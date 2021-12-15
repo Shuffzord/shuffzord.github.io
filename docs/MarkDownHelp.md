@@ -11,5 +11,5 @@ https://squidfunk.github.io/mkdocs-material/reference/mathjax/?h=math
 sample:
 
 $$
-\operatorname{ker} f=\{g\in G:f(g)=e_{H}\}{\mbox{.}}
+\operatorname{ker} f=\{g\in G:f(g)=e_{H}\}
 $$
