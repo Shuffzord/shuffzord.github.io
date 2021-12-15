@@ -2,9 +2,18 @@ https://csrgxtu.github.io/2015/03/20/Writing-Mathematic-Fomulars-in-Markdown/
 
 Example:
 
-| $\alpha$ | `$\alpha$` | \alpha |
-
-| $\theta$ | `$\alpha$` | \alpha |
+| Symbol    | Code        |
+| --------- | ----------- |
+| $\alpha$  | `$\alpha$`  |
+| $\beta$   | `$\beta$`   |
+| $\gamma$  | `$\gamma$`  |
+| $\Gamma$  | `$\Gamma$`  |
+| $\pi$     | `$\pi$`     |
+| $\Pi$     | `$\Pi$`     |
+| $\phi$    | `$\phi$`    |
+| $\Phi$    | `$\Phi$`    |
+| $\varphi$ | `$\varphi$` |
+| $\theta$  | `$\theta$`  |
 
 MarkJax:
 
