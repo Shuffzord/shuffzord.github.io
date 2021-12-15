@@ -4,6 +4,8 @@ Example:
 
 | $\alpha$ | `$\alpha$` | \alpha |
 
+| $\theta$ | `$\alpha$` | \alpha |
+
 MarkJax:
 
 https://squidfunk.github.io/mkdocs-material/reference/mathjax/?h=math
