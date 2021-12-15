@@ -42,3 +42,17 @@ This function is otherwise called the "Squared error function", or "Mean squared
 ![Cost Function Intuition 1](Images/CostFunctionIntuition1.png "Cost Function Intuition 1")
 
 ![Cost Function Intuition 1b](Images/CostFunctionIntuition1b.png "Cost Function Intuition 1b")
+
+### Cost Function - Intuition II
+
+A contour plot is a graph that contains many contour lines. A contour line of a two variable function has a constant value at all points of the same line. An example of such a graph is the one to the right below.
+
+**Taking any color and going along the 'circle', one would expect to get the same value of the cost function**. For example, the three green points found on the green line above have the same value for J($\theta_0$ ,$\theta_1$) and as a result, they are found along the same line. The circled x displays the value of the cost function for the graph on the left when
+$\theta_0$ = 800 and $\theta_1$ = -0.15. Taking another h(x) and plotting its contour plot, one gets the following graphs:
+![Cost Function Intuition 2](Images/CostFunctionIntuition2.png "Cost Function Intuition 2")
+
+When $\theta_0$ = 360 $\theta_1$ = 0, the value of J($\theta_0$,$\theta_1$)J($\theta_0$,$\theta_1$) in the contour plot gets closer to the center thus reducing the cost function error. Now giving our hypothesis function a slightly positive slope results in a better fit of the data.
+
+![Cost Function Intuition 2](Images/CostFunctionIntuition2b.png "Cost Function Intuition 2")
+
+![Cost Function Intuition 2](Images/CostFunctionIntuition2c.png "Cost Function Intuition 2")
