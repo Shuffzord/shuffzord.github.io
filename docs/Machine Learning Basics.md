@@ -105,11 +105,11 @@ On a side note, we should adjust our parameter $\alpha$ to ensure that the gradi
 
 The intuition behind the convergence is that $\frac{d}{d\theta_1}$ J($\theta_1$) approaches 0 as we approach the bottom of our convex function. At the minimum, the derivative will always be 0.
 
-![Gradient](Images/Gradient2.png "Gradient")
+![Gradient](Images/gradient2.png "Gradient")
 
-![Gradient](Images/Gradient2b.png "Gradient")
+![Gradient](Images/gradient2b.png "Gradient")
 
 **Gradient descent can converge to a local
 minimum, even with the learning rate $\alpha$ fixed**
 
-![Gradient](Images/Gradient2c.png "Gradient")
+![Gradient](Images/gradient2c.png "Gradient")
