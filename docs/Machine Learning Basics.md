@@ -87,3 +87,29 @@ At each iteration j, one should simultaneously update the parameters $\theta_1$,
 iteration would yield to a wrong implementation.
 
 ![Gradient](Images/Gradient1b.png "Gradient")
+
+### Gradient Descent Intuition
+
+Let's simplify but optimizing only one dimension. One parameter.
+
+Repeat until convergence:
+
+$\theta_1$ := $\theta_1$ - $\frac{\partial}{\partial \theta_1}$ J($\theta_1$)
+
+Regardless of the slope's sign for $\frac{d}{d \theta_1}$ J($\theta_1$),
+$\theta_1$ eventually converges to its minimum value. The following graph shows that when the slope is negative, the value of $\theta_1$
+increases and when it is positive, the value of $\theta_1$
+decreases.
+
+On a side note, we should adjust our parameter $\alpha$ to ensure that the gradient descent algorithm converges in a reasonable time. Failure to converge or too much time to obtain the minimum value imply that our step size is wrong.
+
+The intuition behind the convergence is that $\frac{d}{d\theta_1}$ J($\theta_1$) approaches 0 as we approach the bottom of our convex function. At the minimum, the derivative will always be 0.
+
+![Gradient](Images/Gradient2.png "Gradient")
+
+![Gradient](Images/Gradient2b.png "Gradient")
+
+**Gradient descent can converge to a local
+minimum, even with the learning rate $\alpha$ fixed**
+
+![Gradient](Images/Gradient2c.png "Gradient")
