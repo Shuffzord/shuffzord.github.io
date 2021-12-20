@@ -1,6 +1,6 @@
 site_name: Mateusz Woźniak - My online markdown notes
 theme:
-  name: windmill-dark
+  name: material
 markdown_extensions:
   - tables
   - attr_list
