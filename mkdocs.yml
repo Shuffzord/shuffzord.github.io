@@ -5,6 +5,9 @@ markdown_extensions:
   - tables
   - attr_list
   - md_in_html
+  - pymdownx.tasklist:
+      custom_checkbox: true
+      clickable_checkbox: true
   - pymdownx.arithmatex:
       generic: true
 extra_javascript:

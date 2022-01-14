@@ -6,11 +6,14 @@ Przydatne linki:
 
 > https://myfund.pl/index.php?raport=tradingview&baza=55201&ticker={ticker}
 
-> https://strefainwestorow.pl/notowania/gpw/voxel-vox/dywidendy
+> https://strefainwestorow.pl/notowania/gpw/{name}-{ticker}/dywidendy
 
 ## Analiza finansowa
 
 - [ ] Tendencje (biznesradar)
-- [ ] Przychody / Zyski w trendzie wzrostowym (biznesradar)
+- [ ] Przychody / Zyski (biznesradar)
+  - [ ] w trendzie wzrostowym
 - [ ] Dywidendy (strefainwestorów)
+  - [ ] Ciągłość
+  - [ ] Stopa
 - [ ] Wskaźniki (biznesradar)
