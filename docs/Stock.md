@@ -11,11 +11,10 @@ Przydatne linki:
 ## Analiza finansowa
 
 - [ ] Tendencje (biznesradar)
-- [ ] Vestibulum convallis sit amet nisi a tincidunt
-    * [x] In hac habitasse platea dictumst
 - [ ] Przychody / Zyski (biznesradar)
     * [ ] w trendzie wzrostowym
 - [ ] Dywidendy (strefainwestorów)
     * [ ] Ciągłość
     * [ ] Stopa
 - [ ] Wskaźniki (biznesradar)
+    - [ ] 
