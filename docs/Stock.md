@@ -3,7 +3,6 @@
 ## Przydatne linki do nauki
 
 - [Inwestomat - Playlista do nauki](https://www.youtube.com/watch?v=gu8ZcHt6wLM&list=PLRBOV-q9LfvVGTepqvrapt63eH1wI5417)
-- [Duck Duck Go](https://duckduckgo.com)
 
 ## Przydatne linki do analizy
 
