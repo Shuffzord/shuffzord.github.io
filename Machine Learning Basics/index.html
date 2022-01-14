@@ -1,0 +1,619 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.6">
+    
+    
+      
+        <title>Machine Learning Basics - Mateusz Woźniak - My online markdown notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.cd566b2a.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#machine-learning-basics" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Mateusz Woźniak - My online markdown notes" class="md-header__button md-logo" aria-label="Mateusz Woźniak - My online markdown notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Mateusz Woźniak - My online markdown notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Machine Learning Basics
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Mateusz Woźniak - My online markdown notes" class="md-nav__button md-logo" aria-label="Mateusz Woźniak - My online markdown notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Mateusz Woźniak - My online markdown notes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Machine Learning Basics
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Machine Learning Basics
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#algorithms" class="md-nav__link">
+    Algorithms
+  </a>
+  
+    <nav class="md-nav" aria-label="Algorithms">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problems" class="md-nav__link">
+    Problems
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-cost-function" class="md-nav__link">
+    Model &amp; Cost Function
+  </a>
+  
+    <nav class="md-nav" aria-label="Model &amp; Cost Function">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cost-function-intuition-i" class="md-nav__link">
+    Cost Function Intuition I
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cost-function-intuition-ii" class="md-nav__link">
+    Cost Function - Intuition II
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parameter-learning" class="md-nav__link">
+    Parameter Learning
+  </a>
+  
+    <nav class="md-nav" aria-label="Parameter Learning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gradient-descent" class="md-nav__link">
+    Gradient Descent
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gradient-descent-intuition" class="md-nav__link">
+    Gradient Descent Intuition
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multiple-features" class="md-nav__link">
+    Multiple Features
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MarkDownHelp/" class="md-nav__link">
+        MarkDownHelp
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Stock/" class="md-nav__link">
+        Buying stock checklist
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#algorithms" class="md-nav__link">
+    Algorithms
+  </a>
+  
+    <nav class="md-nav" aria-label="Algorithms">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problems" class="md-nav__link">
+    Problems
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-cost-function" class="md-nav__link">
+    Model &amp; Cost Function
+  </a>
+  
+    <nav class="md-nav" aria-label="Model &amp; Cost Function">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cost-function-intuition-i" class="md-nav__link">
+    Cost Function Intuition I
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cost-function-intuition-ii" class="md-nav__link">
+    Cost Function - Intuition II
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parameter-learning" class="md-nav__link">
+    Parameter Learning
+  </a>
+  
+    <nav class="md-nav" aria-label="Parameter Learning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gradient-descent" class="md-nav__link">
+    Gradient Descent
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gradient-descent-intuition" class="md-nav__link">
+    Gradient Descent Intuition
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multiple-features" class="md-nav__link">
+    Multiple Features
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+<h1 id="machine-learning-basics">Machine Learning Basics</h1>
+<blockquote>
+<p>A computer program is said to learn from <strong>experience E</strong> with respect to some <strong>task T</strong> and some <strong>performance measure P</strong>, if its performance on T as measured by P, improves with experience E</p>
+</blockquote>
+<p><code>Example: playing checkers.
+E = the experience of playing many games of checkers
+T = the task of playing checkers.
+P = the probability that the program will win the next game</code></p>
+<h2 id="algorithms">Algorithms</h2>
+<ul>
+<li>Supervised Learning
+  We give the algorithm 'right answer' to learn</li>
+<li>Unsupervised learning
+  Unsupervised learning allows us to approach problems with little or no idea what our results should look like. We can derive structure from data where we don't necessarily know the effect of the variables.
+  We can derive this structure by clustering the data based on relationships among the variables in the data.
+  With unsupervised learning there is no feedback based on the prediction results.</li>
+</ul>
+<h3 id="problems">Problems</h3>
+<ul>
+<li>Regression: Predict continuous valued output</li>
+<li>Classification: Discrete valued output (0,1,...can be more options than two)</li>
+</ul>
+<h2 id="model-cost-function">Model &amp; Cost Function</h2>
+<p>To describe the supervised learning problem slightly more formally, our goal is, given a training set, to learn a function h : X → Y so that h(x) is a “good” predictor for the corresponding value of y. For historical reasons, this function h is called a hypothesis. Seen pictorially, the process is therefore like this:</p>
+<p><img alt="Model Representation" src="../Images/ModelRepresentation.png" title="Model Representation" /></p>
+<p>We can measure the accuracy of our hypothesis function by using a cost function. This takes an average difference (actually a fancier version of an average) of all the results of the hypothesis with inputs from x's and the actual output y's.</p>
+<p><img alt="Cost Function" src="../Images/CostFunction.png" title="Cost Function" />
+This function is otherwise called the "Squared error function", or "Mean squared error". The mean is halved (1/2) as a convenience for the computation of the gradient descent, as the derivative term of the square function will cancel out the (1/2) term. The following image summarizes what the cost function does:</p>
+<p><img alt="Cost Function2" src="../Images/CostFunction2.png" title="Cost Function2" /></p>
+<h3 id="cost-function-intuition-i">Cost Function Intuition I</h3>
+<p><img alt="Cost Function Intuition 1" src="../Images/CostFunctionIntuition1.png" title="Cost Function Intuition 1" /></p>
+<p><img alt="Cost Function Intuition 1b" src="../Images/CostFunctionIntuition1b.png" title="Cost Function Intuition 1b" /></p>
+<h3 id="cost-function-intuition-ii">Cost Function - Intuition II</h3>
+<p>A contour plot is a graph that contains many contour lines. A contour line of a two variable function has a constant value at all points of the same line. An example of such a graph is the one to the right below.</p>
+<p><strong>Taking any color and going along the 'circle', one would expect to get the same value of the cost function</strong>. For example, the three green points found on the green line above have the same value for J(<span class="arithmatex">\(\theta_0\)</span> ,<span class="arithmatex">\(\theta_1\)</span>) and as a result, they are found along the same line. The circled x displays the value of the cost function for the graph on the left when
+<span class="arithmatex">\(\theta_0\)</span> = 800 and <span class="arithmatex">\(\theta_1\)</span> = -0.15. Taking another h(x) and plotting its contour plot, one gets the following graphs:
+<img alt="Cost Function Intuition 2" src="../Images/CostFunctionIntuition2.png" title="Cost Function Intuition 2" /></p>
+<p>When <span class="arithmatex">\(\theta_0\)</span> = 360 <span class="arithmatex">\(\theta_1\)</span> = 0, the value of J(<span class="arithmatex">\(\theta_0\)</span>,<span class="arithmatex">\(\theta_1\)</span>)J(<span class="arithmatex">\(\theta_0\)</span>,<span class="arithmatex">\(\theta_1\)</span>) in the contour plot gets closer to the center thus reducing the cost function error. Now giving our hypothesis function a slightly positive slope results in a better fit of the data.</p>
+<p><img alt="Cost Function Intuition 2" src="../Images/CostFunctionIntuition2b.png" title="Cost Function Intuition 2" /></p>
+<p><img alt="Cost Function Intuition 2" src="../Images/CostFunctionIntuition2c.png" title="Cost Function Intuition 2" /></p>
+<h2 id="parameter-learning">Parameter Learning</h2>
+<h3 id="gradient-descent">Gradient Descent</h3>
+<p>So we have our hypothesis function and we have a way of measuring how well it fits into the data. Now we need to estimate the parameters in the hypothesis function. That's where gradient descent comes in.</p>
+<p>Imagine that we graph our hypothesis function based on its fields <span class="arithmatex">\(\theta_0\)</span> and <span class="arithmatex">\(\theta_1\)</span>
+(actually we are graphing the cost function as a function of the parameter estimates). We are not graphing x and y itself, but the parameter range of our hypothesis function and the cost resulting from selecting a particular set of parameters.</p>
+<p>We put <span class="arithmatex">\(\theta_0\)</span> on the x axis and <span class="arithmatex">\(\theta_1\)</span>
+on the y axis, with the cost function on the vertical z axis. The points on our graph will be the result of the cost function using our hypothesis with those specific theta parameters. The graph below depicts such a setup.</p>
+<p><img alt="Gradient" src="../Images/Gradient1.png" title="Gradient" /></p>
+<p>We will know that we have succeeded when our cost function is at the very bottom of the pits in our graph, i.e. when its value is the minimum. The red arrows show the minimum points in the graph.</p>
+<p>The way we do this is by taking the derivative (the tangential line to a function) of our cost function. The slope of the tangent is the derivative at that point and it will give us a direction to move towards. We make steps down the cost function in the direction with the steepest descent. The size of each step is determined by the parameter α, which is called the learning rate.</p>
+<p>For example, the distance between each 'star' in the graph above represents a step determined by our parameter α. A smaller α would result in a smaller step and a larger α results in a larger step. The direction in which the step is taken is determined by the partial derivative of J(<span class="arithmatex">\(\theta_0\)</span>,<span class="arithmatex">\(\theta_1\)</span>). Depending on where one starts on the graph, one could end up at different points. The image above shows us two different starting points that end up in two different places.</p>
+<p>The gradient descent algorithm is:</p>
+<p>repeat until convergence:</p>
+<p><span class="arithmatex">\(\theta_j\)</span> := <span class="arithmatex">\(\theta_j\)</span> - <span class="arithmatex">\(\alpha\)</span> <span class="arithmatex">\(\frac{\partial}{\partial \theta_j}\)</span> J(<span class="arithmatex">\(\theta_0\)</span>, <span class="arithmatex">\(\theta_1\)</span>)</p>
+<p>where j=0,1 represents the feature index number.</p>
+<p>At each iteration j, one should simultaneously update the parameters <span class="arithmatex">\(\theta_1\)</span>, <span class="arithmatex">\(\theta_2\)</span>,...,<span class="arithmatex">\(\theta_n\)</span>. Updating a specific parameter prior to calculating another one on the j<span class="arithmatex">\(^{(th)}\)</span>
+iteration would yield to a wrong implementation.</p>
+<p><img alt="Gradient" src="../Images/Gradient1b.png" title="Gradient" /></p>
+<h3 id="gradient-descent-intuition">Gradient Descent Intuition</h3>
+<p>Let's simplify but optimizing only one dimension. One parameter.</p>
+<p>Repeat until convergence:</p>
+<p><span class="arithmatex">\(\theta_1\)</span> := <span class="arithmatex">\(\theta_1\)</span> - <span class="arithmatex">\(\frac{\partial}{\partial \theta_1}\)</span> J(<span class="arithmatex">\(\theta_1\)</span>)</p>
+<p>Regardless of the slope's sign for <span class="arithmatex">\(\frac{d}{d \theta_1}\)</span> J(<span class="arithmatex">\(\theta_1\)</span>),
+<span class="arithmatex">\(\theta_1\)</span> eventually converges to its minimum value. The following graph shows that when the slope is negative, the value of <span class="arithmatex">\(\theta_1\)</span>
+increases and when it is positive, the value of <span class="arithmatex">\(\theta_1\)</span>
+decreases.</p>
+<p>On a side note, we should adjust our parameter <span class="arithmatex">\(\alpha\)</span> to ensure that the gradient descent algorithm converges in a reasonable time. Failure to converge or too much time to obtain the minimum value imply that our step size is wrong.</p>
+<p>The intuition behind the convergence is that <span class="arithmatex">\(\frac{d}{d\theta_1}\)</span> J(<span class="arithmatex">\(\theta_1\)</span>) approaches 0 as we approach the bottom of our convex function. At the minimum, the derivative will always be 0.</p>
+<p><img alt="Gradient" src="../Images/gradient2.png" title="Gradient" /></p>
+<p><img alt="Gradient" src="../Images/gradient2b.png" title="Gradient" /></p>
+<p><strong>Gradient descent can converge to a local
+minimum, even with the learning rate <span class="arithmatex">\(\alpha\)</span> fixed</strong></p>
+<p><img alt="Gradient" src="../Images/gradient2c.png" title="Gradient" /></p>
+<h2 id="multiple-features">Multiple Features</h2>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href=".." class="md-footer__link md-footer__link--prev" aria-label="Previous: Home" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Home
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../MarkDownHelp/" class="md-footer__link md-footer__link--next" aria-label="Next: MarkDownHelp" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              MarkDownHelp
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.22074ed6.min.js"}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.1514a9a0.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
