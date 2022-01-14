@@ -12,8 +12,8 @@ Przydatne linki:
 
 - [ ] Tendencje (biznesradar)
 - [ ] Przychody / Zyski (biznesradar)
-  - [ ] w trendzie wzrostowym
+  * [ ] w trendzie wzrostowym
 - [ ] Dywidendy (strefainwestorów)
-  - [ ] Ciągłość
-  - [ ] Stopa
+  * [ ] Ciągłość
+  * [ ] Stopa
 - [ ] Wskaźniki (biznesradar)
