@@ -113,3 +113,5 @@ The intuition behind the convergence is that $\frac{d}{d\theta_1}$ J($\theta_1$)
 minimum, even with the learning rate $\alpha$ fixed**
 
 ![Gradient](Images/gradient2c.png "Gradient")
+
+## Multiple Features
