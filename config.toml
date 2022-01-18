@@ -8,7 +8,7 @@ theme = "hello-friend-ng"
   dateformShort   = "Jan 2"
   dateformNum     = "2006-01-02"
   dateformNumTime = "2006-01-02 15:04"
-
+  enableThemeToggle = true
   # Subtitle for home
   homeSubtitle = "Structure in life"
 
