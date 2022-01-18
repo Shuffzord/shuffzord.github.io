@@ -1,0 +1,146 @@
+<!doctype html><html lang=en-us>
+<head>
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge,chrome=1">
+<title>Principles</title>
+<meta name=viewport content="width=device-width,minimum-scale=1">
+<meta name=description content="Machine Learning Basics When (a \ne 0), there are two solutions to (ax^2 + bx + c = 0) and they are $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$
+ A computer program is said to learn from experience E with respect to some task T and some performance measure P, if its performance on T as measured by P, improves with experience E
+ E = the experience of playing many games of checkers T = the task of playing checkers.">
+<meta name=generator content="Hugo 0.92.0">
+<meta name=ROBOTS content="NOINDEX, NOFOLLOW">
+<link rel=stylesheet href=/ananke/css/main.min.css>
+<meta property="og:title" content>
+<meta property="og:description" content="Machine Learning Basics When (a \ne 0), there are two solutions to (ax^2 + bx + c = 0) and they are $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$
+ A computer program is said to learn from experience E with respect to some task T and some performance measure P, if its performance on T as measured by P, improves with experience E
+ E = the experience of playing many games of checkers T = the task of playing checkers.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://shuffzord.github.io/study/"><meta property="article:section" content>
+<meta itemprop=name content>
+<meta itemprop=description content="Machine Learning Basics When (a \ne 0), there are two solutions to (ax^2 + bx + c = 0) and they are $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$
+ A computer program is said to learn from experience E with respect to some task T and some performance measure P, if its performance on T as measured by P, improves with experience E
+ E = the experience of playing many games of checkers T = the task of playing checkers.">
+<meta itemprop=wordCount content="1066">
+<meta itemprop=keywords content><meta name=twitter:card content="summary">
+<meta name=twitter:title content>
+<meta name=twitter:description content="Machine Learning Basics When (a \ne 0), there are two solutions to (ax^2 + bx + c = 0) and they are $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$
+ A computer program is said to learn from experience E with respect to some task T and some performance measure P, if its performance on T as measured by P, improves with experience E
+ E = the experience of playing many games of checkers T = the task of playing checkers.">
+</head>
+<body class="ma0 avenir bg-near-white">
+<header>
+<div class=bg-black>
+<nav class="pv3 ph3 ph4-ns" role=navigation>
+<div class="flex-l justify-between items-center center">
+<a href=/ class="f3 fw2 hover-white no-underline white-90 dib">
+Principles
+</a>
+<div class="flex-l items-center">
+<div class=ananke-socials>
+</div>
+</div>
+</div>
+</nav>
+</div>
+</header>
+<main class=pb7 role=main>
+<div class="flex-l mt2 mw8 center">
+<article class="center cf pv5 ph3 ph4-ns mw7">
+<header>
+<p class="f6 b helvetica tracked">
+</p>
+<h1 class=f1>
+</h1>
+</header>
+<div class="nested-copy-line-height lh-copy f4 nested-links nested-img mid-gray">
+<h1 id=machine-learning-basics>Machine Learning Basics</h1>
+<p>When (a \ne 0), there are two solutions to (ax^2 + bx + c = 0) and they are
+$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$</p>
+<blockquote>
+<p>A computer program is said to learn from <strong>experience E</strong> with respect to some <strong>task T</strong> and some <strong>performance measure P</strong>, if its performance on T as measured by P, improves with experience E</p>
+</blockquote>
+<pre tabindex=0><code class=language-Example: data-lang=Example:>E = the experience of playing many games of checkers
+T = the task of playing checkers.
+P = the probability that the program will win the next game
+</code></pre><h2 id=algorithms>Algorithms</h2>
+<ul>
+<li>Supervised Learning
+We give the algorithm &lsquo;right answer&rsquo; to learn</li>
+<li>Unsupervised learning
+Unsupervised learning allows us to approach problems with little or no idea what our results should look like. We can derive structure from data where we don&rsquo;t necessarily know the effect of the variables.
+We can derive this structure by clustering the data based on relationships among the variables in the data.
+With unsupervised learning there is no feedback based on the prediction results.</li>
+</ul>
+<h3 id=problems>Problems</h3>
+<ul>
+<li>Regression: Predict continuous valued output</li>
+<li>Classification: Discrete valued output (0,1,&mldr;can be more options than two)</li>
+</ul>
+<h2 id=model--cost-function>Model & Cost Function</h2>
+<p>To describe the supervised learning problem slightly more formally, our goal is, given a training set, to learn a function h : X → Y so that h(x) is a “good” predictor for the corresponding value of y. For historical reasons, this function h is called a hypothesis. Seen pictorially, the process is therefore like this:</p>
+<p><img src=Images/ModelRepresentation.png alt="Model Representation" title="Model Representation"></p>
+<p>We can measure the accuracy of our hypothesis function by using a cost function. This takes an average difference (actually a fancier version of an average) of all the results of the hypothesis with inputs from x&rsquo;s and the actual output y&rsquo;s.</p>
+<p><img src=Images/CostFunction.png alt="Cost Function" title="Cost Function">
+This function is otherwise called the &ldquo;Squared error function&rdquo;, or &ldquo;Mean squared error&rdquo;. The mean is halved (1/2) as a convenience for the computation of the gradient descent, as the derivative term of the square function will cancel out the (1/2) term. The following image summarizes what the cost function does:</p>
+<p><img src=Images/CostFunction2.png alt="Cost Function2" title="Cost Function2"></p>
+<h3 id=cost-function-intuition-i>Cost Function Intuition I</h3>
+<p><img src=Images/CostFunctionIntuition1.png alt="Cost Function Intuition 1" title="Cost Function Intuition 1"></p>
+<p><img src=Images/CostFunctionIntuition1b.png alt="Cost Function Intuition 1b" title="Cost Function Intuition 1b"></p>
+<h3 id=cost-function---intuition-ii>Cost Function - Intuition II</h3>
+<p>A contour plot is a graph that contains many contour lines. A contour line of a two variable function has a constant value at all points of the same line. An example of such a graph is the one to the right below.</p>
+<p><strong>Taking any color and going along the &lsquo;circle&rsquo;, one would expect to get the same value of the cost function</strong>. For example, the three green points found on the green line above have the same value for J($\theta_0$ ,$\theta_1$) and as a result, they are found along the same line. The circled x displays the value of the cost function for the graph on the left when
+$\theta_0$ = 800 and $\theta_1$ = -0.15. Taking another h(x) and plotting its contour plot, one gets the following graphs:
+<img src=Images/CostFunctionIntuition2.png alt="Cost Function Intuition 2" title="Cost Function Intuition 2"></p>
+<p>When $\theta_0$ = 360 $\theta_1$ = 0, the value of J($\theta_0$,$\theta_1$)J($\theta_0$,$\theta_1$) in the contour plot gets closer to the center thus reducing the cost function error. Now giving our hypothesis function a slightly positive slope results in a better fit of the data.</p>
+<p><img src=Images/CostFunctionIntuition2b.png alt="Cost Function Intuition 2" title="Cost Function Intuition 2"></p>
+<p><img src=Images/CostFunctionIntuition2c.png alt="Cost Function Intuition 2" title="Cost Function Intuition 2"></p>
+<h2 id=parameter-learning>Parameter Learning</h2>
+<h3 id=gradient-descent>Gradient Descent</h3>
+<p>So we have our hypothesis function and we have a way of measuring how well it fits into the data. Now we need to estimate the parameters in the hypothesis function. That&rsquo;s where gradient descent comes in.</p>
+<p>Imagine that we graph our hypothesis function based on its fields $\theta_0$ and $\theta_1$
+(actually we are graphing the cost function as a function of the parameter estimates). We are not graphing x and y itself, but the parameter range of our hypothesis function and the cost resulting from selecting a particular set of parameters.</p>
+<p>We put $\theta_0$ on the x axis and $\theta_1$
+on the y axis, with the cost function on the vertical z axis. The points on our graph will be the result of the cost function using our hypothesis with those specific theta parameters. The graph below depicts such a setup.</p>
+<p><img src=Images/Gradient1.png alt=Gradient title=Gradient></p>
+<p>We will know that we have succeeded when our cost function is at the very bottom of the pits in our graph, i.e. when its value is the minimum. The red arrows show the minimum points in the graph.</p>
+<p>The way we do this is by taking the derivative (the tangential line to a function) of our cost function. The slope of the tangent is the derivative at that point and it will give us a direction to move towards. We make steps down the cost function in the direction with the steepest descent. The size of each step is determined by the parameter α, which is called the learning rate.</p>
+<p>For example, the distance between each &lsquo;star&rsquo; in the graph above represents a step determined by our parameter α. A smaller α would result in a smaller step and a larger α results in a larger step. The direction in which the step is taken is determined by the partial derivative of J($\theta_0$,$\theta_1$). Depending on where one starts on the graph, one could end up at different points. The image above shows us two different starting points that end up in two different places.</p>
+<p>The gradient descent algorithm is:</p>
+<p>repeat until convergence:</p>
+<p>$\theta_j$ := $\theta_j$ - $\alpha$ $\frac{\partial}{\partial \theta_j}$ J($\theta_0$, $\theta_1$)</p>
+<p>where j=0,1 represents the feature index number.</p>
+<p>At each iteration j, one should simultaneously update the parameters $\theta_1$, $\theta_2$,&mldr;,$\theta_n$. Updating a specific parameter prior to calculating another one on the j$^{(th)}$
+iteration would yield to a wrong implementation.</p>
+<p><img src=Images/Gradient1b.png alt=Gradient title=Gradient></p>
+<h3 id=gradient-descent-intuition>Gradient Descent Intuition</h3>
+<p>Let&rsquo;s simplify but optimizing only one dimension. One parameter.</p>
+<p>Repeat until convergence:</p>
+<p>$\theta_1$ := $\theta_1$ - $\frac{\partial}{\partial \theta_1}$ J($\theta_1$)</p>
+<p>Regardless of the slope&rsquo;s sign for $\frac{d}{d \theta_1}$ J($\theta_1$),
+$\theta_1$ eventually converges to its minimum value. The following graph shows that when the slope is negative, the value of $\theta_1$
+increases and when it is positive, the value of $\theta_1$
+decreases.</p>
+<p>On a side note, we should adjust our parameter $\alpha$ to ensure that the gradient descent algorithm converges in a reasonable time. Failure to converge or too much time to obtain the minimum value imply that our step size is wrong.</p>
+<p>The intuition behind the convergence is that $\frac{d}{d\theta_1}$ J($\theta_1$) approaches 0 as we approach the bottom of our convex function. At the minimum, the derivative will always be 0.</p>
+<p><img src=Images/gradient2.png alt=Gradient title=Gradient></p>
+<p><img src=Images/gradient2b.png alt=Gradient title=Gradient></p>
+<p><strong>Gradient descent can converge to a local
+minimum, even with the learning rate $\alpha$ fixed</strong></p>
+<p><img src=Images/gradient2c.png alt=Gradient title=Gradient></p>
+<h2 id=multiple-features>Multiple Features</h2>
+</div>
+</article>
+</div>
+</main>
+<footer class="bg-black bottom-0 w-100 pa3" role=contentinfo>
+<div class="flex justify-between">
+<a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href=https://shuffzord.github.io>
+&copy; Principles 2022
+</a>
+<div>
+<div class=ananke-socials>
+</div></div>
+</div>
+</footer>
+</body>
+</html>
