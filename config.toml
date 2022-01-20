@@ -54,3 +54,8 @@ theme = "hello-friend-ng"
     identifier = "Machine Learning"
     name       = "Machine Learning"
     url        = "/Machine Learning"
+
+[[menu.main]]
+    identifier = "Quotes"
+    name       = "Quotes"
+    url        = "/Quotes"
