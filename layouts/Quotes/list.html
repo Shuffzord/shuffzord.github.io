@@ -12,6 +12,15 @@
   .checked {
     color: orange;
   }
+  .tags {
+    margin-left: 1em;
+    font-size: 0.8em;
+    color: black;
+    background-color: orange;
+    border: none;
+    padding: 6px;
+    border-radius: 16px;
+  }
 </style>
 <main class="posts">
   <h1>{{ .Title }}</h1>
@@ -55,17 +64,17 @@
     </div>
   </div>
   {{end}} -->
-  
+
   {{ range .Site.Data.cytaty}}
+  <!-- TODO: Filter out discarded and add paging -->
   <div class="posts-group">
     <div class="post-year"></div>
     <div class="posts-list">
       <star></star>
       <figure class="quote">
-        <blockquote>{{.Text}}      
-          <span {{ if .Favorite }} class=" fa fa-star checked"{{ end }} ></span>
-          </blockquote>
+        <blockquote><span {{ if .Favorite }} class=" fa fa-star checked" {{ end }}></span> {{.Text}}</blockquote>
         <figcaption>&mdash; {{.Author}}, <cite>{{.Title}}</cite></figcaption>
+        <!-- {{ range .Tags}} <span class="tags">{{.name}} </span> {{end}} -->
       </figure>
     </div>
   </div>
