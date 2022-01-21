@@ -1,9 +1,35 @@
 [
     {
-        "text": "Decide the type of person you want to be. Prove it to yourself with small wins.",
+        "text": "Quote 1",
         "note": "",
         "author": "Test Author",
         "url": "https://images-na.ssl-images-amazon.com/images/I/51Eqf-URhoL._SL200_.jpg",
-        "title": "Book title"
+        "book": "Book title",
+        "favorite": true
+    },
+    {
+        "text": "Quote 2",
+        "note": "",
+        "author": "Test Author",
+        "url": "https://images-na.ssl-images-amazon.com/images/I/51Eqf-URhoL._SL200_.jpg",
+        "book": "Another Book title",
+        "favorite": true
+    },
+    {
+        "text": "Quote 3",
+        "note": "",
+        "author": "Test Author",
+        "url": "https://images-na.ssl-images-amazon.com/images/I/51Eqf-URhoL._SL200_.jpg",
+        "book": "Another Book title",
+        "favorite": true
+    },
+    {
+        "text": "Quote 4",
+        "note": "",
+        "author": "Another Author",
+        "url": "https://images-na.ssl-images-amazon.com/images/I/51Eqf-URhoL._SL200_.jpg",
+        "book": "Book title",
+        "favorite": false
     }
+
 ]

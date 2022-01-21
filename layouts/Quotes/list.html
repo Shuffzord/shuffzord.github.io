@@ -1,4 +1,5 @@
 {{ define "main" }}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 <style>
   .quote {
     margin: 0;
@@ -6,7 +7,10 @@
   }
   .quote figcaption,
   .quote blockquote {
-    margin: 1em;
+    margin: 1.4em;
+  }
+  .checked {
+    color: orange;
   }
 </style>
 <main class="posts">
@@ -15,17 +19,43 @@
   {{ if .Content }}
   <div class="content">{{ .Content }}</div>
   {{ end }}
-  <!-- {{ range .Site.Data.cytatytest}}
+
+  <!-- {{ $author := slice }}
+  {{ range .Site.Data.cytatytest }}
+    {{ $author = $author | append .author }}
+  {{ end }}
+  {{ $author = uniq $author | sort }}
+  
+  {{ range $author }}
+    {{ $author := . }}
+   
+    {{ range where $.Site.Data.cytatytest "author" $author }}
+    <div class="posts-group">
+      <div class="post-year"></div>
+      <div class="posts-list">
+        <figure class="quote">
+          <blockquote>{{.text}}</blockquote>
+          <cite>{{.book}}</cite>
+        </figure>
+      </div>
+    </div>
+    {{ end }}
+  {{ end }} -->
+  <!-- {{ range .Site.Data.cytatytest }}
   <div class="posts-group">
     <div class="post-year"></div>
     <div class="posts-list">
+      <star></star>
       <figure class="quote">
-        <blockquote>{{.text}}</blockquote>
-        <figcaption>&mdash; {{.author}}, <cite>{{.title}}</cite></figcaption>
+        <blockquote>{{.text}}      
+          <span {{ if .favorite }} class=" fa fa-star checked"{{ end }} ></span>
+          </blockquote>
+        <figcaption>&mdash; {{.author}}, <cite>{{.book}}</cite></figcaption>
       </figure>
     </div>
   </div>
   {{end}} -->
+  
   {{ range .Site.Data.cytaty}}
   <div class="posts-group">
     <div class="post-year"></div>
