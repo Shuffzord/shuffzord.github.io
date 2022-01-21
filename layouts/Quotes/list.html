@@ -1,5 +1,15 @@
 {{ define "main" }}
-
+<style>
+  .quote {
+    margin: 0;
+    padding: 1em;
+    border-radius: 1em;
+  }
+  .quote figcaption,
+  .quote blockquote {
+    margin: 1em;
+  }
+</style>
 <main class="posts">
   <h1>{{ .Title }}</h1>
 
@@ -7,7 +17,12 @@
   <div class="content">{{ .Content }}</div>
   {{ end }} {{ range .Site.Data.cytaty}}
   <div class="posts-group">
-    <div class="post-year">{{ .text }}</div>
+    <div class="post-year">
+      <figure class="quote">
+        <blockquote>{{.text}}</blockquote>
+        <!-- <figcaption>&mdash; author, <cite>Book</cite></figcaption> -->
+      </figure>
+    </div>
 
     <ul class="posts-list">
       <!-- {{ range .Pages }}
