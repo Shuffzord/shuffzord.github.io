@@ -1,5 +1,5 @@
 ---
-title: Stock
+title: Checklista
 date: 2022-01-18
 publishdate: 2022-01-18
 ---

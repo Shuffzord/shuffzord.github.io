@@ -1,3 +1,9 @@
+---
+title: Wskaźniki
+date: 2022-01-21
+publishdate: 2022-01-21
+---
+
 # Wskaźniki - cheatsheet
 
 Opisy wskaźników z [inwestomat](https://inwestomat.eu/jak-analizowac-akcje-spolek/)
