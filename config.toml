@@ -47,15 +47,15 @@ theme = "hello-friend-ng"
   # And you can even create generic menu
 [[menu.main]]
     identifier = "Stock"
-    name       = "Stock"
+    name       = "Giełda"
     url        = "/Stock"
 
 [[menu.main]]
-    identifier = "Machine Learning"
-    name       = "Machine Learning"
-    url        = "/Machine Learning"
+    identifier = "Study"
+    name       = "Nauka"
+    url        = "/Study"
 
 [[menu.main]]
     identifier = "Quote"
-    name       = "Quote"
-    url        = "/Quote"
+    name       = "Cytaty"
+    url        = "/Quotes"

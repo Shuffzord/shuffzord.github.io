@@ -5,9 +5,9 @@
 
   {{ if .Content }}
   <div class="content">{{ .Content }}</div>
-  {{ end }} {{ range .Site.Data.sample}}
+  {{ end }} {{ range .Site.Data.cytaty}}
   <div class="posts-group">
-    <div class="post-year">{{ .url }}</div>
+    <div class="post-year">{{ .text }}</div>
 
     <ul class="posts-list">
       <!-- {{ range .Pages }}

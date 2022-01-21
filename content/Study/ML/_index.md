@@ -1,3 +1,9 @@
+---
+title: Machine Learning
+date: 2022-01-18
+publishdate: 2022-01-18
+---
+
 # Machine Learning Basics
 
 When \(a \ne 0\), there are two solutions to \(ax^2 + bx + c = 0\) and they are
