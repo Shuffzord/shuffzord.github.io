@@ -1,5 +1,1265 @@
 [
     {
+      "Id": 269732862,
+      "Author": "Jacek Walkiewicz",
+      "Title": "Pe\u0142na MOC Mo\u017Cliwo\u015Bci",
+      "Url": "https://readwise-assets.s3.amazonaws.com/media/uploaded_book_covers/profile_329436/445febec-6714-4710-8972-c05b34a40915.jpg",
+      "Text": "By\u0107 bohaterem swojego \u017Cycia to akt odwagi",
+      "Tags": [
+        {
+          "id": 63490226,
+          "name": "favorite"
+        }
+      ],
+      "Favorite": true,
+      "Discarded": false,
+      "Note": "",
+      "BookId": 12793828
+    },
+    {
+      "Id": 269731215,
+      "Author": "Jacek Walkiewicz",
+      "Title": "Pe\u0142na MOC Mo\u017Cliwo\u015Bci",
+      "Url": "https://readwise-assets.s3.amazonaws.com/media/uploaded_book_covers/profile_329436/445febec-6714-4710-8972-c05b34a40915.jpg",
+      "Text": "Zwyci\u0119zcy nigdy nie rezygnuj\u0105, a rezygnuj\u0105cy nigdy nie zwyci\u0119\u017Caj\u0105.",
+      "Tags": [
+        {
+          "id": 63373388,
+          "name": "favorite"
+        }
+      ],
+      "Favorite": true,
+      "Discarded": false,
+      "Note": "",
+      "BookId": 12793828
+    },
+    {
+      "Id": 269648235,
+      "Author": "Eric Jorgenson",
+      "Title": "The Almanack of Naval Ravikant",
+      "Url": "https://readwise-assets.s3.amazonaws.com/static/images/default-book-icon-8.18caceaece2b.png",
+      "Text": "To have peace of mind, you have to have peace of body first.",
+      "Tags": [
+        {
+          "id": 63490227,
+          "name": "favorite"
+        }
+      ],
+      "Favorite": true,
+      "Discarded": false,
+      "Note": "",
+      "BookId": 12792360
+    },
+    {
+      "Id": 269648231,
+      "Author": "Eric Jorgenson",
+      "Title": "The Almanack of Naval Ravikant",
+      "Url": "https://readwise-assets.s3.amazonaws.com/static/images/default-book-icon-8.18caceaece2b.png",
+      "Text": "The harder the workout, the easier the day.",
+      "Tags": [
+        {
+          "id": 63557859,
+          "name": "favorite"
+        }
+      ],
+      "Favorite": true,
+      "Discarded": false,
+      "Note": "",
+      "BookId": 12792360
+    },
+    {
+      "Id": 269648228,
+      "Author": "Eric Jorgenson",
+      "Title": "The Almanack of Naval Ravikant",
+      "Url": "https://readwise-assets.s3.amazonaws.com/static/images/default-book-icon-8.18caceaece2b.png",
+      "Text": "You\u2019re going to die one day, and none of this is going to matter. So enjoy yourself. Do something positive. Project some love. Make someone happy. Laugh a little bit. Appreciate the moment. And do your work.\u00A0[8]",
+      "Tags": [
+        {
+          "id": 63986290,
+          "name": "favorite"
+        }
+      ],
+      "Favorite": true,
+      "Discarded": false,
+      "Note": "",
+      "BookId": 12792360
+    },
+    {
+      "Id": 269648219,
+      "Author": "Eric Jorgenson",
+      "Title": "The Almanack of Naval Ravikant",
+      "Url": "https://readwise-assets.s3.amazonaws.com/static/images/default-book-icon-8.18caceaece2b.png",
+      "Text": "Don\u2019t take yourself so seriously. You\u2019re just a monkey with a plan.",
+      "Tags": [
+        {
+          "id": 63838671,
+          "name": "favorite"
+        }
+      ],
+      "Favorite": true,
+      "Discarded": false,
+      "Note": "",
+      "BookId": 12792360
+    },
+    {
+      "Id": 269648218,
+      "Author": "Eric Jorgenson",
+      "Title": "The Almanack of Naval Ravikant",
+      "Url": "https://readwise-assets.s3.amazonaws.com/static/images/default-book-icon-8.18caceaece2b.png",
+      "Text": "A calm mind, a fit body, and a house full of love. These things cannot be bought. They must be earned.",
+      "Tags": [
+        {
+          "id": 64320762,
+          "name": "favorite"
+        }
+      ],
+      "Favorite": true,
+      "Discarded": false,
+      "Note": "",
+      "BookId": 12792360
+    },
+    {
+      "Id": 269648215,
+      "Author": "Eric Jorgenson",
+      "Title": "The Almanack of Naval Ravikant",
+      "Url": "https://readwise-assets.s3.amazonaws.com/static/images/default-book-icon-8.18caceaece2b.png",
+      "Text": "Working out for me is not fun; I suffer in the short term, I feel pain. But then in the long term, I\u2019m better off because I have muscles or I\u2019m healthier. If I am reading a book and I\u2019m getting confused, it is just like working out and the muscle getting sore or tired, except now my brain is being overwhelmed. In the long run I\u2019m getting smarter because I\u2019m absorbing new concepts from working at the limit or edge of my capability. So you generally want to lean into things with short-term pain, but long-term gain.",
+      "Tags": [
+        {
+          "id": 63986297,
+          "name": "favorite"
+        }
+      ],
+      "Favorite": true,
+      "Discarded": false,
+      "Note": "",
+      "BookId": 12792360
+    },
+    {
+      "Id": 269648204,
+      "Author": "Eric Jorgenson",
+      "Title": "The Almanack of Naval Ravikant",
+      "Url": "https://readwise-assets.s3.amazonaws.com/static/images/default-book-icon-8.18caceaece2b.png",
+      "Text": "Compound interest is a very powerful concept. Compound interest applies to more than just compounding capital. Compounding capital is just the beginning. Compounding in business relationships is very important. Look at some of the top roles in society, like why someone is a CEO of a public company or managing billions of dollars. It\u2019s because people trust them. They are trusted because the relationships they\u2019ve built and the work they\u2019ve done has compounded. They\u2019ve stuck with the business and shown themselves (in a visible and accountable way) to be high-integrity people. Compound interest also happens in your reputation. If you have a sterling reputation and you keep building it for decades upon decades, people will notice. Your reputation will literally end up being thousands or tens of thousands of times more valuable than somebody else who was very talented but is not keeping the compound interest in reputation going.",
+      "Tags": [
+        {
+          "id": 64321011,
+          "name": "favorite"
+        }
+      ],
+      "Favorite": true,
+      "Discarded": false,
+      "Note": "",
+      "BookId": 12792360
+    },
+    {
+      "Id": 259961917,
+      "Author": "Viktor E. Frankl",
+      "Title": "Man\u0027s Search for Meaning",
+      "Url": "https://images-na.ssl-images-amazon.com/images/I/41s4xJZlEYL._SL200_.jpg",
+      "Text": "Forces beyond your control can take away everything you possess except one thing, your freedom to choose how you will respond to the situation. You cannot control what happens to you in life, but you can always control what you will feel and do about what happens to you.",
+      "Tags": [
+        {
+          "id": 63262151,
+          "name": "favorite"
+        }
+      ],
+      "Favorite": true,
+      "Discarded": false,
+      "Note": "",
+      "BookId": 12348616
+    },
+    {
+      "Id": 258084087,
+      "Author": null,
+      "Title": "Quick Passages",
+      "Url": "https://readwise-assets.s3.amazonaws.com/static/images/quick-passages-book-icon.2489c00a3133.png",
+      "Text": "A critical quality for success is the ability to change your mind. A lot of ideas are bad until they\u0027re good. And a lot of ideas are good until they\u0027re bad.",
+      "Tags": [
+        {
+          "id": 60350689,
+          "name": "favorite"
+        }
+      ],
+      "Favorite": true,
+      "Discarded": false,
+      "Note": "",
+      "BookId": 12256779
+    },
+    {
+      "Id": 258084054,
+      "Author": null,
+      "Title": "Quick Passages",
+      "Url": "https://readwise-assets.s3.amazonaws.com/static/images/quick-passages-book-icon.2489c00a3133.png",
+      "Text": "\u201CYou only need to know the direction, not the destination. The direction is enough to make the next choice.\u201D\n\n\u2014 James Clear",
+      "Tags": [
+        {
+          "id": 60350710,
+          "name": "favorite"
+        }
+      ],
+      "Favorite": true,
+      "Discarded": false,
+      "Note": "",
+      "BookId": 12256779
+    },
+    {
+      "Id": 256958344,
+      "Author": "Eric Jorgenson, Jack Butcher, and Tim Ferriss",
+      "Title": "The Almanack of Naval Ravikant",
+      "Url": "https://m.media-amazon.com/images/I/61VbL0FspqL._SY160.jpg",
+      "Text": "Intentions don\u2019t matter. Actions do. That\u2019s why being ethical is hard.",
+      "Tags": [
+        {
+          "id": 60739212,
+          "name": "favorite"
+        }
+      ],
+      "Favorite": true,
+      "Discarded": false,
+      "Note": "",
+      "BookId": 12208274
+    },
+    {
+      "Id": 256958341,
+      "Author": "Eric Jorgenson, Jack Butcher, and Tim Ferriss",
+      "Title": "The Almanack of Naval Ravikant",
+      "Url": "https://m.media-amazon.com/images/I/61VbL0FspqL._SY160.jpg",
+      "Text": "Reading science, math, and philosophy one hour per day will likely put you at the upper echelon of human success within seven years.",
+      "Tags": [
+        {
+          "id": 60615159,
+          "name": "favorite"
+        }
+      ],
+      "Favorite": true,
+      "Discarded": false,
+      "Note": "",
+      "BookId": 12208274
+    },
+    {
+      "Id": 256958338,
+      "Author": "Eric Jorgenson, Jack Butcher, and Tim Ferriss",
+      "Title": "The Almanack of Naval Ravikant",
+      "Url": "https://m.media-amazon.com/images/I/61VbL0FspqL._SY160.jpg",
+      "Text": "Whenever you can in life, optimize for independence rather than pay. If you have independence and you\u2019re accountable on your output, as opposed to your input\u2014that\u2019s the dream.",
+      "Tags": [
+        {
+          "id": 61147329,
+          "name": "favorite"
+        }
+      ],
+      "Favorite": true,
+      "Discarded": false,
+      "Note": "",
+      "BookId": 12208274
+    },
+    {
+      "Id": 256958336,
+      "Author": "Eric Jorgenson, Jack Butcher, and Tim Ferriss",
+      "Title": "The Almanack of Naval Ravikant",
+      "Url": "https://m.media-amazon.com/images/I/61VbL0FspqL._SY160.jpg",
+      "Text": "You\u2019re not going to get rich renting out your time. You must own equity\u2014a piece of a business\u2014to gain your financial freedom.",
+      "Tags": [
+        {
+          "id": 61063523,
+          "name": "favorite"
+        }
+      ],
+      "Favorite": true,
+      "Discarded": false,
+      "Note": "",
+      "BookId": 12208274
+    },
+    {
+      "Id": 252024216,
+      "Author": "Camille Fournier",
+      "Title": "The Manager\u0027s Path",
+      "Url": "https://images-na.ssl-images-amazon.com/images/I/51BHEtpF4eL._SL200_.jpg",
+      "Text": "Ultimately, the value of planning isn\u2019t that you execute the plan perfectly, that you catch every detail beforehand, or that you predict the future; it\u2019s that you enforce the self-discipline to think about the project in some depth before diving in and seeing what happens.",
+      "Tags": [
+        {
+          "id": 62209999,
+          "name": "favorite"
+        }
+      ],
+      "Favorite": true,
+      "Discarded": false,
+      "Note": "",
+      "BookId": 11992507
+    },
+    {
+      "Id": 250812381,
+      "Author": "Marek Aureliusz",
+      "Title": "Rozmy\u015Blania",
+      "Url": "https://is4-ssl.mzstatic.com/image/thumb/Publication128/v4/62/88/88/62888851-1c02-aa63-dd21-cc346b4728de/10.png/1400x2234w.png",
+      "Text": "Ze wszystkich wad bowiem najprzykrzejsza jest duma, pyszna pod os\u0142on\u0105 pokory.",
+      "Tags": [
+        {
+          "id": 58374755,
+          "name": "favorite"
+        }
+      ],
+      "Favorite": true,
+      "Discarded": false,
+      "Note": "",
+      "BookId": 11942468
+    },
+    {
+      "Id": 250812380,
+      "Author": "Marek Aureliusz",
+      "Title": "Rozmy\u015Blania",
+      "Url": "https://is4-ssl.mzstatic.com/image/thumb/Publication128/v4/62/88/88/62888851-1c02-aa63-dd21-cc346b4728de/10.png/1400x2234w.png",
+      "Text": "Wnet b\u0119dziesz nikim nigdzie \u2014 a\u00A0tak samo b\u0119dzie z\u00A0tym, co teraz widzisz, i\u00A0z\u00A0lud\u017Ami, kt\u00F3rzy teraz \u017Cyj\u0105. Wszystko bowiem rodzi si\u0119 dla zmiany, przemiany i\u00A0zniszczenia, aby co innego w\u00A0to miejsce mog\u0142o powsta\u0107.",
+      "Tags": [
+        {
+          "id": 58374745,
+          "name": "humble"
+        },
+        {
+          "id": 58374742,
+          "name": "life"
+        },
+        {
+          "id": 58374741,
+          "name": "philosophy"
+        },
+        {
+          "id": 58374737,
+          "name": "meditations"
+        },
+        {
+          "id": 58374736,
+          "name": "death"
+        },
+        {
+          "id": 58374664,
+          "name": "favorite"
+        }
+      ],
+      "Favorite": true,
+      "Discarded": false,
+      "Note": "",
+      "BookId": 11942468
+    },
+    {
+      "Id": 250812379,
+      "Author": "Marek Aureliusz",
+      "Title": "Rozmy\u015Blania",
+      "Url": "https://is4-ssl.mzstatic.com/image/thumb/Publication128/v4/62/88/88/62888851-1c02-aa63-dd21-cc346b4728de/10.png/1400x2234w.png",
+      "Text": "Po pierwsze: nic na o\u015Blep i\u00A0nic bez celu. Po wt\u00F3re: nic innego nie mie\u0107 na wzgl\u0119dzie jak cel spo\u0142eczny.",
+      "Tags": [
+        {
+          "id": 58374661,
+          "name": "favorite"
+        }
+      ],
+      "Favorite": true,
+      "Discarded": false,
+      "Note": "",
+      "BookId": 11942468
+    },
+    {
+      "Id": 250812376,
+      "Author": "Marek Aureliusz",
+      "Title": "Rozmy\u015Blania",
+      "Url": "https://is4-ssl.mzstatic.com/image/thumb/Publication128/v4/62/88/88/62888851-1c02-aa63-dd21-cc346b4728de/10.png/1400x2234w.png",
+      "Text": "Nale\u017Cy rozwa\u017Ca\u0107, czym jest przyczyna obna\u017Cona z\u00A0os\u0142ony, jakie s\u0105 cele dzia\u0142a\u0144, czym jest b\u00F3l, czym rozkosz, czym \u015Bmier\u0107, czym s\u0142awa, kto sam jest sprawc\u0105 w\u0142asnego niepokoju, jak nikt nikomu nie staje w\u00A0drodze, jak wszystko polega na s\u0105dzie!",
+      "Tags": [
+        {
+          "id": 58374616,
+          "name": "meditations"
+        },
+        {
+          "id": 58374615,
+          "name": "philosophy"
+        },
+        {
+          "id": 58374614,
+          "name": "favorite"
+        }
+      ],
+      "Favorite": true,
+      "Discarded": false,
+      "Note": "",
+      "BookId": 11942468
+    },
+    {
+      "Id": 250812375,
+      "Author": "Marek Aureliusz",
+      "Title": "Rozmy\u015Blania",
+      "Url": "https://is4-ssl.mzstatic.com/image/thumb/Publication128/v4/62/88/88/62888851-1c02-aa63-dd21-cc346b4728de/10.png/1400x2234w.png",
+      "Text": "7. My\u015Bl o\u00A0tym, w\u00A0jakim stanie cia\u0142a i\u00A0duszy powinna ci\u0119 zabra\u0107 z\u00A0sob\u0105 \u015Bmier\u0107 i\u00A0jak kr\u00F3tkie jest \u017Cycie, jak przepastna wieczno\u015B\u0107, przesz\u0142o\u015B\u0107 i\u00A0przysz\u0142o\u015B\u0107, jak krucha wszelka materia!",
+      "Tags": [
+        {
+          "id": 58921108,
+          "name": "favorite"
+        },
+        {
+          "id": 58374603,
+          "name": "philiosophy"
+        },
+        {
+          "id": 58374602,
+          "name": "death"
+        },
+        {
+          "id": 58374601,
+          "name": "life"
+        }
+      ],
+      "Favorite": true,
+      "Discarded": false,
+      "Note": "",
+      "BookId": 11942468
+    },
+    {
+      "Id": 250812369,
+      "Author": "Marek Aureliusz",
+      "Title": "Rozmy\u015Blania",
+      "Url": "https://is4-ssl.mzstatic.com/image/thumb/Publication128/v4/62/88/88/62888851-1c02-aa63-dd21-cc346b4728de/10.png/1400x2234w.png",
+      "Text": "Kto si\u0119 boi \u015Bmierci, boi si\u0119 albo braku odczuwania, albo zmiany odczuwania. Je\u017Celi jednak nie b\u0119dzie w\u00A0og\u00F3le odczuwa\u0142, to nie b\u0119dzie odczuwa\u0142 i\u00A0\u017Cadnego nieszcz\u0119\u015Bcia. A\u00A0je\u017Celi inaczej b\u0119dzie odczuwa\u0142, to b\u0119dzie innym stworzeniem, ale \u017Cy\u0107 nie przestanie.",
+      "Tags": [
+        {
+          "id": 58374498,
+          "name": "death"
+        },
+        {
+          "id": 58374495,
+          "name": "favorite"
+        }
+      ],
+      "Favorite": true,
+      "Discarded": false,
+      "Note": "",
+      "BookId": 11942468
+    },
+    {
+      "Id": 250812360,
+      "Author": "MJ DeMarco",
+      "Title": "Unscripted",
+      "Url": "https://readwise-assets.s3.amazonaws.com/static/images/default-book-icon-7.09749d3efd49.png",
+      "Text": "\u201CThe smart way to keep people passive and obedient is to strictly limit the spectrum of acceptable opinion, but allow very lively debate within that spectrum.\u201D",
+      "Tags": [
+        {
+          "id": 58374893,
+          "name": "control"
+        },
+        {
+          "id": 58374892,
+          "name": "media"
+        },
+        {
+          "id": 58374887,
+          "name": "favorite"
+        }
+      ],
+      "Favorite": true,
+      "Discarded": false,
+      "Note": "Media",
+      "BookId": 11942464
+    },
+    {
+      "Id": 250812345,
+      "Author": "Nieznany",
+      "Title": "Republika Z\u0142odziei",
+      "Url": "https://readwise-assets.s3.amazonaws.com/static/images/default-book-icon-1.a08c56e2fedd.png",
+      "Text": "\u2013 \u0141a\u0144cuch mawia\u0142, \u017Ce \u017Cycie sprowadza si\u0119 do stania w kolejce i czekania, a\u017C g\u00F3wno spadnie ci na g\u0142ow\u0119. Ka\u017Cdy ma swoje miejsce w kolejce, nie mo\u017Cna z niej wyj\u015B\u0107, a kiedy zaczynasz sobie gratulowa\u0107, \u017Ce prze\u017Cy\u0142a\u015B swoj\u0105 dawk\u0119 g\u00F3wna, stwierdzasz nagle, \u017Ce kolejka jest zap\u0119tlona.",
+      "Tags": [
+        {
+          "id": 58374949,
+          "name": "life"
+        },
+        {
+          "id": 58374948,
+          "name": "humour"
+        },
+        {
+          "id": 58374946,
+          "name": "favorite"
+        }
+      ],
+      "Favorite": true,
+      "Discarded": false,
+      "Note": "",
+      "BookId": 11942460
+    },
+    {
+      "Id": 250812341,
+      "Author": "James Comey",
+      "Title": "A Higher Loyalty",
+      "Url": "https://readwise-assets.s3.amazonaws.com/static/images/default-book-icon-2.dae1dc4d332b.png",
+      "Text": "To not think of dying, is to not think of living. \u2014JANN ARDEN",
+      "Tags": [
+        {
+          "id": 58375084,
+          "name": "life"
+        },
+        {
+          "id": 58375083,
+          "name": "death"
+        },
+        {
+          "id": 58375078,
+          "name": "philosophy"
+        },
+        {
+          "id": 58375076,
+          "name": "favorite"
+        }
+      ],
+      "Favorite": true,
+      "Discarded": false,
+      "Note": "",
+      "BookId": 11942458
+    },
+    {
+      "Id": 250757148,
+      "Author": "Marcus Aurelius",
+      "Title": "Meditations",
+      "Url": "https://images-na.ssl-images-amazon.com/images/I/41zY8V%2B5QEL._SL200_.jpg",
+      "Text": "If anyone can refute me\u2014show me I\u2019m making a mistake or looking at things from the wrong perspective\u2014I\u2019ll gladly change. It\u2019s the truth I\u2019m after, and the truth never harmed anyone. What harms us is to persist in self-deceit and ignorance.",
+      "Tags": [
+        {
+          "id": 58352448,
+          "name": "meditations"
+        },
+        {
+          "id": 58352443,
+          "name": "leadership"
+        },
+        {
+          "id": 58352442,
+          "name": "truth"
+        },
+        {
+          "id": 58352313,
+          "name": "favorite"
+        }
+      ],
+      "Favorite": true,
+      "Discarded": false,
+      "Note": "",
+      "BookId": 11940110
+    },
+    {
+      "Id": 250756809,
+      "Author": "Julie Zhuo",
+      "Title": "The Making of a Manager",
+      "Url": "https://images-na.ssl-images-amazon.com/images/I/41SKhBKxy9L._SL200_.jpg",
+      "Text": "Hackman\u2019s research describes five conditions that increase a team\u2019s odds of success: having a real team (one with clear boundaries and stable membership), a compelling direction, an enabling structure, a supportive organizational context, and expert coaching. My own observations are similar, and I\u2019ve come to think of the multitude of tasks that fill up a manager\u2019s day as sorting neatly into three buckets: purpose, people, and process.",
+      "Tags": [
+        {
+          "id": 60739213,
+          "name": "favorite"
+        }
+      ],
+      "Favorite": true,
+      "Discarded": false,
+      "Note": "",
+      "BookId": 11940090
+    },
+    {
+      "Id": 250756808,
+      "Author": "Julie Zhuo",
+      "Title": "The Making of a Manager",
+      "Url": "https://images-na.ssl-images-amazon.com/images/I/41SKhBKxy9L._SL200_.jpg",
+      "Text": "At higher levels of management, the job starts to converge regardless of background. Success becomes more and more about mastering a few key skills: hiring exceptional leaders, building self-reliant teams, establishing a clear vision, and communicating well.",
+      "Tags": [
+        {
+          "id": 60615216,
+          "name": "favorite"
+        }
+      ],
+      "Favorite": true,
+      "Discarded": false,
+      "Note": "",
+      "BookId": 11940090
+    },
+    {
+      "Id": 250756805,
+      "Author": "Julie Zhuo",
+      "Title": "The Making of a Manager",
+      "Url": "https://images-na.ssl-images-amazon.com/images/I/41SKhBKxy9L._SL200_.jpg",
+      "Text": "This is the crux of management: It is the belief that a team of people can achieve more than a single person going it alone. It is the realization that you don\u2019t have to do everything yourself, be the best at everything yourself, or even know how to do everything yourself. Your job, as a manager, is to get better outcomes from a group of people working together.",
+      "Tags": [
+        {
+          "id": 61955625,
+          "name": "favorite"
+        }
+      ],
+      "Favorite": true,
+      "Discarded": false,
+      "Note": "",
+      "BookId": 11940090
+    },
+    {
+      "Id": 250756804,
+      "Author": "Julie Zhuo",
+      "Title": "The Making of a Manager",
+      "Url": "https://images-na.ssl-images-amazon.com/images/I/41SKhBKxy9L._SL200_.jpg",
+      "Text": "Hackman\u2019s research describes five conditions that increase a team\u2019s odds of success: having a real team (one with clear boundaries and stable membership), a compelling direction, an enabling structure, a supportive organizational context, and expert coaching.",
+      "Tags": [
+        {
+          "id": 58351957,
+          "name": "favorite"
+        }
+      ],
+      "Favorite": true,
+      "Discarded": false,
+      "Note": "",
+      "BookId": 11940090
+    },
+    {
+      "Id": 250756802,
+      "Author": "Julie Zhuo",
+      "Title": "The Making of a Manager",
+      "Url": "https://images-na.ssl-images-amazon.com/images/I/41SKhBKxy9L._SL200_.jpg",
+      "Text": "The first big part of your job as a manager is to ensure that your team knows what success looks like and cares about achieving it.",
+      "Tags": [
+        {
+          "id": 58351808,
+          "name": "favorite"
+        }
+      ],
+      "Favorite": true,
+      "Discarded": false,
+      "Note": "",
+      "BookId": 11940090
+    },
+    {
+      "Id": 250756801,
+      "Author": "Julie Zhuo",
+      "Title": "The Making of a Manager",
+      "Url": "https://images-na.ssl-images-amazon.com/images/I/41SKhBKxy9L._SL200_.jpg",
+      "Text": "Your role as a manager is not to do the work yourself, even if you are the best at it, because that will only take you so far. Your role is to improve the purpose, people, and process of your team to get as high a multiplier effect on your collective outcome as you can.",
+      "Tags": [
+        {
+          "id": 58351810,
+          "name": "favorite"
+        }
+      ],
+      "Favorite": true,
+      "Discarded": false,
+      "Note": "",
+      "BookId": 11940090
+    },
+    {
+      "Id": 250756791,
+      "Author": "Jocko Willink and Leif Babin",
+      "Title": "Extreme Ownership",
+      "Url": "https://images-na.ssl-images-amazon.com/images/I/51LA5FKuExL._SL200_.jpg",
+      "Text": "The only meaningful measure for a leader is whether the team succeeds or fails. For all the definitions, descriptions, and characterizations of leaders, there are only two that matter: effective and ineffective. Effective leaders lead successful teams that accomplish their mission and win. Ineffective leaders do not.",
+      "Tags": [
+        {
+          "id": 58351698,
+          "name": "favorite"
+        }
+      ],
+      "Favorite": true,
+      "Discarded": false,
+      "Note": "",
+      "BookId": 11940089
+    },
+    {
+      "Id": 250756788,
+      "Author": "Amor Towles",
+      "Title": "A Gentleman in Moscow",
+      "Url": "https://images-na.ssl-images-amazon.com/images/I/51T7zMDV9xL._SL200_.jpg",
+      "Text": "For as it turns out, one can revisit the past quite pleasantly, as long as one does so expecting nearly every aspect of it to have changed.",
+      "Tags": [
+        {
+          "id": 60350686,
+          "name": "favorite"
+        }
+      ],
+      "Favorite": true,
+      "Discarded": false,
+      "Note": "",
+      "BookId": 11940088
+    },
+    {
+      "Id": 250756787,
+      "Author": "Amor Towles",
+      "Title": "A Gentleman in Moscow",
+      "Url": "https://images-na.ssl-images-amazon.com/images/I/51T7zMDV9xL._SL200_.jpg",
+      "Text": "The first was that if one did not master one\u2019s circumstances, one was bound to be mastered by them; and the second was Montaigne\u2019s maxim that the surest sign of wisdom is constant cheerfulness.",
+      "Tags": [
+        {
+          "id": 58764682,
+          "name": "favorite"
+        }
+      ],
+      "Favorite": true,
+      "Discarded": false,
+      "Note": "",
+      "BookId": 11940088
+    },
+    {
+      "Id": 250756775,
+      "Author": "Edward Snowden",
+      "Title": "Permanent Record",
+      "Url": "https://images-na.ssl-images-amazon.com/images/I/51z1ZaEn6sL._SL200_.jpg",
+      "Text": "Ultimately, saying that you don\u2019t care about privacy because you have nothing to hide is no different from saying you don\u2019t care about freedom of speech because you have nothing to say.",
+      "Tags": [
+        {
+          "id": 58522360,
+          "name": "favorite"
+        }
+      ],
+      "Favorite": true,
+      "Discarded": false,
+      "Note": "",
+      "BookId": 11940087
+    },
+    {
+      "Id": 250756773,
+      "Author": "Edward Snowden",
+      "Title": "Permanent Record",
+      "Url": "https://images-na.ssl-images-amazon.com/images/I/51z1ZaEn6sL._SL200_.jpg",
+      "Text": "The freedom of a country can only be measured by its respect for the rights of its citizens, and it\u2019s my conviction that these rights are in fact limitations of state power that define exactly where and when a government may not infringe into that domain of personal or individual freedoms that during the American Revolution was called \u201Cliberty\u201D and during the Internet Revolution is called \u201Cprivacy.\u201D",
+      "Tags": [
+        {
+          "id": 58522357,
+          "name": "favorite"
+        }
+      ],
+      "Favorite": true,
+      "Discarded": false,
+      "Note": "",
+      "BookId": 11940087
+    },
+    {
+      "Id": 250756760,
+      "Author": "Arnold Schwarzenegger",
+      "Title": "Total Recall",
+      "Url": "https://images-na.ssl-images-amazon.com/images/I/51f8oh%2BBWXL._SL200_.jpg",
+      "Text": "But I believed that the only way you become a leading man is by treating yourself like a leading man and working your ass off.",
+      "Tags": [
+        {
+          "id": 59492186,
+          "name": "favorite"
+        }
+      ],
+      "Favorite": true,
+      "Discarded": false,
+      "Note": "",
+      "BookId": 11940085
+    },
+    {
+      "Id": 250756758,
+      "Author": "Arnold Schwarzenegger",
+      "Title": "Total Recall",
+      "Url": "https://images-na.ssl-images-amazon.com/images/I/51f8oh%2BBWXL._SL200_.jpg",
+      "Text": "From now on if I lost, I would be able to walk away with a big smile because I had done everything I could to prepare.",
+      "Tags": [
+        {
+          "id": 58854254,
+          "name": "favorite"
+        }
+      ],
+      "Favorite": true,
+      "Discarded": false,
+      "Note": "",
+      "BookId": 11940085
+    },
+    {
+      "Id": 250756709,
+      "Author": "Scott Lynch",
+      "Title": "The Republic of Thieves",
+      "Url": "https://images-na.ssl-images-amazon.com/images/I/51W6-%2BX%2B20L._SL200_.jpg",
+      "Text": "What is government but theft by consent? You\u2019ll be moving in a society of kindred spirits.\u201D",
+      "Tags": [
+        {
+          "id": 61147333,
+          "name": "favorite"
+        }
+      ],
+      "Favorite": true,
+      "Discarded": false,
+      "Note": "",
+      "BookId": 11940077
+    },
+    {
+      "Id": 250756707,
+      "Author": "Scott Lynch",
+      "Title": "The Republic of Thieves",
+      "Url": "https://images-na.ssl-images-amazon.com/images/I/51W6-%2BX%2B20L._SL200_.jpg",
+      "Text": "\u201CNobody admires anyone else without qualification. If they do they\u2019re after an image, not a person.\u201D",
+      "Tags": [
+        {
+          "id": 59492184,
+          "name": "favorite"
+        }
+      ],
+      "Favorite": true,
+      "Discarded": false,
+      "Note": "",
+      "BookId": 11940077
+    },
+    {
+      "Id": 250756671,
+      "Author": "Harper Lee",
+      "Title": "To Kill a Mockingbird",
+      "Url": "https://images-na.ssl-images-amazon.com/images/I/51IXWZzlgSL._SL200_.jpg",
+      "Text": "I wanted you to see what real courage is, instead of getting the idea that courage is a man with a gun in his hand. It\u2019s when you know you\u2019re licked before you begin but you begin anyway and you see it through no matter what. You rarely win, but sometimes you do.",
+      "Tags": [
+        {
+          "id": 58414933,
+          "name": "favorite"
+        }
+      ],
+      "Favorite": true,
+      "Discarded": false,
+      "Note": "",
+      "BookId": 11940074
+    },
+    {
+      "Id": 250756667,
+      "Author": "Josh Kaufman",
+      "Title": "The Personal MBA",
+      "Url": "https://images-na.ssl-images-amazon.com/images/I/51FEKUFEs7L._SL200_.jpg",
+      "Text": "Every business fundamentally relies on two additional factors: people and systems.",
+      "Tags": [
+        {
+          "id": 59491983,
+          "name": "favorite"
+        }
+      ],
+      "Favorite": true,
+      "Discarded": false,
+      "Note": "",
+      "BookId": 11940073
+    },
+    {
+      "Id": 250756658,
+      "Author": "William B. Irvine",
+      "Title": "A Guide to the Good Life",
+      "Url": "https://images-na.ssl-images-amazon.com/images/I/41GaZyCpZHL._SL200_.jpg",
+      "Text": "\u201CBEGIN EACH DAY by telling yourself: Today I shall be meeting with interference, ingratitude, insolence, disloyalty, ill-will, and selfishness\u2014all of them due to the offenders\u2019 ignorance of what is good or evil.\u201D",
+      "Tags": [
+        {
+          "id": 61147343,
+          "name": "favorite"
+        }
+      ],
+      "Favorite": true,
+      "Discarded": false,
+      "Note": "",
+      "BookId": 11940072
+    },
+    {
+      "Id": 250756652,
+      "Author": "William B. Irvine",
+      "Title": "A Guide to the Good Life",
+      "Url": "https://images-na.ssl-images-amazon.com/images/I/41GaZyCpZHL._SL200_.jpg",
+      "Text": "We humans are unhappy in large part because we are insatiable; after working hard to get what we want, we routinely lose interest in the object of our desire. Rather than feeling satisfied, we feel a bit bored, and in response to this boredom, we go on to form new, even grander desires.",
+      "Tags": [
+        {
+          "id": 60812612,
+          "name": "favorite"
+        }
+      ],
+      "Favorite": true,
+      "Discarded": false,
+      "Note": "",
+      "BookId": 11940072
+    },
+    {
+      "Id": 250756651,
+      "Author": "William B. Irvine",
+      "Title": "A Guide to the Good Life",
+      "Url": "https://images-na.ssl-images-amazon.com/images/I/41GaZyCpZHL._SL200_.jpg",
+      "Text": "What Stoics discover, though, is that willpower is like muscle power: The more they exercise their muscles, the stronger they get, and the more they exercise their will, the stronger it gets. Indeed, by practicing Stoic self-denial techniques over a long period, Stoics can transform themselves into individuals remarkable for their courage and self-control.",
+      "Tags": [
+        {
+          "id": 58522382,
+          "name": "motivation"
+        },
+        {
+          "id": 58522381,
+          "name": "will"
+        },
+        {
+          "id": 58522375,
+          "name": "philiosophy"
+        },
+        {
+          "id": 58522371,
+          "name": "favorite"
+        }
+      ],
+      "Favorite": true,
+      "Discarded": false,
+      "Note": "",
+      "BookId": 11940072
+    },
+    {
+      "Id": 250756649,
+      "Author": "William B. Irvine",
+      "Title": "A Guide to the Good Life",
+      "Url": "https://images-na.ssl-images-amazon.com/images/I/41GaZyCpZHL._SL200_.jpg",
+      "Text": "By contemplating the impermanence of everything in the world, we are forced to recognize that every time we do something could be the last time we do it, and this recognition can invest the things we do with a significance and intensity that would otherwise be absent.",
+      "Tags": [
+        {
+          "id": 58522364,
+          "name": "favorite"
+        }
+      ],
+      "Favorite": true,
+      "Discarded": false,
+      "Note": "",
+      "BookId": 11940072
+    },
+    {
+      "Id": 250756602,
+      "Author": "Anthony Doerr",
+      "Title": "All the Light We Cannot See",
+      "Url": "https://images-na.ssl-images-amazon.com/images/I/51tjJGTkUhL._SL200_.jpg",
+      "Text": "We all come into existence as a single cell, smaller than a speck of dust. Much smaller. Add and subtract. Matter changes hands, atoms flow in and out, molecules pivot, proteins stitch together, mitochondria send out their oxidative dictates; we begin as a microscopic electrical swarm. The lungs the brain the heart. Forty weeks later, six trillion cells get crushed in the vise of our mother\u2019s birth canal and we howl. Then the world starts in on us.",
+      "Tags": [
+        {
+          "id": 58352415,
+          "name": "existence"
+        },
+        {
+          "id": 58352406,
+          "name": "favorite"
+        }
+      ],
+      "Favorite": true,
+      "Discarded": false,
+      "Note": "",
+      "BookId": 11940064
+    },
+    {
+      "Id": 250756601,
+      "Author": "Anthony Doerr",
+      "Title": "All the Light We Cannot See",
+      "Url": "https://images-na.ssl-images-amazon.com/images/I/51tjJGTkUhL._SL200_.jpg",
+      "Text": "\u201CYour problem, Werner,\u201D says Frederick, \u201Cis that you still believe you own your life.\u201D",
+      "Tags": [
+        {
+          "id": 58445693,
+          "name": "favorite"
+        }
+      ],
+      "Favorite": true,
+      "Discarded": false,
+      "Note": "",
+      "BookId": 11940064
+    },
+    {
+      "Id": 250756565,
+      "Author": "Blake Crouch",
+      "Title": "Recursion",
+      "Url": "https://images-na.ssl-images-amazon.com/images/I/51HsFY3rRBL._SL200_.jpg",
+      "Text": "\u201CTime is an illusion, a construct made out of human memory. There\u2019s no such thing as the past, the present, or the future. It\u2019s all happening now.\u201D",
+      "Tags": [
+        {
+          "id": 60615154,
+          "name": "favorite"
+        }
+      ],
+      "Favorite": true,
+      "Discarded": false,
+      "Note": "",
+      "BookId": 11940061
+    },
+    {
+      "Id": 250756564,
+      "Author": "Blake Crouch",
+      "Title": "Recursion",
+      "Url": "https://images-na.ssl-images-amazon.com/images/I/51HsFY3rRBL._SL200_.jpg",
+      "Text": "Life is nothing how he expected it would be when he was young and living under the delusion that things could be controlled. Nothing can be controlled. Only endured.",
+      "Tags": [
+        {
+          "id": 58445622,
+          "name": "favorite"
+        }
+      ],
+      "Favorite": true,
+      "Discarded": false,
+      "Note": "",
+      "BookId": 11940061
+    },
+    {
+      "Id": 250756557,
+      "Author": "James Comey",
+      "Title": "A Higher Loyalty",
+      "Url": "https://images-na.ssl-images-amazon.com/images/I/31psjQoH6XL._SL200_.jpg",
+      "Text": "Bridgewater\u2019s founder, Ray Dalio, believes there is no such thing as negative feedback or positive feedback; there is only accurate feedback, and we should care enough about each other to be accurate.",
+      "Tags": [
+        {
+          "id": 59100454,
+          "name": "favorite"
+        }
+      ],
+      "Favorite": true,
+      "Discarded": false,
+      "Note": "",
+      "BookId": 11940060
+    },
+    {
+      "Id": 250756544,
+      "Author": "John Carreyrou",
+      "Title": "Bad Blood",
+      "Url": "https://images-na.ssl-images-amazon.com/images/I/41r-oFRk-GL._SL200_.jpg",
+      "Text": "Ian nodded. \u201CIt\u2019s a folie \u00E0 deux,\u201D he said. Tony didn\u2019t know any French, so he left to go look up the expression in the dictionary. The definition he found struck him as apt: \u201CThe presence of the same or similar delusional ideas in two persons closely associated with one another.\u201D",
+      "Tags": [
+        {
+          "id": 61147364,
+          "name": "favorite"
+        }
+      ],
+      "Favorite": true,
+      "Discarded": false,
+      "Note": "",
+      "BookId": 11940059
+    },
+    {
+      "Id": 250756541,
+      "Author": "Dale Carnegie",
+      "Title": "How to Win Friends and Influence People",
+      "Url": "https://images-na.ssl-images-amazon.com/images/I/51NVtjOrnqL._SL200_.jpg",
+      "Text": "\u201CI consider my ability to arouse enthusiasm among my people,\u201D said Schwab, \u201Cthe greatest asset I possess, and the way to develop the best that is in a person is by appreciation and encouragement.",
+      "Tags": [
+        {
+          "id": 58414846,
+          "name": "favorite"
+        }
+      ],
+      "Favorite": true,
+      "Discarded": false,
+      "Note": "",
+      "BookId": 11940058
+    },
+    {
+      "Id": 250756533,
+      "Author": "Dale Carnegie",
+      "Title": "How to Win Friends and Influence People",
+      "Url": "https://images-na.ssl-images-amazon.com/images/I/51NVtjOrnqL._SL200_.jpg",
+      "Text": "When dealing with people, let us remember we are not dealing with creatures of logic. We are dealing with creatures of emotion, creatures bristling with prejudices and motivated by pride and vanity.",
+      "Tags": [
+        {
+          "id": 58854139,
+          "name": "favorite"
+        }
+      ],
+      "Favorite": true,
+      "Discarded": false,
+      "Note": "",
+      "BookId": 11940058
+    },
+    {
+      "Id": 250756519,
+      "Author": "Orson Scott Card",
+      "Title": "Speaker for the Dead",
+      "Url": "https://images-na.ssl-images-amazon.com/images/I/51hXDdflGML._SL200_.jpg",
+      "Text": "When you really know somebody, you can\u2019t hate them.\u201D \u201COr maybe it\u2019s just that you can\u2019t really know them until you stop hating them.\u201D",
+      "Tags": [
+        {
+          "id": 59369112,
+          "name": "favorite"
+        }
+      ],
+      "Favorite": true,
+      "Discarded": false,
+      "Note": "",
+      "BookId": 11940056
+    },
+    {
+      "Id": 250756508,
+      "Author": "Bill Bryson",
+      "Title": "A Short History of Nearly Everything",
+      "Url": "https://images-na.ssl-images-amazon.com/images/I/41CHniZzf0L._SL200_.jpg",
+      "Text": "Incidentally, disturbance from cosmic background radiation is something we have all experienced. Tune your television to any channel it doesn\u2019t receive, and about 1 percent of the dancing static you see is accounted for by this ancient remnant of the Big Bang. The next time you complain that there is nothing on, remember that you can always watch the birth of the universe.",
+      "Tags": [
+        {
+          "id": 60615214,
+          "name": "favorite"
+        }
+      ],
+      "Favorite": true,
+      "Discarded": false,
+      "Note": "",
+      "BookId": 11940055
+    },
+    {
+      "Id": 250756507,
+      "Author": "Bill Bryson",
+      "Title": "A Short History of Nearly Everything",
+      "Url": "https://images-na.ssl-images-amazon.com/images/I/41CHniZzf0L._SL200_.jpg",
+      "Text": "Of the billions and billions of species of living thing that have existed since the dawn of time, most\u201499.99 percent\u2014are no longer around. Life on Earth, you see, is not only brief but dismayingly tenuous. It is a curious feature of our existence that we come from a planet that is very good at promoting life but even better at extinguishing it.",
+      "Tags": [
+        {
+          "id": 59802419,
+          "name": "favorite"
+        }
+      ],
+      "Favorite": true,
+      "Discarded": false,
+      "Note": "",
+      "BookId": 11940055
+    },
+    {
+      "Id": 250756506,
+      "Author": "Bill Bryson",
+      "Title": "A Short History of Nearly Everything",
+      "Url": "https://images-na.ssl-images-amazon.com/images/I/41CHniZzf0L._SL200_.jpg",
+      "Text": "Every atom you possess has almost certainly passed through several stars and been part of millions of organisms on its way to becoming you.",
+      "Tags": [
+        {
+          "id": 58352414,
+          "name": "existence"
+        },
+        {
+          "id": 58351972,
+          "name": "favorite"
+        }
+      ],
+      "Favorite": true,
+      "Discarded": false,
+      "Note": "",
+      "BookId": 11940055
+    },
+    {
+      "Id": 250756223,
+      "Author": "Chris Bradford",
+      "Title": "Young Samurai",
+      "Url": "https://images-na.ssl-images-amazon.com/images/I/41EtjakLoiL._SL200_.jpg",
+      "Text": "Buddhism was a philosophy open to all religions. This was why the Japanese had no issues with following Shintoism \u2013 their native religion \u2013 practising Buddhism, and even converting to Christianity, at the same time. \u2018They\u2019re all strands of the same rug,\u2019 Sensei Yamada had said, \u2018only different colours.\u2019",
+      "Tags": [
+        {
+          "id": 58414931,
+          "name": "favorite"
+        }
+      ],
+      "Favorite": true,
+      "Discarded": false,
+      "Note": "",
+      "BookId": 11940038
+    },
+    {
+      "Id": 250756213,
+      "Author": "David Benioff",
+      "Title": "City of Thieves",
+      "Url": "https://images-na.ssl-images-amazon.com/images/I/51qhKReKcBL._SL200_.jpg",
+      "Text": "\u201CTalent must be a fanatical mistress. She\u2019s beautiful; when you\u2019re with her, people watch you, they notice. But she bangs on your door at odd hours, and she disappears for long stretches, and she has no patience for the rest of your existence: your wife, your children, your friends. She is the most thrilling evening of your week, but some day she will leave you for good. One night, after she\u2019s been gone for years, you will see her on the arm of a younger man, and she will pretend not to recognize you.\u201D",
+      "Tags": [
+        {
+          "id": 59025589,
+          "name": "favorite"
+        }
+      ],
+      "Favorite": true,
+      "Discarded": false,
+      "Note": "",
+      "BookId": 11940036
+    },
+    {
+      "Id": 250756208,
+      "Author": "David Benioff",
+      "Title": "City of Thieves",
+      "Url": "https://images-na.ssl-images-amazon.com/images/I/51qhKReKcBL._SL200_.jpg",
+      "Text": "In certain ways I am deeply stupid. I don\u2019t say this out of modesty. I believe that I\u2019m more intelligent than the average human being, though perhaps intelligence should not be looked at as a single gauge, like a speedometer, but as a full array of tachometers, odometers, altimeters, and the rest.",
+      "Tags": [
+        {
+          "id": 62656761,
+          "name": "favorite"
+        }
+      ],
+      "Favorite": true,
+      "Discarded": false,
+      "Note": "",
+      "BookId": 11940036
+    },
+    {
+      "Id": 250756199,
+      "Author": "Joe Abercrombie",
+      "Title": "Before They Are Hanged",
+      "Url": "https://images-na.ssl-images-amazon.com/images/I/51VGBUhDcbL._SL200_.jpg",
+      "Text": "Laughing with a man was a good step forward. First comes the laughter, then the respect, then the trust.",
+      "Tags": [
+        {
+          "id": 58921109,
+          "name": "favorite"
+        }
+      ],
+      "Favorite": true,
+      "Discarded": false,
+      "Note": "",
+      "BookId": 11940035
+    },
+    {
+      "Id": 250756188,
+      "Author": "Joe Abercrombie",
+      "Title": "Last Argument of Kings",
+      "Url": "https://images-na.ssl-images-amazon.com/images/I/51EZPB4RStL._SL200_.jpg",
+      "Text": "If you want to be a new man you have to stay in new places, and do new things, with people who never knew you before.",
+      "Tags": [
+        {
+          "id": 58764763,
+          "name": "favorite"
+        }
+      ],
+      "Favorite": true,
+      "Discarded": false,
+      "Note": "",
+      "BookId": 11940034
+    },
+    {
+      "Id": 250756185,
+      "Author": "Joe Abercrombie",
+      "Title": "Last Argument of Kings",
+      "Url": "https://images-na.ssl-images-amazon.com/images/I/51EZPB4RStL._SL200_.jpg",
+      "Text": "It can be a terrible curse for a man to get everything he ever dreamed of. If the shining prizes turn out somehow to be empty baubles, he is left without even his dreams for comfort.",
+      "Tags": [
+        {
+          "id": 60155611,
+          "name": "favorite"
+        }
+      ],
+      "Favorite": true,
+      "Discarded": false,
+      "Note": "",
+      "BookId": 11940034
+    },
+    {
+      "Id": 250756182,
+      "Author": "Joe Abercrombie",
+      "Title": "The Blade Itself",
+      "Url": "https://images-na.ssl-images-amazon.com/images/I/51bOdgp6-wL._SL200_.jpg",
+      "Text": "A few glasses of wine can be the difference between finding a man a hilarious companion or an insufferable moron.",
+      "Tags": [
+        {
+          "id": 62338888,
+          "name": "favorite"
+        }
+      ],
+      "Favorite": true,
+      "Discarded": false,
+      "Note": "",
+      "BookId": 11940033
+    },
+    {
+      "Id": 250756180,
+      "Author": "Joe Abercrombie",
+      "Title": "The Blade Itself",
+      "Url": "https://images-na.ssl-images-amazon.com/images/I/51bOdgp6-wL._SL200_.jpg",
+      "Text": "But some things have to be done. It\u2019s better to do them, than to live with the fear of them.",
+      "Tags": [
+        {
+          "id": 58351571,
+          "name": "favorite"
+        }
+      ],
+      "Favorite": true,
+      "Discarded": false,
+      "Note": "",
+      "BookId": 11940033
+    },
+    {
       "Id": 274096570,
       "Author": "James Clear",
       "Title": "Atomic Habits",
@@ -564,23 +1824,6 @@
       "BookId": 12867331
     },
     {
-      "Id": 269732862,
-      "Author": "Jacek Walkiewicz",
-      "Title": "Pe\u0142na MOC Mo\u017Cliwo\u015Bci",
-      "Url": "https://readwise-assets.s3.amazonaws.com/media/uploaded_book_covers/profile_329436/445febec-6714-4710-8972-c05b34a40915.jpg",
-      "Text": "By\u0107 bohaterem swojego \u017Cycia to akt odwagi",
-      "Tags": [
-        {
-          "id": 63490226,
-          "name": "favorite"
-        }
-      ],
-      "Favorite": true,
-      "Discarded": false,
-      "Note": "",
-      "BookId": 12793828
-    },
-    {
       "Id": 269732791,
       "Author": "Jacek Walkiewicz",
       "Title": "Pe\u0142na MOC Mo\u017Cliwo\u015Bci",
@@ -588,23 +1831,6 @@
       "Text": "Sukces to mie\u0107 to, co si\u0119 chce. Szcz\u0119\u015Bcie to chcie\u0107 tego, co si\u0119 ma.",
       "Tags": [],
       "Favorite": false,
-      "Discarded": false,
-      "Note": "",
-      "BookId": 12793828
-    },
-    {
-      "Id": 269731215,
-      "Author": "Jacek Walkiewicz",
-      "Title": "Pe\u0142na MOC Mo\u017Cliwo\u015Bci",
-      "Url": "https://readwise-assets.s3.amazonaws.com/media/uploaded_book_covers/profile_329436/445febec-6714-4710-8972-c05b34a40915.jpg",
-      "Text": "Zwyci\u0119zcy nigdy nie rezygnuj\u0105, a rezygnuj\u0105cy nigdy nie zwyci\u0119\u017Caj\u0105.",
-      "Tags": [
-        {
-          "id": 63373388,
-          "name": "favorite"
-        }
-      ],
-      "Favorite": true,
       "Discarded": false,
       "Note": "",
       "BookId": 12793828
@@ -706,23 +1932,6 @@
       "BookId": 12792360
     },
     {
-      "Id": 269648235,
-      "Author": "Eric Jorgenson",
-      "Title": "The Almanack of Naval Ravikant",
-      "Url": "https://readwise-assets.s3.amazonaws.com/static/images/default-book-icon-8.18caceaece2b.png",
-      "Text": "To have peace of mind, you have to have peace of body first.",
-      "Tags": [
-        {
-          "id": 63490227,
-          "name": "favorite"
-        }
-      ],
-      "Favorite": true,
-      "Discarded": false,
-      "Note": "",
-      "BookId": 12792360
-    },
-    {
       "Id": 269648234,
       "Author": "Eric Jorgenson",
       "Title": "The Almanack of Naval Ravikant",
@@ -759,23 +1968,6 @@
       "BookId": 12792360
     },
     {
-      "Id": 269648231,
-      "Author": "Eric Jorgenson",
-      "Title": "The Almanack of Naval Ravikant",
-      "Url": "https://readwise-assets.s3.amazonaws.com/static/images/default-book-icon-8.18caceaece2b.png",
-      "Text": "The harder the workout, the easier the day.",
-      "Tags": [
-        {
-          "id": 63557859,
-          "name": "favorite"
-        }
-      ],
-      "Favorite": true,
-      "Discarded": false,
-      "Note": "",
-      "BookId": 12792360
-    },
-    {
       "Id": 269648230,
       "Author": "Eric Jorgenson",
       "Title": "The Almanack of Naval Ravikant",
@@ -795,23 +1987,6 @@
       "Text": "Doctors won\u2019t make you healthy. Nutritionists won\u2019t make you slim. Teachers won\u2019t make you smart. Gurus won\u2019t make you calm. Mentors won\u2019t make you rich. Trainers won\u2019t make you fit. Ultimately, you have to take responsibility. Save yourself.",
       "Tags": [],
       "Favorite": false,
-      "Discarded": false,
-      "Note": "",
-      "BookId": 12792360
-    },
-    {
-      "Id": 269648228,
-      "Author": "Eric Jorgenson",
-      "Title": "The Almanack of Naval Ravikant",
-      "Url": "https://readwise-assets.s3.amazonaws.com/static/images/default-book-icon-8.18caceaece2b.png",
-      "Text": "You\u2019re going to die one day, and none of this is going to matter. So enjoy yourself. Do something positive. Project some love. Make someone happy. Laugh a little bit. Appreciate the moment. And do your work.\u00A0[8]",
-      "Tags": [
-        {
-          "id": 63986290,
-          "name": "favorite"
-        }
-      ],
-      "Favorite": true,
       "Discarded": false,
       "Note": "",
       "BookId": 12792360
@@ -913,40 +2088,6 @@
       "BookId": 12792360
     },
     {
-      "Id": 269648219,
-      "Author": "Eric Jorgenson",
-      "Title": "The Almanack of Naval Ravikant",
-      "Url": "https://readwise-assets.s3.amazonaws.com/static/images/default-book-icon-8.18caceaece2b.png",
-      "Text": "Don\u2019t take yourself so seriously. You\u2019re just a monkey with a plan.",
-      "Tags": [
-        {
-          "id": 63838671,
-          "name": "favorite"
-        }
-      ],
-      "Favorite": true,
-      "Discarded": false,
-      "Note": "",
-      "BookId": 12792360
-    },
-    {
-      "Id": 269648218,
-      "Author": "Eric Jorgenson",
-      "Title": "The Almanack of Naval Ravikant",
-      "Url": "https://readwise-assets.s3.amazonaws.com/static/images/default-book-icon-8.18caceaece2b.png",
-      "Text": "A calm mind, a fit body, and a house full of love. These things cannot be bought. They must be earned.",
-      "Tags": [
-        {
-          "id": 64320762,
-          "name": "favorite"
-        }
-      ],
-      "Favorite": true,
-      "Discarded": false,
-      "Note": "",
-      "BookId": 12792360
-    },
-    {
       "Id": 269648217,
       "Author": "Eric Jorgenson",
       "Title": "The Almanack of Naval Ravikant",
@@ -966,23 +2107,6 @@
       "Text": "Read a lot\u2014just read.\u00A0[2]",
       "Tags": [],
       "Favorite": false,
-      "Discarded": false,
-      "Note": "",
-      "BookId": 12792360
-    },
-    {
-      "Id": 269648215,
-      "Author": "Eric Jorgenson",
-      "Title": "The Almanack of Naval Ravikant",
-      "Url": "https://readwise-assets.s3.amazonaws.com/static/images/default-book-icon-8.18caceaece2b.png",
-      "Text": "Working out for me is not fun; I suffer in the short term, I feel pain. But then in the long term, I\u2019m better off because I have muscles or I\u2019m healthier. If I am reading a book and I\u2019m getting confused, it is just like working out and the muscle getting sore or tired, except now my brain is being overwhelmed. In the long run I\u2019m getting smarter because I\u2019m absorbing new concepts from working at the limit or edge of my capability. So you generally want to lean into things with short-term pain, but long-term gain.",
-      "Tags": [
-        {
-          "id": 63986297,
-          "name": "favorite"
-        }
-      ],
-      "Favorite": true,
       "Discarded": false,
       "Note": "",
       "BookId": 12792360
@@ -1091,23 +2215,6 @@
       "Text": "Intentions don\u2019t matter. Actions do. That\u2019s why being ethical is hard.",
       "Tags": [],
       "Favorite": false,
-      "Discarded": false,
-      "Note": "",
-      "BookId": 12792360
-    },
-    {
-      "Id": 269648204,
-      "Author": "Eric Jorgenson",
-      "Title": "The Almanack of Naval Ravikant",
-      "Url": "https://readwise-assets.s3.amazonaws.com/static/images/default-book-icon-8.18caceaece2b.png",
-      "Text": "Compound interest is a very powerful concept. Compound interest applies to more than just compounding capital. Compounding capital is just the beginning. Compounding in business relationships is very important. Look at some of the top roles in society, like why someone is a CEO of a public company or managing billions of dollars. It\u2019s because people trust them. They are trusted because the relationships they\u2019ve built and the work they\u2019ve done has compounded. They\u2019ve stuck with the business and shown themselves (in a visible and accountable way) to be high-integrity people. Compound interest also happens in your reputation. If you have a sterling reputation and you keep building it for decades upon decades, people will notice. Your reputation will literally end up being thousands or tens of thousands of times more valuable than somebody else who was very talented but is not keeping the compound interest in reputation going.",
-      "Tags": [
-        {
-          "id": 64321011,
-          "name": "favorite"
-        }
-      ],
-      "Favorite": true,
       "Discarded": false,
       "Note": "",
       "BookId": 12792360
@@ -1521,23 +2628,6 @@
       "BookId": 12348616
     },
     {
-      "Id": 259961917,
-      "Author": "Viktor E. Frankl",
-      "Title": "Man\u0027s Search for Meaning",
-      "Url": "https://images-na.ssl-images-amazon.com/images/I/41s4xJZlEYL._SL200_.jpg",
-      "Text": "Forces beyond your control can take away everything you possess except one thing, your freedom to choose how you will respond to the situation. You cannot control what happens to you in life, but you can always control what you will feel and do about what happens to you.",
-      "Tags": [
-        {
-          "id": 63262151,
-          "name": "favorite"
-        }
-      ],
-      "Favorite": true,
-      "Discarded": false,
-      "Note": "",
-      "BookId": 12348616
-    },
-    {
       "Id": 259961883,
       "Author": "Sir David Attenborough",
       "Title": "A Life on Our Planet",
@@ -1646,57 +2736,6 @@
       "BookId": 12348608
     },
     {
-      "Id": 258084087,
-      "Author": null,
-      "Title": "Quick Passages",
-      "Url": "https://readwise-assets.s3.amazonaws.com/static/images/quick-passages-book-icon.2489c00a3133.png",
-      "Text": "A critical quality for success is the ability to change your mind. A lot of ideas are bad until they\u0027re good. And a lot of ideas are good until they\u0027re bad.",
-      "Tags": [
-        {
-          "id": 60350689,
-          "name": "favorite"
-        }
-      ],
-      "Favorite": true,
-      "Discarded": false,
-      "Note": "",
-      "BookId": 12256779
-    },
-    {
-      "Id": 258084054,
-      "Author": null,
-      "Title": "Quick Passages",
-      "Url": "https://readwise-assets.s3.amazonaws.com/static/images/quick-passages-book-icon.2489c00a3133.png",
-      "Text": "\u201CYou only need to know the direction, not the destination. The direction is enough to make the next choice.\u201D\n\n\u2014 James Clear",
-      "Tags": [
-        {
-          "id": 60350710,
-          "name": "favorite"
-        }
-      ],
-      "Favorite": true,
-      "Discarded": false,
-      "Note": "",
-      "BookId": 12256779
-    },
-    {
-      "Id": 256958344,
-      "Author": "Eric Jorgenson, Jack Butcher, and Tim Ferriss",
-      "Title": "The Almanack of Naval Ravikant",
-      "Url": "https://m.media-amazon.com/images/I/61VbL0FspqL._SY160.jpg",
-      "Text": "Intentions don\u2019t matter. Actions do. That\u2019s why being ethical is hard.",
-      "Tags": [
-        {
-          "id": 60739212,
-          "name": "favorite"
-        }
-      ],
-      "Favorite": true,
-      "Discarded": false,
-      "Note": "",
-      "BookId": 12208274
-    },
-    {
       "Id": 256958343,
       "Author": "Eric Jorgenson, Jack Butcher, and Tim Ferriss",
       "Title": "The Almanack of Naval Ravikant",
@@ -1716,23 +2755,6 @@
       "Text": "Retirement is when you stop sacrificing today for an imaginary tomorrow. When today is complete, in and of itself, you\u2019re retired.",
       "Tags": [],
       "Favorite": false,
-      "Discarded": false,
-      "Note": "",
-      "BookId": 12208274
-    },
-    {
-      "Id": 256958341,
-      "Author": "Eric Jorgenson, Jack Butcher, and Tim Ferriss",
-      "Title": "The Almanack of Naval Ravikant",
-      "Url": "https://m.media-amazon.com/images/I/61VbL0FspqL._SY160.jpg",
-      "Text": "Reading science, math, and philosophy one hour per day will likely put you at the upper echelon of human success within seven years.",
-      "Tags": [
-        {
-          "id": 60615159,
-          "name": "favorite"
-        }
-      ],
-      "Favorite": true,
       "Discarded": false,
       "Note": "",
       "BookId": 12208274
@@ -1762,23 +2784,6 @@
       "BookId": 12208274
     },
     {
-      "Id": 256958338,
-      "Author": "Eric Jorgenson, Jack Butcher, and Tim Ferriss",
-      "Title": "The Almanack of Naval Ravikant",
-      "Url": "https://m.media-amazon.com/images/I/61VbL0FspqL._SY160.jpg",
-      "Text": "Whenever you can in life, optimize for independence rather than pay. If you have independence and you\u2019re accountable on your output, as opposed to your input\u2014that\u2019s the dream.",
-      "Tags": [
-        {
-          "id": 61147329,
-          "name": "favorite"
-        }
-      ],
-      "Favorite": true,
-      "Discarded": false,
-      "Note": "",
-      "BookId": 12208274
-    },
-    {
       "Id": 256958337,
       "Author": "Eric Jorgenson, Jack Butcher, and Tim Ferriss",
       "Title": "The Almanack of Naval Ravikant",
@@ -1786,23 +2791,6 @@
       "Text": "Getting rich is about knowing what to do, who to do it with, and when to do it.",
       "Tags": [],
       "Favorite": false,
-      "Discarded": false,
-      "Note": "",
-      "BookId": 12208274
-    },
-    {
-      "Id": 256958336,
-      "Author": "Eric Jorgenson, Jack Butcher, and Tim Ferriss",
-      "Title": "The Almanack of Naval Ravikant",
-      "Url": "https://m.media-amazon.com/images/I/61VbL0FspqL._SY160.jpg",
-      "Text": "You\u2019re not going to get rich renting out your time. You must own equity\u2014a piece of a business\u2014to gain your financial freedom.",
-      "Tags": [
-        {
-          "id": 61063523,
-          "name": "favorite"
-        }
-      ],
-      "Favorite": true,
       "Discarded": false,
       "Note": "",
       "BookId": 12208274
@@ -1818,23 +2806,6 @@
       "Discarded": false,
       "Note": "",
       "BookId": 12208274
-    },
-    {
-      "Id": 252024216,
-      "Author": "Camille Fournier",
-      "Title": "The Manager\u0027s Path",
-      "Url": "https://images-na.ssl-images-amazon.com/images/I/51BHEtpF4eL._SL200_.jpg",
-      "Text": "Ultimately, the value of planning isn\u2019t that you execute the plan perfectly, that you catch every detail beforehand, or that you predict the future; it\u2019s that you enforce the self-discipline to think about the project in some depth before diving in and seeing what happens.",
-      "Tags": [
-        {
-          "id": 62209999,
-          "name": "favorite"
-        }
-      ],
-      "Favorite": true,
-      "Discarded": false,
-      "Note": "",
-      "BookId": 11992507
     },
     {
       "Id": 252024215,
@@ -1945,131 +2916,6 @@
       "BookId": 11992507
     },
     {
-      "Id": 250812381,
-      "Author": "Marek Aureliusz",
-      "Title": "Rozmy\u015Blania",
-      "Url": "https://is4-ssl.mzstatic.com/image/thumb/Publication128/v4/62/88/88/62888851-1c02-aa63-dd21-cc346b4728de/10.png/1400x2234w.png",
-      "Text": "Ze wszystkich wad bowiem najprzykrzejsza jest duma, pyszna pod os\u0142on\u0105 pokory.",
-      "Tags": [
-        {
-          "id": 58374755,
-          "name": "favorite"
-        }
-      ],
-      "Favorite": true,
-      "Discarded": false,
-      "Note": "",
-      "BookId": 11942468
-    },
-    {
-      "Id": 250812380,
-      "Author": "Marek Aureliusz",
-      "Title": "Rozmy\u015Blania",
-      "Url": "https://is4-ssl.mzstatic.com/image/thumb/Publication128/v4/62/88/88/62888851-1c02-aa63-dd21-cc346b4728de/10.png/1400x2234w.png",
-      "Text": "Wnet b\u0119dziesz nikim nigdzie \u2014 a\u00A0tak samo b\u0119dzie z\u00A0tym, co teraz widzisz, i\u00A0z\u00A0lud\u017Ami, kt\u00F3rzy teraz \u017Cyj\u0105. Wszystko bowiem rodzi si\u0119 dla zmiany, przemiany i\u00A0zniszczenia, aby co innego w\u00A0to miejsce mog\u0142o powsta\u0107.",
-      "Tags": [
-        {
-          "id": 58374745,
-          "name": "humble"
-        },
-        {
-          "id": 58374742,
-          "name": "life"
-        },
-        {
-          "id": 58374741,
-          "name": "philosophy"
-        },
-        {
-          "id": 58374737,
-          "name": "meditations"
-        },
-        {
-          "id": 58374736,
-          "name": "death"
-        },
-        {
-          "id": 58374664,
-          "name": "favorite"
-        }
-      ],
-      "Favorite": true,
-      "Discarded": false,
-      "Note": "",
-      "BookId": 11942468
-    },
-    {
-      "Id": 250812379,
-      "Author": "Marek Aureliusz",
-      "Title": "Rozmy\u015Blania",
-      "Url": "https://is4-ssl.mzstatic.com/image/thumb/Publication128/v4/62/88/88/62888851-1c02-aa63-dd21-cc346b4728de/10.png/1400x2234w.png",
-      "Text": "Po pierwsze: nic na o\u015Blep i\u00A0nic bez celu. Po wt\u00F3re: nic innego nie mie\u0107 na wzgl\u0119dzie jak cel spo\u0142eczny.",
-      "Tags": [
-        {
-          "id": 58374661,
-          "name": "favorite"
-        }
-      ],
-      "Favorite": true,
-      "Discarded": false,
-      "Note": "",
-      "BookId": 11942468
-    },
-    {
-      "Id": 250812376,
-      "Author": "Marek Aureliusz",
-      "Title": "Rozmy\u015Blania",
-      "Url": "https://is4-ssl.mzstatic.com/image/thumb/Publication128/v4/62/88/88/62888851-1c02-aa63-dd21-cc346b4728de/10.png/1400x2234w.png",
-      "Text": "Nale\u017Cy rozwa\u017Ca\u0107, czym jest przyczyna obna\u017Cona z\u00A0os\u0142ony, jakie s\u0105 cele dzia\u0142a\u0144, czym jest b\u00F3l, czym rozkosz, czym \u015Bmier\u0107, czym s\u0142awa, kto sam jest sprawc\u0105 w\u0142asnego niepokoju, jak nikt nikomu nie staje w\u00A0drodze, jak wszystko polega na s\u0105dzie!",
-      "Tags": [
-        {
-          "id": 58374616,
-          "name": "meditations"
-        },
-        {
-          "id": 58374615,
-          "name": "philosophy"
-        },
-        {
-          "id": 58374614,
-          "name": "favorite"
-        }
-      ],
-      "Favorite": true,
-      "Discarded": false,
-      "Note": "",
-      "BookId": 11942468
-    },
-    {
-      "Id": 250812375,
-      "Author": "Marek Aureliusz",
-      "Title": "Rozmy\u015Blania",
-      "Url": "https://is4-ssl.mzstatic.com/image/thumb/Publication128/v4/62/88/88/62888851-1c02-aa63-dd21-cc346b4728de/10.png/1400x2234w.png",
-      "Text": "7. My\u015Bl o\u00A0tym, w\u00A0jakim stanie cia\u0142a i\u00A0duszy powinna ci\u0119 zabra\u0107 z\u00A0sob\u0105 \u015Bmier\u0107 i\u00A0jak kr\u00F3tkie jest \u017Cycie, jak przepastna wieczno\u015B\u0107, przesz\u0142o\u015B\u0107 i\u00A0przysz\u0142o\u015B\u0107, jak krucha wszelka materia!",
-      "Tags": [
-        {
-          "id": 58921108,
-          "name": "favorite"
-        },
-        {
-          "id": 58374603,
-          "name": "philiosophy"
-        },
-        {
-          "id": 58374602,
-          "name": "death"
-        },
-        {
-          "id": 58374601,
-          "name": "life"
-        }
-      ],
-      "Favorite": true,
-      "Discarded": false,
-      "Note": "",
-      "BookId": 11942468
-    },
-    {
       "Id": 250812374,
       "Author": "Marek Aureliusz",
       "Title": "Rozmy\u015Blania",
@@ -2077,27 +2923,6 @@
       "Text": "\u201ENie, moje dziecko! Inny jest cel \u017Cycia naszego. Mnie nie wyrz\u0105dzisz krzywdy, ale sobie, moje dziecko!\u201D. A\u00A0udowodnij mu w\u00A0spos\u00F3b \u0142agodny a\u00A0przekonywaj\u0105cy, \u017Ce tak jest w\u00A0istocie i\u00A0\u017Ce ani pszczo\u0142y, ani w\u00A0og\u00F3le istoty gromadnie \u017Cyj\u0105ce tak nie post\u0119puj\u0105. A\u00A0trzeba to zrobi\u0107 bez ironii i\u00A0bez obelg, ale w\u00A0spos\u00F3b uprzejmy i\u00A0niedotkliwy dla duszy. A\u00A0i\u00A0nie tak, jak z\u00A0katedry lub by ci\u0119 podziwia\u0142 ten, kto obok was stoi. Ale zwracaj\u0105c si\u0119 do jednego, cho\u0107by kto inny by\u0142 przy tym. Pami\u0119taj o\u00A0tych dziewi\u0119ciu radach g\u0142\u00F3wnych, a\u00A0przyjmij je jakoby dary Muz. I\u00A0zacznij raz by\u0107 cz\u0142owiekiem, dop\u00F3ki jeste\u015B przy \u017Cyciu. A\u00A0wystrzega\u0107 si\u0119 nale\u017Cy zar\u00F3wno gniewu, jak i\u00A0pochlebstwa. I\u00A0jedno, i\u00A0drugie bowiem jest niespo\u0142eczne i\u00A0szkodliwe. A w\u00A0chwili gniewu pami\u0119taj, \u017Ce niem\u0119ska to rzecz gniew; owszem, \u0142agodno\u015B\u0107 i\u00A0uprzejmo\u015B\u0107, jak s\u0105 bardziej ludzkie, tak i\u00A0bardziej m\u0119skie. I\u00A0tylko tu okazuje si\u0119 si\u0142\u0119 i\u00A0\u015Bci\u0119gna, i\u00A0m\u0119sko\u015B\u0107, a\u00A0nie w\u00A0chwili gniewu i\u00A0oburzenia. O\u00A0ile bowiem jest co bardziej objawem r\u00F3wnowagi, o\u00A0tyle i\u00A0si\u0142y. A\u00A0jak smutek, tak i\u00A0gniew jest objawem s\u0142abo\u015Bci. W\u00A0obu bowiem tych wypadkach otrzyma\u0142o si\u0119 rany i\u00A0uleg\u0142o si\u0119 im. A je\u015Bli chcesz, przyjmij i\u00A0dziesi\u0105ty dar od przewodnika Muz: szalone jest \u017C\u0105danie, by ludzie \u017Ali nie pope\u0142niali wyst\u0119pk\u00F3w. Kto tego chce, chce rzeczy niemo\u017Cliwej. A\u00A0zgodzi\u0107 si\u0119 na to, by wobec innych tak post\u0119powali, i\u00A0\u017C\u0105da\u0107, by wobec ciebie nie grzeszyli, by\u0142oby nierozumne i\u00A0tyra\u0144skie.",
       "Tags": [],
       "Favorite": false,
-      "Discarded": false,
-      "Note": "",
-      "BookId": 11942468
-    },
-    {
-      "Id": 250812369,
-      "Author": "Marek Aureliusz",
-      "Title": "Rozmy\u015Blania",
-      "Url": "https://is4-ssl.mzstatic.com/image/thumb/Publication128/v4/62/88/88/62888851-1c02-aa63-dd21-cc346b4728de/10.png/1400x2234w.png",
-      "Text": "Kto si\u0119 boi \u015Bmierci, boi si\u0119 albo braku odczuwania, albo zmiany odczuwania. Je\u017Celi jednak nie b\u0119dzie w\u00A0og\u00F3le odczuwa\u0142, to nie b\u0119dzie odczuwa\u0142 i\u00A0\u017Cadnego nieszcz\u0119\u015Bcia. A\u00A0je\u017Celi inaczej b\u0119dzie odczuwa\u0142, to b\u0119dzie innym stworzeniem, ale \u017Cy\u0107 nie przestanie.",
-      "Tags": [
-        {
-          "id": 58374498,
-          "name": "death"
-        },
-        {
-          "id": 58374495,
-          "name": "favorite"
-        }
-      ],
-      "Favorite": true,
       "Discarded": false,
       "Note": "",
       "BookId": 11942468
@@ -2159,85 +2984,6 @@
       "Discarded": false,
       "Note": "Keys",
       "BookId": 11942464
-    },
-    {
-      "Id": 250812360,
-      "Author": "MJ DeMarco",
-      "Title": "Unscripted",
-      "Url": "https://readwise-assets.s3.amazonaws.com/static/images/default-book-icon-7.09749d3efd49.png",
-      "Text": "\u201CThe smart way to keep people passive and obedient is to strictly limit the spectrum of acceptable opinion, but allow very lively debate within that spectrum.\u201D",
-      "Tags": [
-        {
-          "id": 58374893,
-          "name": "control"
-        },
-        {
-          "id": 58374892,
-          "name": "media"
-        },
-        {
-          "id": 58374887,
-          "name": "favorite"
-        }
-      ],
-      "Favorite": true,
-      "Discarded": false,
-      "Note": "Media",
-      "BookId": 11942464
-    },
-    {
-      "Id": 250812345,
-      "Author": "Nieznany",
-      "Title": "Republika Z\u0142odziei",
-      "Url": "https://readwise-assets.s3.amazonaws.com/static/images/default-book-icon-1.a08c56e2fedd.png",
-      "Text": "\u2013 \u0141a\u0144cuch mawia\u0142, \u017Ce \u017Cycie sprowadza si\u0119 do stania w kolejce i czekania, a\u017C g\u00F3wno spadnie ci na g\u0142ow\u0119. Ka\u017Cdy ma swoje miejsce w kolejce, nie mo\u017Cna z niej wyj\u015B\u0107, a kiedy zaczynasz sobie gratulowa\u0107, \u017Ce prze\u017Cy\u0142a\u015B swoj\u0105 dawk\u0119 g\u00F3wna, stwierdzasz nagle, \u017Ce kolejka jest zap\u0119tlona.",
-      "Tags": [
-        {
-          "id": 58374949,
-          "name": "life"
-        },
-        {
-          "id": 58374948,
-          "name": "humour"
-        },
-        {
-          "id": 58374946,
-          "name": "favorite"
-        }
-      ],
-      "Favorite": true,
-      "Discarded": false,
-      "Note": "",
-      "BookId": 11942460
-    },
-    {
-      "Id": 250812341,
-      "Author": "James Comey",
-      "Title": "A Higher Loyalty",
-      "Url": "https://readwise-assets.s3.amazonaws.com/static/images/default-book-icon-2.dae1dc4d332b.png",
-      "Text": "To not think of dying, is to not think of living. \u2014JANN ARDEN",
-      "Tags": [
-        {
-          "id": 58375084,
-          "name": "life"
-        },
-        {
-          "id": 58375083,
-          "name": "death"
-        },
-        {
-          "id": 58375078,
-          "name": "philosophy"
-        },
-        {
-          "id": 58375076,
-          "name": "favorite"
-        }
-      ],
-      "Favorite": true,
-      "Discarded": false,
-      "Note": "",
-      "BookId": 11942458
     },
     {
       "Id": 250757156,
@@ -2319,35 +3065,6 @@
       "Text": "Everywhere, at each moment, you have the option: to accept this event with humility [will]; to treat this person as he should be treated [action]; to approach this thought with care, so that nothing irrational creeps in [perception].",
       "Tags": [],
       "Favorite": false,
-      "Discarded": false,
-      "Note": "",
-      "BookId": 11940110
-    },
-    {
-      "Id": 250757148,
-      "Author": "Marcus Aurelius",
-      "Title": "Meditations",
-      "Url": "https://images-na.ssl-images-amazon.com/images/I/41zY8V%2B5QEL._SL200_.jpg",
-      "Text": "If anyone can refute me\u2014show me I\u2019m making a mistake or looking at things from the wrong perspective\u2014I\u2019ll gladly change. It\u2019s the truth I\u2019m after, and the truth never harmed anyone. What harms us is to persist in self-deceit and ignorance.",
-      "Tags": [
-        {
-          "id": 58352448,
-          "name": "meditations"
-        },
-        {
-          "id": 58352443,
-          "name": "leadership"
-        },
-        {
-          "id": 58352442,
-          "name": "truth"
-        },
-        {
-          "id": 58352313,
-          "name": "favorite"
-        }
-      ],
-      "Favorite": true,
       "Discarded": false,
       "Note": "",
       "BookId": 11940110
@@ -4200,40 +4917,6 @@
       "BookId": 11940090
     },
     {
-      "Id": 250756809,
-      "Author": "Julie Zhuo",
-      "Title": "The Making of a Manager",
-      "Url": "https://images-na.ssl-images-amazon.com/images/I/41SKhBKxy9L._SL200_.jpg",
-      "Text": "Hackman\u2019s research describes five conditions that increase a team\u2019s odds of success: having a real team (one with clear boundaries and stable membership), a compelling direction, an enabling structure, a supportive organizational context, and expert coaching. My own observations are similar, and I\u2019ve come to think of the multitude of tasks that fill up a manager\u2019s day as sorting neatly into three buckets: purpose, people, and process.",
-      "Tags": [
-        {
-          "id": 60739213,
-          "name": "favorite"
-        }
-      ],
-      "Favorite": true,
-      "Discarded": false,
-      "Note": "",
-      "BookId": 11940090
-    },
-    {
-      "Id": 250756808,
-      "Author": "Julie Zhuo",
-      "Title": "The Making of a Manager",
-      "Url": "https://images-na.ssl-images-amazon.com/images/I/41SKhBKxy9L._SL200_.jpg",
-      "Text": "At higher levels of management, the job starts to converge regardless of background. Success becomes more and more about mastering a few key skills: hiring exceptional leaders, building self-reliant teams, establishing a clear vision, and communicating well.",
-      "Tags": [
-        {
-          "id": 60615216,
-          "name": "favorite"
-        }
-      ],
-      "Favorite": true,
-      "Discarded": false,
-      "Note": "",
-      "BookId": 11940090
-    },
-    {
       "Id": 250756807,
       "Author": "Julie Zhuo",
       "Title": "The Making of a Manager",
@@ -4258,40 +4941,6 @@
       "BookId": 11940090
     },
     {
-      "Id": 250756805,
-      "Author": "Julie Zhuo",
-      "Title": "The Making of a Manager",
-      "Url": "https://images-na.ssl-images-amazon.com/images/I/41SKhBKxy9L._SL200_.jpg",
-      "Text": "This is the crux of management: It is the belief that a team of people can achieve more than a single person going it alone. It is the realization that you don\u2019t have to do everything yourself, be the best at everything yourself, or even know how to do everything yourself. Your job, as a manager, is to get better outcomes from a group of people working together.",
-      "Tags": [
-        {
-          "id": 61955625,
-          "name": "favorite"
-        }
-      ],
-      "Favorite": true,
-      "Discarded": false,
-      "Note": "",
-      "BookId": 11940090
-    },
-    {
-      "Id": 250756804,
-      "Author": "Julie Zhuo",
-      "Title": "The Making of a Manager",
-      "Url": "https://images-na.ssl-images-amazon.com/images/I/41SKhBKxy9L._SL200_.jpg",
-      "Text": "Hackman\u2019s research describes five conditions that increase a team\u2019s odds of success: having a real team (one with clear boundaries and stable membership), a compelling direction, an enabling structure, a supportive organizational context, and expert coaching.",
-      "Tags": [
-        {
-          "id": 58351957,
-          "name": "favorite"
-        }
-      ],
-      "Favorite": true,
-      "Discarded": false,
-      "Note": "",
-      "BookId": 11940090
-    },
-    {
       "Id": 250756803,
       "Author": "Julie Zhuo",
       "Title": "The Making of a Manager",
@@ -4299,40 +4948,6 @@
       "Text": "Good design at its core is about understanding people and their needs in order to create the best possible tools for them. I\u2019m drawn to design for a lot of the same reasons that I\u2019m drawn to management\u2014it feels like a deeply human endeavor to empower others.",
       "Tags": [],
       "Favorite": false,
-      "Discarded": false,
-      "Note": "",
-      "BookId": 11940090
-    },
-    {
-      "Id": 250756802,
-      "Author": "Julie Zhuo",
-      "Title": "The Making of a Manager",
-      "Url": "https://images-na.ssl-images-amazon.com/images/I/41SKhBKxy9L._SL200_.jpg",
-      "Text": "The first big part of your job as a manager is to ensure that your team knows what success looks like and cares about achieving it.",
-      "Tags": [
-        {
-          "id": 58351808,
-          "name": "favorite"
-        }
-      ],
-      "Favorite": true,
-      "Discarded": false,
-      "Note": "",
-      "BookId": 11940090
-    },
-    {
-      "Id": 250756801,
-      "Author": "Julie Zhuo",
-      "Title": "The Making of a Manager",
-      "Url": "https://images-na.ssl-images-amazon.com/images/I/41SKhBKxy9L._SL200_.jpg",
-      "Text": "Your role as a manager is not to do the work yourself, even if you are the best at it, because that will only take you so far. Your role is to improve the purpose, people, and process of your team to get as high a multiplier effect on your collective outcome as you can.",
-      "Tags": [
-        {
-          "id": 58351810,
-          "name": "favorite"
-        }
-      ],
-      "Favorite": true,
       "Discarded": false,
       "Note": "",
       "BookId": 11940090
@@ -4434,23 +5049,6 @@
       "BookId": 11940089
     },
     {
-      "Id": 250756791,
-      "Author": "Jocko Willink and Leif Babin",
-      "Title": "Extreme Ownership",
-      "Url": "https://images-na.ssl-images-amazon.com/images/I/51LA5FKuExL._SL200_.jpg",
-      "Text": "The only meaningful measure for a leader is whether the team succeeds or fails. For all the definitions, descriptions, and characterizations of leaders, there are only two that matter: effective and ineffective. Effective leaders lead successful teams that accomplish their mission and win. Ineffective leaders do not.",
-      "Tags": [
-        {
-          "id": 58351698,
-          "name": "favorite"
-        }
-      ],
-      "Favorite": true,
-      "Discarded": false,
-      "Note": "",
-      "BookId": 11940089
-    },
-    {
       "Id": 250756790,
       "Author": "Amor Towles",
       "Title": "A Gentleman in Moscow",
@@ -4470,40 +5068,6 @@
       "Text": "He had said that our lives are steered by uncertainties, many of which are disruptive or even daunting; but that if we persevere and remain generous of heart, we may be granted a moment of supreme lucidity\u2014a moment in which all that has happened to us suddenly comes into focus as a necessary course of events, even as we find ourselves on the threshold of a bold new life that we had been meant to lead all along.",
       "Tags": [],
       "Favorite": false,
-      "Discarded": false,
-      "Note": "",
-      "BookId": 11940088
-    },
-    {
-      "Id": 250756788,
-      "Author": "Amor Towles",
-      "Title": "A Gentleman in Moscow",
-      "Url": "https://images-na.ssl-images-amazon.com/images/I/51T7zMDV9xL._SL200_.jpg",
-      "Text": "For as it turns out, one can revisit the past quite pleasantly, as long as one does so expecting nearly every aspect of it to have changed.",
-      "Tags": [
-        {
-          "id": 60350686,
-          "name": "favorite"
-        }
-      ],
-      "Favorite": true,
-      "Discarded": false,
-      "Note": "",
-      "BookId": 11940088
-    },
-    {
-      "Id": 250756787,
-      "Author": "Amor Towles",
-      "Title": "A Gentleman in Moscow",
-      "Url": "https://images-na.ssl-images-amazon.com/images/I/51T7zMDV9xL._SL200_.jpg",
-      "Text": "The first was that if one did not master one\u2019s circumstances, one was bound to be mastered by them; and the second was Montaigne\u2019s maxim that the surest sign of wisdom is constant cheerfulness.",
-      "Tags": [
-        {
-          "id": 58764682,
-          "name": "favorite"
-        }
-      ],
-      "Favorite": true,
       "Discarded": false,
       "Note": "",
       "BookId": 11940088
@@ -4617,40 +5181,6 @@
       "BookId": 11940087
     },
     {
-      "Id": 250756775,
-      "Author": "Edward Snowden",
-      "Title": "Permanent Record",
-      "Url": "https://images-na.ssl-images-amazon.com/images/I/51z1ZaEn6sL._SL200_.jpg",
-      "Text": "Ultimately, saying that you don\u2019t care about privacy because you have nothing to hide is no different from saying you don\u2019t care about freedom of speech because you have nothing to say.",
-      "Tags": [
-        {
-          "id": 58522360,
-          "name": "favorite"
-        }
-      ],
-      "Favorite": true,
-      "Discarded": false,
-      "Note": "",
-      "BookId": 11940087
-    },
-    {
-      "Id": 250756773,
-      "Author": "Edward Snowden",
-      "Title": "Permanent Record",
-      "Url": "https://images-na.ssl-images-amazon.com/images/I/51z1ZaEn6sL._SL200_.jpg",
-      "Text": "The freedom of a country can only be measured by its respect for the rights of its citizens, and it\u2019s my conviction that these rights are in fact limitations of state power that define exactly where and when a government may not infringe into that domain of personal or individual freedoms that during the American Revolution was called \u201Cliberty\u201D and during the Internet Revolution is called \u201Cprivacy.\u201D",
-      "Tags": [
-        {
-          "id": 58522357,
-          "name": "favorite"
-        }
-      ],
-      "Favorite": true,
-      "Discarded": false,
-      "Note": "",
-      "BookId": 11940087
-    },
-    {
       "Id": 250756772,
       "Author": "Edward Snowden",
       "Title": "Permanent Record",
@@ -4723,23 +5253,6 @@
       "BookId": 11940086
     },
     {
-      "Id": 250756760,
-      "Author": "Arnold Schwarzenegger",
-      "Title": "Total Recall",
-      "Url": "https://images-na.ssl-images-amazon.com/images/I/51f8oh%2BBWXL._SL200_.jpg",
-      "Text": "But I believed that the only way you become a leading man is by treating yourself like a leading man and working your ass off.",
-      "Tags": [
-        {
-          "id": 59492186,
-          "name": "favorite"
-        }
-      ],
-      "Favorite": true,
-      "Discarded": false,
-      "Note": "",
-      "BookId": 11940085
-    },
-    {
       "Id": 250756759,
       "Author": "Arnold Schwarzenegger",
       "Title": "Total Recall",
@@ -4747,23 +5260,6 @@
       "Text": "Don\u2019t go where it\u2019s crowded. Go where it\u2019s empty. Even though it\u2019s harder to get there, that\u2019s where you belong and where there\u2019s less competition.",
       "Tags": [],
       "Favorite": false,
-      "Discarded": false,
-      "Note": "",
-      "BookId": 11940085
-    },
-    {
-      "Id": 250756758,
-      "Author": "Arnold Schwarzenegger",
-      "Title": "Total Recall",
-      "Url": "https://images-na.ssl-images-amazon.com/images/I/51f8oh%2BBWXL._SL200_.jpg",
-      "Text": "From now on if I lost, I would be able to walk away with a big smile because I had done everything I could to prepare.",
-      "Tags": [
-        {
-          "id": 58854254,
-          "name": "favorite"
-        }
-      ],
-      "Favorite": true,
       "Discarded": false,
       "Note": "",
       "BookId": 11940085
@@ -5117,23 +5613,6 @@
       "BookId": 11940078
     },
     {
-      "Id": 250756709,
-      "Author": "Scott Lynch",
-      "Title": "The Republic of Thieves",
-      "Url": "https://images-na.ssl-images-amazon.com/images/I/51W6-%2BX%2B20L._SL200_.jpg",
-      "Text": "What is government but theft by consent? You\u2019ll be moving in a society of kindred spirits.\u201D",
-      "Tags": [
-        {
-          "id": 61147333,
-          "name": "favorite"
-        }
-      ],
-      "Favorite": true,
-      "Discarded": false,
-      "Note": "",
-      "BookId": 11940077
-    },
-    {
       "Id": 250756708,
       "Author": "Scott Lynch",
       "Title": "The Republic of Thieves",
@@ -5141,23 +5620,6 @@
       "Text": "\u201CI can\u2019t name the poison that\u2019s killing your friend. But the one that\u2019s killing you is called hope.\u201D",
       "Tags": [],
       "Favorite": false,
-      "Discarded": false,
-      "Note": "",
-      "BookId": 11940077
-    },
-    {
-      "Id": 250756707,
-      "Author": "Scott Lynch",
-      "Title": "The Republic of Thieves",
-      "Url": "https://images-na.ssl-images-amazon.com/images/I/51W6-%2BX%2B20L._SL200_.jpg",
-      "Text": "\u201CNobody admires anyone else without qualification. If they do they\u2019re after an image, not a person.\u201D",
-      "Tags": [
-        {
-          "id": 59492184,
-          "name": "favorite"
-        }
-      ],
-      "Favorite": true,
       "Discarded": false,
       "Note": "",
       "BookId": 11940077
@@ -5391,23 +5853,6 @@
       "BookId": 11940074
     },
     {
-      "Id": 250756671,
-      "Author": "Harper Lee",
-      "Title": "To Kill a Mockingbird",
-      "Url": "https://images-na.ssl-images-amazon.com/images/I/51IXWZzlgSL._SL200_.jpg",
-      "Text": "I wanted you to see what real courage is, instead of getting the idea that courage is a man with a gun in his hand. It\u2019s when you know you\u2019re licked before you begin but you begin anyway and you see it through no matter what. You rarely win, but sometimes you do.",
-      "Tags": [
-        {
-          "id": 58414933,
-          "name": "favorite"
-        }
-      ],
-      "Favorite": true,
-      "Discarded": false,
-      "Note": "",
-      "BookId": 11940074
-    },
-    {
       "Id": 250756670,
       "Author": "Harper Lee",
       "Title": "To Kill a Mockingbird",
@@ -5439,23 +5884,6 @@
       "Text": "Value Creation. Discovering what people need or want, then creating it. Attracting attention and building demand for what you\u2019ve created. Turning prospective customers into paying customers. Value Delivery. Giving your customers what you\u2019ve promised and ensuring that they\u2019re satisfied. Bringing in enough money to keep going and make your effort worthwhile.",
       "Tags": [],
       "Favorite": false,
-      "Discarded": false,
-      "Note": "",
-      "BookId": 11940073
-    },
-    {
-      "Id": 250756667,
-      "Author": "Josh Kaufman",
-      "Title": "The Personal MBA",
-      "Url": "https://images-na.ssl-images-amazon.com/images/I/51FEKUFEs7L._SL200_.jpg",
-      "Text": "Every business fundamentally relies on two additional factors: people and systems.",
-      "Tags": [
-        {
-          "id": 59491983,
-          "name": "favorite"
-        }
-      ],
-      "Favorite": true,
       "Discarded": false,
       "Note": "",
       "BookId": 11940073
@@ -5521,23 +5949,6 @@
       "BookId": 11940073
     },
     {
-      "Id": 250756658,
-      "Author": "William B. Irvine",
-      "Title": "A Guide to the Good Life",
-      "Url": "https://images-na.ssl-images-amazon.com/images/I/41GaZyCpZHL._SL200_.jpg",
-      "Text": "\u201CBEGIN EACH DAY by telling yourself: Today I shall be meeting with interference, ingratitude, insolence, disloyalty, ill-will, and selfishness\u2014all of them due to the offenders\u2019 ignorance of what is good or evil.\u201D",
-      "Tags": [
-        {
-          "id": 61147343,
-          "name": "favorite"
-        }
-      ],
-      "Favorite": true,
-      "Discarded": false,
-      "Note": "",
-      "BookId": 11940072
-    },
-    {
       "Id": 250756657,
       "Author": "William B. Irvine",
       "Title": "A Guide to the Good Life",
@@ -5598,52 +6009,6 @@
       "BookId": 11940072
     },
     {
-      "Id": 250756652,
-      "Author": "William B. Irvine",
-      "Title": "A Guide to the Good Life",
-      "Url": "https://images-na.ssl-images-amazon.com/images/I/41GaZyCpZHL._SL200_.jpg",
-      "Text": "We humans are unhappy in large part because we are insatiable; after working hard to get what we want, we routinely lose interest in the object of our desire. Rather than feeling satisfied, we feel a bit bored, and in response to this boredom, we go on to form new, even grander desires.",
-      "Tags": [
-        {
-          "id": 60812612,
-          "name": "favorite"
-        }
-      ],
-      "Favorite": true,
-      "Discarded": false,
-      "Note": "",
-      "BookId": 11940072
-    },
-    {
-      "Id": 250756651,
-      "Author": "William B. Irvine",
-      "Title": "A Guide to the Good Life",
-      "Url": "https://images-na.ssl-images-amazon.com/images/I/41GaZyCpZHL._SL200_.jpg",
-      "Text": "What Stoics discover, though, is that willpower is like muscle power: The more they exercise their muscles, the stronger they get, and the more they exercise their will, the stronger it gets. Indeed, by practicing Stoic self-denial techniques over a long period, Stoics can transform themselves into individuals remarkable for their courage and self-control.",
-      "Tags": [
-        {
-          "id": 58522382,
-          "name": "motivation"
-        },
-        {
-          "id": 58522381,
-          "name": "will"
-        },
-        {
-          "id": 58522375,
-          "name": "philiosophy"
-        },
-        {
-          "id": 58522371,
-          "name": "favorite"
-        }
-      ],
-      "Favorite": true,
-      "Discarded": false,
-      "Note": "",
-      "BookId": 11940072
-    },
-    {
       "Id": 250756650,
       "Author": "William B. Irvine",
       "Title": "A Guide to the Good Life",
@@ -5651,23 +6016,6 @@
       "Text": "One key to happiness, then, is to forestall the adaptation process: We need to take steps to prevent ourselves from taking for granted, once we get them, the things we worked so hard to get.",
       "Tags": [],
       "Favorite": false,
-      "Discarded": false,
-      "Note": "",
-      "BookId": 11940072
-    },
-    {
-      "Id": 250756649,
-      "Author": "William B. Irvine",
-      "Title": "A Guide to the Good Life",
-      "Url": "https://images-na.ssl-images-amazon.com/images/I/41GaZyCpZHL._SL200_.jpg",
-      "Text": "By contemplating the impermanence of everything in the world, we are forced to recognize that every time we do something could be the last time we do it, and this recognition can invest the things we do with a significance and intensity that would otherwise be absent.",
-      "Tags": [
-        {
-          "id": 58522364,
-          "name": "favorite"
-        }
-      ],
-      "Favorite": true,
       "Discarded": false,
       "Note": "",
       "BookId": 11940072
@@ -5997,44 +6345,6 @@
       "BookId": 11940065
     },
     {
-      "Id": 250756602,
-      "Author": "Anthony Doerr",
-      "Title": "All the Light We Cannot See",
-      "Url": "https://images-na.ssl-images-amazon.com/images/I/51tjJGTkUhL._SL200_.jpg",
-      "Text": "We all come into existence as a single cell, smaller than a speck of dust. Much smaller. Add and subtract. Matter changes hands, atoms flow in and out, molecules pivot, proteins stitch together, mitochondria send out their oxidative dictates; we begin as a microscopic electrical swarm. The lungs the brain the heart. Forty weeks later, six trillion cells get crushed in the vise of our mother\u2019s birth canal and we howl. Then the world starts in on us.",
-      "Tags": [
-        {
-          "id": 58352415,
-          "name": "existence"
-        },
-        {
-          "id": 58352406,
-          "name": "favorite"
-        }
-      ],
-      "Favorite": true,
-      "Discarded": false,
-      "Note": "",
-      "BookId": 11940064
-    },
-    {
-      "Id": 250756601,
-      "Author": "Anthony Doerr",
-      "Title": "All the Light We Cannot See",
-      "Url": "https://images-na.ssl-images-amazon.com/images/I/51tjJGTkUhL._SL200_.jpg",
-      "Text": "\u201CYour problem, Werner,\u201D says Frederick, \u201Cis that you still believe you own your life.\u201D",
-      "Tags": [
-        {
-          "id": 58445693,
-          "name": "favorite"
-        }
-      ],
-      "Favorite": true,
-      "Discarded": false,
-      "Note": "",
-      "BookId": 11940064
-    },
-    {
       "Id": 250756600,
       "Author": "Anthony Doerr",
       "Title": "All the Light We Cannot See",
@@ -6275,40 +6585,6 @@
       "BookId": 11940061
     },
     {
-      "Id": 250756565,
-      "Author": "Blake Crouch",
-      "Title": "Recursion",
-      "Url": "https://images-na.ssl-images-amazon.com/images/I/51HsFY3rRBL._SL200_.jpg",
-      "Text": "\u201CTime is an illusion, a construct made out of human memory. There\u2019s no such thing as the past, the present, or the future. It\u2019s all happening now.\u201D",
-      "Tags": [
-        {
-          "id": 60615154,
-          "name": "favorite"
-        }
-      ],
-      "Favorite": true,
-      "Discarded": false,
-      "Note": "",
-      "BookId": 11940061
-    },
-    {
-      "Id": 250756564,
-      "Author": "Blake Crouch",
-      "Title": "Recursion",
-      "Url": "https://images-na.ssl-images-amazon.com/images/I/51HsFY3rRBL._SL200_.jpg",
-      "Text": "Life is nothing how he expected it would be when he was young and living under the delusion that things could be controlled. Nothing can be controlled. Only endured.",
-      "Tags": [
-        {
-          "id": 58445622,
-          "name": "favorite"
-        }
-      ],
-      "Favorite": true,
-      "Discarded": false,
-      "Note": "",
-      "BookId": 11940061
-    },
-    {
       "Id": 250756563,
       "Author": "Blake Crouch",
       "Title": "Recursion",
@@ -6364,23 +6640,6 @@
       "Text": "We would teach that great leaders are (1) people of integrity and decency; (2) confident enough to be humble; (3) both kind and tough; (4) transparent; and (5) aware that we all seek meaning in work. We would also teach them that (6) what they say is important, but what they do is far more important, because their people are always watching them. In short, we would demand and develop ethical leaders.",
       "Tags": [],
       "Favorite": false,
-      "Discarded": false,
-      "Note": "",
-      "BookId": 11940060
-    },
-    {
-      "Id": 250756557,
-      "Author": "James Comey",
-      "Title": "A Higher Loyalty",
-      "Url": "https://images-na.ssl-images-amazon.com/images/I/31psjQoH6XL._SL200_.jpg",
-      "Text": "Bridgewater\u2019s founder, Ray Dalio, believes there is no such thing as negative feedback or positive feedback; there is only accurate feedback, and we should care enough about each other to be accurate.",
-      "Tags": [
-        {
-          "id": 59100454,
-          "name": "favorite"
-        }
-      ],
-      "Favorite": true,
       "Discarded": false,
       "Note": "",
       "BookId": 11940060
@@ -6491,23 +6750,6 @@
       "BookId": 11940059
     },
     {
-      "Id": 250756544,
-      "Author": "John Carreyrou",
-      "Title": "Bad Blood",
-      "Url": "https://images-na.ssl-images-amazon.com/images/I/41r-oFRk-GL._SL200_.jpg",
-      "Text": "Ian nodded. \u201CIt\u2019s a folie \u00E0 deux,\u201D he said. Tony didn\u2019t know any French, so he left to go look up the expression in the dictionary. The definition he found struck him as apt: \u201CThe presence of the same or similar delusional ideas in two persons closely associated with one another.\u201D",
-      "Tags": [
-        {
-          "id": 61147364,
-          "name": "favorite"
-        }
-      ],
-      "Favorite": true,
-      "Discarded": false,
-      "Note": "",
-      "BookId": 11940059
-    },
-    {
       "Id": 250756542,
       "Author": "Dale Carnegie",
       "Title": "How to Win Friends and Influence People",
@@ -6515,23 +6757,6 @@
       "Text": "So the only way on earth to influence other people is to talk about what they want and show them how to get it.",
       "Tags": [],
       "Favorite": false,
-      "Discarded": false,
-      "Note": "",
-      "BookId": 11940058
-    },
-    {
-      "Id": 250756541,
-      "Author": "Dale Carnegie",
-      "Title": "How to Win Friends and Influence People",
-      "Url": "https://images-na.ssl-images-amazon.com/images/I/51NVtjOrnqL._SL200_.jpg",
-      "Text": "\u201CI consider my ability to arouse enthusiasm among my people,\u201D said Schwab, \u201Cthe greatest asset I possess, and the way to develop the best that is in a person is by appreciation and encouragement.",
-      "Tags": [
-        {
-          "id": 58414846,
-          "name": "favorite"
-        }
-      ],
-      "Favorite": true,
       "Discarded": false,
       "Note": "",
       "BookId": 11940058
@@ -6580,23 +6805,6 @@
       "Text": "Instead of condemning people, let\u2019s try to understand them. Let\u2019s try to figure out why they do what they do. That\u2019s a lot more profitable and intriguing than criticism; and it breeds sympathy, tolerance and kindness. \u201CTo know all is to forgive all.\u201D",
       "Tags": [],
       "Favorite": false,
-      "Discarded": false,
-      "Note": "",
-      "BookId": 11940058
-    },
-    {
-      "Id": 250756533,
-      "Author": "Dale Carnegie",
-      "Title": "How to Win Friends and Influence People",
-      "Url": "https://images-na.ssl-images-amazon.com/images/I/51NVtjOrnqL._SL200_.jpg",
-      "Text": "When dealing with people, let us remember we are not dealing with creatures of logic. We are dealing with creatures of emotion, creatures bristling with prejudices and motivated by pride and vanity.",
-      "Tags": [
-        {
-          "id": 58854139,
-          "name": "favorite"
-        }
-      ],
-      "Favorite": true,
       "Discarded": false,
       "Note": "",
       "BookId": 11940058
@@ -6662,23 +6870,6 @@
       "BookId": 11940056
     },
     {
-      "Id": 250756519,
-      "Author": "Orson Scott Card",
-      "Title": "Speaker for the Dead",
-      "Url": "https://images-na.ssl-images-amazon.com/images/I/51hXDdflGML._SL200_.jpg",
-      "Text": "When you really know somebody, you can\u2019t hate them.\u201D \u201COr maybe it\u2019s just that you can\u2019t really know them until you stop hating them.\u201D",
-      "Tags": [
-        {
-          "id": 59369112,
-          "name": "favorite"
-        }
-      ],
-      "Favorite": true,
-      "Discarded": false,
-      "Note": "",
-      "BookId": 11940056
-    },
-    {
       "Id": 250756516,
       "Author": "Orson Scott Card",
       "Title": "Speaker for the Dead",
@@ -6727,61 +6918,6 @@
       "Text": "For the first 99.99999 percent of our history as organisms, we were in the same ancestral line as chimpanzees. Virtually nothing is known about the prehistory of chimpanzees, but whatever they were, we were. Then about seven million years ago something major happened. A group of new beings emerged from the tropical forests of Africa and began to move about on the open savanna.",
       "Tags": [],
       "Favorite": false,
-      "Discarded": false,
-      "Note": "",
-      "BookId": 11940055
-    },
-    {
-      "Id": 250756508,
-      "Author": "Bill Bryson",
-      "Title": "A Short History of Nearly Everything",
-      "Url": "https://images-na.ssl-images-amazon.com/images/I/41CHniZzf0L._SL200_.jpg",
-      "Text": "Incidentally, disturbance from cosmic background radiation is something we have all experienced. Tune your television to any channel it doesn\u2019t receive, and about 1 percent of the dancing static you see is accounted for by this ancient remnant of the Big Bang. The next time you complain that there is nothing on, remember that you can always watch the birth of the universe.",
-      "Tags": [
-        {
-          "id": 60615214,
-          "name": "favorite"
-        }
-      ],
-      "Favorite": true,
-      "Discarded": false,
-      "Note": "",
-      "BookId": 11940055
-    },
-    {
-      "Id": 250756507,
-      "Author": "Bill Bryson",
-      "Title": "A Short History of Nearly Everything",
-      "Url": "https://images-na.ssl-images-amazon.com/images/I/41CHniZzf0L._SL200_.jpg",
-      "Text": "Of the billions and billions of species of living thing that have existed since the dawn of time, most\u201499.99 percent\u2014are no longer around. Life on Earth, you see, is not only brief but dismayingly tenuous. It is a curious feature of our existence that we come from a planet that is very good at promoting life but even better at extinguishing it.",
-      "Tags": [
-        {
-          "id": 59802419,
-          "name": "favorite"
-        }
-      ],
-      "Favorite": true,
-      "Discarded": false,
-      "Note": "",
-      "BookId": 11940055
-    },
-    {
-      "Id": 250756506,
-      "Author": "Bill Bryson",
-      "Title": "A Short History of Nearly Everything",
-      "Url": "https://images-na.ssl-images-amazon.com/images/I/41CHniZzf0L._SL200_.jpg",
-      "Text": "Every atom you possess has almost certainly passed through several stars and been part of millions of organisms on its way to becoming you.",
-      "Tags": [
-        {
-          "id": 58352414,
-          "name": "existence"
-        },
-        {
-          "id": 58351972,
-          "name": "favorite"
-        }
-      ],
-      "Favorite": true,
       "Discarded": false,
       "Note": "",
       "BookId": 11940055
@@ -6955,23 +7091,6 @@
       "BookId": 11940038
     },
     {
-      "Id": 250756223,
-      "Author": "Chris Bradford",
-      "Title": "Young Samurai",
-      "Url": "https://images-na.ssl-images-amazon.com/images/I/41EtjakLoiL._SL200_.jpg",
-      "Text": "Buddhism was a philosophy open to all religions. This was why the Japanese had no issues with following Shintoism \u2013 their native religion \u2013 practising Buddhism, and even converting to Christianity, at the same time. \u2018They\u2019re all strands of the same rug,\u2019 Sensei Yamada had said, \u2018only different colours.\u2019",
-      "Tags": [
-        {
-          "id": 58414931,
-          "name": "favorite"
-        }
-      ],
-      "Favorite": true,
-      "Discarded": false,
-      "Note": "",
-      "BookId": 11940038
-    },
-    {
       "Id": 250756222,
       "Author": "Chris Bradford",
       "Title": "Young Samurai",
@@ -7044,23 +7163,6 @@
       "BookId": 11940037
     },
     {
-      "Id": 250756213,
-      "Author": "David Benioff",
-      "Title": "City of Thieves",
-      "Url": "https://images-na.ssl-images-amazon.com/images/I/51qhKReKcBL._SL200_.jpg",
-      "Text": "\u201CTalent must be a fanatical mistress. She\u2019s beautiful; when you\u2019re with her, people watch you, they notice. But she bangs on your door at odd hours, and she disappears for long stretches, and she has no patience for the rest of your existence: your wife, your children, your friends. She is the most thrilling evening of your week, but some day she will leave you for good. One night, after she\u2019s been gone for years, you will see her on the arm of a younger man, and she will pretend not to recognize you.\u201D",
-      "Tags": [
-        {
-          "id": 59025589,
-          "name": "favorite"
-        }
-      ],
-      "Favorite": true,
-      "Discarded": false,
-      "Note": "",
-      "BookId": 11940036
-    },
-    {
       "Id": 250756210,
       "Author": "David Benioff",
       "Title": "City of Thieves",
@@ -7068,23 +7170,6 @@
       "Text": "The boy sold what people called library candy, made from tearing the covers off of books, peeling off the binding glue, boiling it down, and reforming it into bars you could wrap in paper. The stuff tasted like wax, but there was protein in the glue, protein kept you alive, and the city\u2019s books were disappearing like the pigeons.",
       "Tags": [],
       "Favorite": false,
-      "Discarded": false,
-      "Note": "",
-      "BookId": 11940036
-    },
-    {
-      "Id": 250756208,
-      "Author": "David Benioff",
-      "Title": "City of Thieves",
-      "Url": "https://images-na.ssl-images-amazon.com/images/I/51qhKReKcBL._SL200_.jpg",
-      "Text": "In certain ways I am deeply stupid. I don\u2019t say this out of modesty. I believe that I\u2019m more intelligent than the average human being, though perhaps intelligence should not be looked at as a single gauge, like a speedometer, but as a full array of tachometers, odometers, altimeters, and the rest.",
-      "Tags": [
-        {
-          "id": 62656761,
-          "name": "favorite"
-        }
-      ],
-      "Favorite": true,
       "Discarded": false,
       "Note": "",
       "BookId": 11940036
@@ -7157,23 +7242,6 @@
       "Text": "Respect costs you nothing, and nothing gets a man killed quicker than confidence.\u201D",
       "Tags": [],
       "Favorite": false,
-      "Discarded": false,
-      "Note": "",
-      "BookId": 11940035
-    },
-    {
-      "Id": 250756199,
-      "Author": "Joe Abercrombie",
-      "Title": "Before They Are Hanged",
-      "Url": "https://images-na.ssl-images-amazon.com/images/I/51VGBUhDcbL._SL200_.jpg",
-      "Text": "Laughing with a man was a good step forward. First comes the laughter, then the respect, then the trust.",
-      "Tags": [
-        {
-          "id": 58921109,
-          "name": "favorite"
-        }
-      ],
-      "Favorite": true,
       "Discarded": false,
       "Note": "",
       "BookId": 11940035
@@ -7263,23 +7331,6 @@
       "BookId": 11940034
     },
     {
-      "Id": 250756188,
-      "Author": "Joe Abercrombie",
-      "Title": "Last Argument of Kings",
-      "Url": "https://images-na.ssl-images-amazon.com/images/I/51EZPB4RStL._SL200_.jpg",
-      "Text": "If you want to be a new man you have to stay in new places, and do new things, with people who never knew you before.",
-      "Tags": [
-        {
-          "id": 58764763,
-          "name": "favorite"
-        }
-      ],
-      "Favorite": true,
-      "Discarded": false,
-      "Note": "",
-      "BookId": 11940034
-    },
-    {
       "Id": 250756187,
       "Author": "Joe Abercrombie",
       "Title": "Last Argument of Kings",
@@ -7292,40 +7343,6 @@
       "BookId": 11940034
     },
     {
-      "Id": 250756185,
-      "Author": "Joe Abercrombie",
-      "Title": "Last Argument of Kings",
-      "Url": "https://images-na.ssl-images-amazon.com/images/I/51EZPB4RStL._SL200_.jpg",
-      "Text": "It can be a terrible curse for a man to get everything he ever dreamed of. If the shining prizes turn out somehow to be empty baubles, he is left without even his dreams for comfort.",
-      "Tags": [
-        {
-          "id": 60155611,
-          "name": "favorite"
-        }
-      ],
-      "Favorite": true,
-      "Discarded": false,
-      "Note": "",
-      "BookId": 11940034
-    },
-    {
-      "Id": 250756182,
-      "Author": "Joe Abercrombie",
-      "Title": "The Blade Itself",
-      "Url": "https://images-na.ssl-images-amazon.com/images/I/51bOdgp6-wL._SL200_.jpg",
-      "Text": "A few glasses of wine can be the difference between finding a man a hilarious companion or an insufferable moron.",
-      "Tags": [
-        {
-          "id": 62338888,
-          "name": "favorite"
-        }
-      ],
-      "Favorite": true,
-      "Discarded": false,
-      "Note": "",
-      "BookId": 11940033
-    },
-    {
       "Id": 250756181,
       "Author": "Joe Abercrombie",
       "Title": "The Blade Itself",
@@ -7333,23 +7350,6 @@
       "Text": "Jezal had often observed that the ever so slightly stupid will act more stupidly in clever company.",
       "Tags": [],
       "Favorite": false,
-      "Discarded": false,
-      "Note": "",
-      "BookId": 11940033
-    },
-    {
-      "Id": 250756180,
-      "Author": "Joe Abercrombie",
-      "Title": "The Blade Itself",
-      "Url": "https://images-na.ssl-images-amazon.com/images/I/51bOdgp6-wL._SL200_.jpg",
-      "Text": "But some things have to be done. It\u2019s better to do them, than to live with the fear of them.",
-      "Tags": [
-        {
-          "id": 58351571,
-          "name": "favorite"
-        }
-      ],
-      "Favorite": true,
       "Discarded": false,
       "Note": "",
       "BookId": 11940033
