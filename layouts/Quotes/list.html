@@ -14,29 +14,27 @@
 
   {{ if .Content }}
   <div class="content">{{ .Content }}</div>
-  {{ end }} {{ range .Site.Data.cytaty}}
+  {{ end }}
+  <!-- {{ range .Site.Data.cytatytest}}
   <div class="posts-group">
-    <div class="post-year">
+    <div class="post-year"></div>
+    <div class="posts-list">
+      <figure class="quote">
+        <blockquote>{{.text}}</blockquote>
+        <figcaption>&mdash; {{.author}}, <cite>{{.title}}</cite></figcaption>
+      </figure>
+    </div>
+  </div>
+  {{end}} -->
+  {{ range .Site.Data.cytaty}}
+  <div class="posts-group">
+    <div class="post-year"></div>
+    <div class="posts-list">
       <figure class="quote">
         <blockquote>{{.text}}</blockquote>
         <!-- <figcaption>&mdash; author, <cite>Book</cite></figcaption> -->
       </figure>
     </div>
-
-    <ul class="posts-list">
-      <!-- {{ range .Pages }}
-      <li class="post-item">
-        <a href="{{.Permalink}}">
-          <span class="post-title">{{.Title}}</span>
-          <span class="post-day">
-            {{ if .Site.Params.dateformShort }} {{ .Date.Format
-            .Site.Params.dateformShort }} {{ else }} {{ .Date.Format "Jan 2"}}
-            {{ end }}
-          </span>
-        </a>
-      </li>
-      {{ end }} -->
-    </ul>
   </div>
   {{ end }} {{ partial "pagination-list.html" . }}
 </main>
