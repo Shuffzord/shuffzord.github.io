@@ -60,9 +60,12 @@
   <div class="posts-group">
     <div class="post-year"></div>
     <div class="posts-list">
+      <star></star>
       <figure class="quote">
-        <blockquote>{{.text}}</blockquote>
-        <!-- <figcaption>&mdash; author, <cite>Book</cite></figcaption> -->
+        <blockquote>{{.Text}}      
+          <span {{ if .Favorite }} class=" fa fa-star checked"{{ end }} ></span>
+          </blockquote>
+        <figcaption>&mdash; {{.Author}}, <cite>{{.Title}}</cite></figcaption>
       </figure>
     </div>
   </div>

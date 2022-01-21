@@ -4,7 +4,7 @@
         "note": "",
         "author": "Test Author",
         "url": "https://images-na.ssl-images-amazon.com/images/I/51Eqf-URhoL._SL200_.jpg",
-        "book": "Book title",
+        "title": "titl title",
         "favorite": true
     },
     {
@@ -12,7 +12,7 @@
         "note": "",
         "author": "Test Author",
         "url": "https://images-na.ssl-images-amazon.com/images/I/51Eqf-URhoL._SL200_.jpg",
-        "book": "Another Book title",
+        "title": "Another titl title",
         "favorite": true
     },
     {
@@ -20,7 +20,7 @@
         "note": "",
         "author": "Test Author",
         "url": "https://images-na.ssl-images-amazon.com/images/I/51Eqf-URhoL._SL200_.jpg",
-        "book": "Another Book title",
+        "title": "Another titl title",
         "favorite": true
     },
     {
@@ -28,7 +28,7 @@
         "note": "",
         "author": "Another Author",
         "url": "https://images-na.ssl-images-amazon.com/images/I/51Eqf-URhoL._SL200_.jpg",
-        "book": "Book title",
+        "title": "titl title",
         "favorite": false
     }
 
