@@ -1,12 +1,13 @@
 ---
 title: Machine Learning
 date: 2022-01-18
+mathjax: true
 publishdate: 2022-01-18
 ---
 
 # Machine Learning Basics
 
-When \(a \ne 0\), there are two solutions to \(ax^2 + bx + c = 0\) and they are
+When $\(a \ne 0\)$, there are two solutions to $\(ax^2 + bx + c = 0\)$ and they are
 $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$
 
 > A computer program is said to learn from **experience E** with respect to some **task T** and some **performance measure P**, if its performance on T as measured by P, improves with experience E
