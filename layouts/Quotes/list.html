@@ -1,8 +1,5 @@
 {{ define "main" }}
-<link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 <style>
   .quote {
     margin: 0;
@@ -67,18 +64,14 @@
     </div>
   </div>
   {{end}} -->
-
-  {{ range .Site.Data.cytaty}}
+  {{ $data := getJSON "https://readwisestorage.blob.core.windows.net/output/quotes.json" }} {{ range $data}}
   <!-- TODO: Filter out discarded and add paging -->
   <div class="posts-group">
     <div class="post-year"></div>
     <div class="posts-list">
       <star></star>
       <figure class="quote">
-        <blockquote>
-          <span {{ if .Favorite }} class="fa fa-star checked" {{ end }}></span>
-          {{.Text}}
-        </blockquote>
+        <blockquote><span {{ if .Favorite }} class="fa fa-star checked" {{ end }}></span> {{.Text}}</blockquote>
         <figcaption>&mdash; {{.Author}}, <cite>{{.Title}}</cite></figcaption>
         <!-- {{ range .Tags}} <span class="tags">{{.name}} </span> {{end}} -->
       </figure>
