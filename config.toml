@@ -23,6 +23,13 @@ theme = "hello-friend-ng"
   keywords = "homepage, blog"
   images = [""]
 
+
+# Integrate Javascript files or stylesheets by adding the url to the external assets or by
+  # linking local files with their path relative to the static folder, e.g. "css/styles.css"
+  #
+  customCSS = ["css/math.css"]
+  customJS  = []
+
 [taxonomies]
     category = "blog"
     tag      = "tags"
