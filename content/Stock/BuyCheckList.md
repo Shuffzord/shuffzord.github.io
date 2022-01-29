@@ -22,3 +22,4 @@ publishdate: 2022-01-18
     - [ ] Ciągłość
     - [ ] Stopa
 - [ ] Wskaźniki (biznesradar)
+- [ ] Currency
