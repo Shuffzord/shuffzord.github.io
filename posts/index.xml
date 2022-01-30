@@ -1,20 +1,176 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Posts on Principles</title>
-    <link>http://example.org/posts/</link>
-    <description>Recent content in Posts on Principles</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Tue, 18 Jan 2022 14:55:35 +0100</lastBuildDate><atom:link href="http://example.org/posts/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>My First Post</title>
-      <link>http://example.org/posts/my-first-post/</link>
-      <pubDate>Tue, 18 Jan 2022 14:55:35 +0100</pubDate>
-      
-      <guid>http://example.org/posts/my-first-post/</guid>
-      <description></description>
-    </item>
-    
-  </channel>
-</rss>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Principles</title><link>https://shuffzord.github.io/posts/</link><description>Recent content in Posts on Principles</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>&lt;a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0&lt;/a></copyright><lastBuildDate>Mon, 24 Jan 2022 13:13:05 +0100</lastBuildDate><atom:link href="https://shuffzord.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Structure</title><link>https://shuffzord.github.io/posts/structure/</link><pubDate>Mon, 24 Jan 2022 13:13:05 +0100</pubDate><guid>https://shuffzord.github.io/posts/structure/</guid><description>Creating a corporate structure Problem: Growing number of projects and lack of the line/product managers causes upper management to work overtime on day to day project work and losing focus on the big picture of the company.
+Thesis: Introducing middle management will lessen the burden on the higher management and better the quality of communication between growing list of partners
+Focus should be on establishing:
+The optimal, most efficient workflow Achieving business goals Serving customers well There are many ways by which you can organize your employees:</description><content type="html"><![CDATA[<h1 id="creating-a-corporate-structure">Creating a corporate structure</h1>
+<p><strong>Problem</strong>: Growing number of projects and lack of the line/product managers causes upper management to work overtime on day to day project work and losing focus on the big picture of the company.</p>
+<p><strong>Thesis</strong>: Introducing middle management will lessen the burden on the higher management and better the quality of communication between growing list of partners</p>
+<p>Focus should be on establishing:</p>
+<ul>
+<li>The optimal, most efficient workflow</li>
+<li>Achieving business goals</li>
+<li>Serving customers well</li>
+</ul>
+<p>There are many ways by which you can organize your employees:</p>
+<ul>
+<li>By function (sales, marketing, accounting/finance, etc.)</li>
+<li>By region</li>
+<li>By product line</li>
+</ul>
+<h2 id="questions-to-be-answered">Questions to be answered</h2>
+<ul>
+<li>What is our strategic focus or desired future state?</li>
+<li>What do we want as a company five years from now?</li>
+<li>What is most important to successful execute the strategy?</li>
+<li>What will we have to stop, start or continue to get there?
+<ul>
+<li>Weekly management meetings</li>
+<li>Usage of concrete metrics</li>
+<li>Proper reporting services</li>
+<li>Full time HR team &amp; clear responsibilities structure between management team</li>
+<li>Budget tracking</li>
+</ul>
+</li>
+<li>What do we have to do exceptionally well to win?</li>
+<li>What are the capabilities we need to perform at that exceptional level</li>
+</ul>
+<p>Remembering your key business objectives, ask yourself:</p>
+<ul>
+<li>Which roles (current or future) will disproportionately drive the success of the strategy?</li>
+<li>Which roles could be understaffed with little risk to our business?</li>
+<li>What jobs are most vital?</li>
+<li>What current or future skills will disproportionately drive the success of the strategy?</li>
+<li>What capabilities will accelerate our ability to deliver on our promise?</li>
+<li>What knowledge gaps do we have, that may cause any of are plans to fail (ex. train vs  hire people)</li>
+<li>What external factors are there that may put the strategy at risk (ex political / legislation)</li>
+</ul>
+<p><strong>Solution</strong>: Introduction of additional middle management positions, namely project and line managers. SMART plan
+(specific, measurable, achievable, relevant and time-bound)
+steps:</p>
+<ol>
+<li>Create a weekly management meeting
+<ol>
+<li>Eveyrones capacity to execute the plan</li>
+<li>Responsibilities</li>
+<li>Required training</li>
+<li>Budget / Decision schema per plan step</li>
+</ol>
+</li>
+<li>Hire Project Managers
+<ol>
+<li>Internal recruitment (HR ?)(1 month)</li>
+<li>External recruitment (concurrent)(1 month)(HR ?)</li>
+<li>project manager per x projects (contract FTE based)</li>
+</ol>
+</li>
+<li></li>
+</ol>
+<h2 id="positions">Positions</h2>
+<h3 id="project-management">Project Management</h3>
+<p>The PM role is project-specific and focuses on project implementation within scope and schedule with the help of the project team. In short, the Project managers are the possessor of projects, and their job is to ensure the project gets delivered satisfactorily in line with the company’s objectives and customers’ expectations.</p>
+<h4 id="responsible">Responsible</h4>
+<ul>
+<li>Planning, monitoring, and development of project management plans and communication between stakeholders and management.</li>
+<li>Budgeting and ensuring cost-effective project execution without compromising standards.</li>
+<li>Monitoring SLA (service level agreement) to track the performance of the project.</li>
+<li>Delivering the project within budget and scope.</li>
+<li>Risk Management – Identify risks and create a risk mitigation plan.</li>
+<li>Work on CSI (Continuous Improvement of Services) for soft and hard dollar services.</li>
+<li>Responsible for SOP (standard operating procedure), run books, and other documentation.
+Responsible for CSAT (Customer Satisfaction Assessment) – follow up, improve and close.</li>
+<li>Responsible for project assessment and quality process as Six Sigma.
+People management –  Team motivation, appraisals, promotion, structuring their career path, etc.</li>
+</ul>
+<h4 id="required-skills">Required skills</h4>
+<ul>
+<li>Project Management</li>
+<li>Accountability</li>
+<li>Excellent communication skills</li>
+<li>Ability to think out of the box</li>
+<li>Know-how and when to delegate</li>
+<li>Forecasting</li>
+<li>Leadership</li>
+<li>Problem Solving</li>
+<li>Strategic Thinking</li>
+</ul>
+<h3 id="line-manager">Line Manager</h3>
+<p>Responsible for overseeing and managing employees to fulfill business goals. The responsibility of implementing strategy rests with the line managers who ensure that strategies designed by senior leadership and the management are implemented in a satisfactory manner. They’re are also in the best place to identify bottlenecks and carry out course correction in the event of deviation. Line managers need to possess leadership qualities including effective communication of tasks, listening strategy, grievances handling, and delegation.</p>
+<h4 id="responsibilities">Responsibilities</h4>
+<ul>
+<li>Recruitment and selection of team members</li>
+<li>Onboarding, training, mentoring</li>
+<li>Motivation</li>
+<li>Team Bonding</li>
+<li>Planning the goals, objectives and tasks of their department and communicating this to employees as needed</li>
+<li>Effectively communication organizational goals set by the management to the employees</li>
+<li>Managing the resources within their control (e.g., staff time; finance) to fulfill the objectives set</li>
+<li>Ensuring compliance with organizational policy and legislation</li>
+<li>Providing blueprint, guidance and plan to their teams growth</li>
+<li>Regular meetings with staff members to discuss progress and any bottlenecks</li>
+<li>Measuring performance metrics against set expectations and taking corrective actions where necessary</li>
+<li>Ensuring Quality Standards are met</li>
+<li>Providing reports on performance and goals to higher authorities</li>
+<li>Understanding the projects budget and assigning the right resource to the project</li>
+<li>Has to ensure the bench is always occupied with the right resources and should be aware of projects in the pipeline.</li>
+<li>Coordination with PM to locate overutilization and underutilization of employees and right skilled people are aligned to projects.</li>
+<li>work with PMs to reallocate resources, adjust requirements, and mark critical resource requirements for external recruitment.</li>
+</ul>
+<p>An efficient line manager is hands on with their team on a daily basis with the implementation of organizational strategy, giving guidance, resolving bottlenecks, providing motivation, measuring performance, analyzing reports and taking corrective action in the event of deviation. Line managers directly influence employee satisfaction and engagement and, as a result, organizational productivity.</p>
+<h4 id="required-skills-1">Required skills</h4>
+<ul>
+<li>Fluent english</li>
+<li>Excellent communication skills</li>
+<li>Awareness of Technologies</li>
+<li>Outstanding negotiation skills</li>
+<li>Flexibility</li>
+<li>Quick decision-making</li>
+<li>Commitment</li>
+<li>Analysis and Forecaster</li>
+<li>Presentation skills</li>
+</ul>
+<h2 id="metrics-success">Metrics success</h2>
+<p>Workforce planning metrics are information about your workforce that you can track, analyze and leverage to help improve your business, enhance working relationships, proactively plan for the future and lead better. For example, with these metrics you can:</p>
+<ul>
+<li>Assess your organization’s ability and preparedness to reach certain goals</li>
+<li>Identify organizational strengths and challenges</li>
+<li>Confirm placement of the right people in the right roles</li>
+<li>Uncover skill gaps that can hold your organization back from getting where it needs to be</li>
+<li>Make decisions about your staff</li>
+</ul>
+<h3 id="headcount">HeadCount</h3>
+<ul>
+<li>Turnover rate</li>
+<li>Each manager’s span of control</li>
+<li>Total compensation per employee</li>
+</ul>
+<p>Organize workforce by type:</p>
+<ul>
+<li>Full time</li>
+<li>Part time</li>
+<li>Contractor</li>
+</ul>
+<h3 id="span-of-control">Span of control</h3>
+<p>A subcategory of the headcount metric, span of control provides measures for each manager by answering the following questions:</p>
+<ul>
+<li>How many employees report directly to them?</li>
+<li>How many total employees are within their sphere of influence? For example, do they manage other leaders and therefore have an indirect reporting relationship to all those employees under those leaders?</li>
+</ul>
+<h3 id="salary-rollup">Salary rollup</h3>
+<p>Having an org chart equipped with the salary rollup metric enables executives and HR professionals to:</p>
+<ul>
+<li>Visualize the total cost of their workforce</li>
+<li>Understand how many dollars each leader is responsible for managing on behalf of the organization</li>
+<li>Help ensure pay equity</li>
+<li>Make more accurate budget projections for the coming months, quarters and years</li>
+</ul>
+<h3 id="tenure-and-turnover">Tenure and turnover</h3>
+<p>Tenure is how long an employee has been with an organization. This metric can help you determine whether people are growing and developing, and over what time period. When tenure is rolled up, you can see an average amount of time people are staying with your company.</p>
+<p>Turnover is the departure and replacement of an employee. The rate of turnover is how often this happens in a certain time period (e.g., month, quarter or year) and is expressed as a percentage.</p>
+<p>It’s also suspicious when high performers unexpectedly quit. When this happens, examining the turnover rates at different levels of your org chart can help to identify the real problem. For example:</p>
+<ul>
+<li>High turnover rates specific to one branch of your org chart may denote poor management.</li>
+<li>Increased turnover among your star players may point to a lack of upward mobility, compensation and benefits that are out of alignment with what the market can bear or some other factor related to individual job roles.</li>
+</ul>
+<h3 id="performance-rating">Performance rating</h3>
+<p>To analyze this workforce planning metric, you must first have a solid and objective performance-management system for evaluating your employees’ performance.</p>
+<p>( Separate big story)</p>
+]]></content></item></channel></rss>
