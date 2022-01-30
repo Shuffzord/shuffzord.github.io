@@ -67,3 +67,7 @@ disqusShortname = 'https-shuffzord-github-io'
     identifier = "Quote"
     name       = "Cytaty"
     url        = "/Quotes"
+[[menu.main]]
+    identifier = "Posts"
+    name       = "Posts"
+    url        = "/Posts"

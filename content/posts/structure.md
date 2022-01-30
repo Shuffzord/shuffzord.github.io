@@ -1,8 +1,9 @@
 ---
 title: "Structure"
 date: 2022-01-24T13:13:05+01:00
-draft: true
+draft: false
 toc: false
+comments: true
 images:
 tags:
   - untagged
