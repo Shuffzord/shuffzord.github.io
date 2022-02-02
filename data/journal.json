@@ -12,5 +12,12 @@
         "transaction": "Buy",
         "reason": "Good fundamentals. Dividend in 1 week, risks: Ukraine & Russia market influence. 10k buy",
         "review": ""
+    },
+    {
+        "date": "2022-02-02",
+        "ticker": "Amrest",
+        "transaction": "Buy",
+        "reason": "Trend Reversal (?) - evening out the loss. Good Indicators - sell order of 50% already in place to even out the loss",
+        "review": ""
     }
 ]
