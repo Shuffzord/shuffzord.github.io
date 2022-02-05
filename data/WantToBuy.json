@@ -1,0 +1,19 @@
+[
+    {
+        "ticker": "Berkshire B",
+        "reason": "Stabilization factor - does it change anything if CHarlie & Warren leave?",
+        "urls": []
+    },
+    {
+        "ticker": "Microsoft",
+        "reason": "Stabilization factor and potential gaming giant",
+        "urls": []
+    },
+    {
+        "ticker": "VWRA",
+        "reason": "Long stable new ETF with even distribution of market, bit heavy on US",
+        "urls": [
+            "https://www.justetf.com/en/etf-profile.html?query=IE00BK5BQT80&groupField=index&from=search&isin=IE00BK5BQT80#volatility"
+        ]
+    }
+]

@@ -1,0 +1,16 @@
+[
+    {
+        "date": "2022-01-24",
+        "ticker": "Voxel",
+        "transaction": "Buy",
+        "reason": "Big market crash, outside Bollinger Bands. MACD/RSI/Stoch very very low, good fundamentals. 3rd buy package",
+        "review": ""
+    },
+    {
+        "date": "2022-01-28",
+        "ticker": "Kernel",
+        "transaction": "Buy",
+        "reason": "Good fundamentals. Dividend in 1 week, risks: Ukraine & Russia market influence. 10k buy",
+        "review": ""
+    }
+]
