@@ -12,5 +12,12 @@
         "transaction": "Buy",
         "reason": "Good fundamentals. Dividend in 1 week, risks: Ukraine & Russia market influence. 10k buy",
         "review": ""
+    },
+    {
+        "date": "2022-02-09",
+        "ticker": "ETFBS80TR.PL",
+        "transaction": "Buy",
+        "reason": "Beta ETF s80, long term stabilizing - the idea is to have it instead of savings account",
+        "review": ""
     }
 ]
