@@ -1,5 +1,0 @@
----
-title: Buy Journal reasoning
----
-
-
