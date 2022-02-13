@@ -3,6 +3,7 @@ title: Wskaźniki
 date: 2022-01-21
 publishdate: 2022-01-21
 comments: true
+tags: ["Analiza giełdowa"]
 ---
 
 # Wskaźniki - cheatsheet

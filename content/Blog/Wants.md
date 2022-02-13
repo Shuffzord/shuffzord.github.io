@@ -1,0 +1,15 @@
+# Wants most to or offers the most value:
+- ML study
+- Hugo
+    - Listing Entries Paging
+    - Stock Journal template
+    - Wskazniki techniczne
+- Networking for introverts - CEO/CTO - Linkedin
+- Stock study
+    - Inwestomat series Akcje (4/10)
+    - Inwestomat series ETF (0/6)
+    - Facebook chart:
+        - Filtering by criteria and indicators
+        - Tabele wizualizujace przychody /zyski /akcje w latach dla spolek, excel / biznesradar ? ? Do porownania automat jakis (stock data in power bi) ?
+- Swimming school
+- 

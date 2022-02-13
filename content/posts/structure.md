@@ -5,8 +5,6 @@ draft: true
 toc: false
 comments: true
 images:
-tags:
-  - untagged
 
 sources: [https://www.emptrust.com/blog/the-role-of-line-managers-in-employee-management/#:~:text=A%20line%20manager%20is%20responsible,day%2Dto%2Dday%20basis., https://www.insperity.com/blog/top-5-workforce-metrics-for-your-org-chart/, https://www.insperity.com/blog/strategic-workforce-planning/]
 

@@ -16,6 +16,7 @@ publishdate: 2022-01-23
 ## Do nauki
 
 - [Inwestomat - Playlista do nauki](https://www.youtube.com/watch?v=gu8ZcHt6wLM&list=PLRBOV-q9LfvVGTepqvrapt63eH1wI5417)
+{{<youtube id="gu8ZcHt6wLM" list="PLRBOV-q9LfvVGTepqvrapt63eH1wI5417">}}
 
 ## Do analizy
 

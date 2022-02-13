@@ -1,0 +1,41 @@
+{{ define "main" }}
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+/>
+<style>
+     .checked {
+    color: green;
+  }
+</style>
+<main class="posts">
+  <h1>{{ .Title }}</h1>
+
+  {{ if .Content }}
+  <div class="content">{{ .Content }}</div>
+  {{ end }} {{ $data := .Site.Data.stockjournal }} {{ range $data}}
+  <!-- TODO: Filter out discarded and add paging -->
+  <div class="posts-group">
+    <div class="post-year"></div>
+    <div class="posts-list">
+      <star></star>
+      <figure class="quote">
+        <span
+          >{{.date}} {{.ticker}}
+          <span
+            {{
+            if eq .transaction "Buy"
+            }}
+            class="fa fa-arrow-up checked"
+            {{
+            end
+            }}
+          > {{.transaction}}</span
+        ></span>
+        <figcaption>&mdash; {{.reason}}</figcaption>
+      </figure>
+    </div>
+  </div>
+  {{ end }} {{ partial "pagination-list.html" . }}
+</main>
+{{ end }}
