@@ -28,7 +28,7 @@ Machine Learning :: Principles — Structure in life
  A computer program is said to learn from experience E with respect to some task T and some performance measure P, if its performance on T as measured by P, improves with experience E
  E = the experience of playing many games of checkers T = the task of playing checkers."><meta itemprop=datePublished content="2022-01-18T00:00:00+00:00">
 <meta itemprop=dateModified content="2022-01-18T00:00:00+00:00">
-<meta itemprop=wordCount content="1066"><meta itemprop=image content="https://shuffzord.github.io">
+<meta itemprop=wordCount content="1176"><meta itemprop=image content="https://shuffzord.github.io">
 <meta itemprop=keywords content> <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://shuffzord.github.io">
 <meta name=twitter:title content="Machine Learning">
@@ -92,7 +92,14 @@ iteration would yield to a wrong implementation.</p><p><img src=/Images/Gradient
 $\theta_1$ eventually converges to its minimum value. The following graph shows that when the slope is negative, the value of $\theta_1$
 increases and when it is positive, the value of $\theta_1$
 decreases.</p><p>On a side note, we should adjust our parameter $\alpha$ to ensure that the gradient descent algorithm converges in a reasonable time. Failure to converge or too much time to obtain the minimum value imply that our step size is wrong.</p><p>The intuition behind the convergence is that $\frac{d}{d\theta_1}$ J($\theta_1$) approaches 0 as we approach the bottom of our convex function. At the minimum, the derivative will always be 0.</p><p><img src=/Images/gradient2.png alt=Gradient title=Gradient></p><p><img src=/Images/gradient2b.png alt=Gradient title=Gradient></p><p><strong>Gradient descent can converge to a local
-minimum, even with the learning rate $\alpha$ fixed</strong></p><p><img src=/Images/gradient2c.png alt=Gradient title=Gradient></p><h2 id=multiple-features>Multiple Features</h2></div></article><hr>
+minimum, even with the learning rate $\alpha$ fixed</strong></p><p><img src=/Images/gradient2c.png alt=Gradient title=Gradient></p><h2 id=multiple-features>Multiple Features</h2><p>$x^{(i)}_j$ =value of feature j in the $i^{th}$ training example</p><p>$x^{(j)}$=the input (features) of the ith training example</p><p>m = the number of training examples</p><p>n =the number of features</p><p>$h_θ(x)=θ_0+θ_1x_1+θ_2x_2+⋯+θ_nx_n$
+​</p><p>In order to develop intuition about this function, we can think about $\theta_0$ as the basic price of a house, $\theta_1$ as the price per square meter $θ_2$ as the price per floor, etc. $x_1$ will be the number of square meters in the house, $x_2$ the number of floors, etc.
+Using the definition of matrix multiplication, our multivariable hypothesis function can be concisely represented as:</p><p>$hθ(x)=\begin{matrix}{[θ_0 θ_1 &mldr; θn]}\end{matrix} \begin{bmatrix}
+x_0\
+x_1\
+&mldr;\
+x_n
+\end{bmatrix} = θ^Tx$</p></div></article><hr>
 <div class=post-info>
 category
 </div></main></div><footer class=footer>
