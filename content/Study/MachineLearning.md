@@ -5,6 +5,18 @@ mathjax: true
 publishdate: 2022-01-18
 ---
 
+1. [Machine Learning Basics](#machine-learning-basics)
+1. [Algorithms](#algorithms)
+    1. [Problems](#problems)
+2. [Model & Cost Function](#model--cost-function)
+    1. [Cost Function Intuition I](#cost-function-intuition-i)
+    2. [Cost Function - Intuition II](#cost-function---intuition-ii)
+3. [Parameter Learning](#parameter-learning)
+    1. [Gradient Descent](#gradient-descent)
+    2. [Gradient Descent Intuition](#gradient-descent-intuition)
+4. [Multiple Features](#multiple-features)
+5. [Normal Equation](#normal-equation)
+
 # Machine Learning Basics
 
 > A computer program is said to learn from **experience E** with respect to some **task T** and some **performance measure P**, if its performance on T as measured by P, improves with experience E
@@ -143,3 +155,22 @@ x_1\\
 ...\\
 x_n
 \end{bmatrix} = θ^Tx$
+
+## Normal Equation
+
+Gradient descent gives one way of minimizing J. Let’s discuss a second way of doing so, this time performing the minimization explicitly and without resorting to an iterative algorithm. In the "Normal Equation" method, we will minimize J by explicitly taking its derivatives with respect to the θj ’s, and setting them to zero. This allows us to find the optimum theta without iteration. The normal equation formula is given below:
+
+$θ=(X^TX)^{−1}X^Ty$
+
+There is no need to do feature scaling with the normal equation.
+
+The following is a comparison of gradient descent and the normal equation:
+
+|  Gradient Descent  | Normal Equation   |
+|--- |--- |
+|  Need to choose alpha  |  No need to choose alpha  |
+|   Needs many iterations |  No need to iterate  |
+|   $O (kn^2$) |   $O(n^3)$, need to calculate inverse of $X^TX$ |
+|   Works well when n is large |  Slow if n is very large  |
+
+With the normal equation, computing the inversion has complexity $\mathcal{O}(n^3)$. So if we have a very large number of features, the normal equation will be slow. In practice, when n exceeds 10,000 it might be a good time to go from a normal solution to an iterative process.
