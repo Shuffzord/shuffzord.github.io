@@ -125,3 +125,24 @@ minimum, even with the learning rate $\alpha$ fixed**
 ![Gradient](/Images/gradient2c.png "Gradient")
 
 ## Multiple Features
+
+$x^{(i)}_j$ =value of feature j in the $i^{th}$ training example
+
+$x^{(j)}$=the input (features) of the ith training example
+
+m = the number of training examples
+
+n =the number of features
+
+$h_θ(x)=θ_0+θ_1x_1+θ_2x_2+⋯+θ_nx_n$
+​
+
+In order to develop intuition about this function, we can think about $\theta_0$ as the basic price of a house, $\theta_1$ as the price per square meter $θ_2$ as the price per floor, etc. $x_1$ will be the number of square meters in the house, $x_2$ the number of floors, etc.
+Using the definition of matrix multiplication, our multivariable hypothesis function can be concisely represented as:
+
+$hθ(x)=\begin{matrix}{[θ_0 θ_1 ... θn]}\end{matrix} \begin{bmatrix}
+x_0\\
+x_1\\
+...\\
+x_n
+\end{bmatrix} = θ^Tx$
