@@ -67,7 +67,7 @@ theme = "hello-friend-ng"
     identifier = "Quote"
     name       = "Cytaty"
     url        = "/Quotes"
-[[menu.main]]
-    identifier = "Posts"
-    name       = "Posts"
-    url        = "/Posts"
+# [[menu.main]]
+#     identifier = "Posts"
+#     name       = "Posts"
+#     url        = "/Posts"
