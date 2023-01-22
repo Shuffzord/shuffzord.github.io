@@ -62,6 +62,10 @@ theme = "hello-friend-ng"
     identifier = "Study"
     name       = "Nauka"
     url        = "/Study"
+[[menu.main]]
+    identifier = "CheatSheats"
+    name       = "CheatSheats"
+    url        = "/CheatSheats"
 
 [[menu.main]]
     identifier = "Quote"
