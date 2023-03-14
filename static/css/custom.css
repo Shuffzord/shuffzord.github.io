@@ -10,8 +10,7 @@ header {
 }
 
 body {
-  overflow: hidden;
-  min-height: 100dvh;
+  overflow-x: hidden;
 }
 
 @keyframes rotate {
