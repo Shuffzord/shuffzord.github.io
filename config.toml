@@ -28,8 +28,8 @@ theme = "hello-friend-ng"
 # Integrate Javascript files or stylesheets by adding the url to the external assets or by
   # linking local files with their path relative to the static folder, e.g. "css/styles.css"
   #
-  customCSS = ["css/math.css"]
-  customJS  = []
+  customCSS = ["css/math.css","css/custom.css"]
+  custom_js = ["js/custom.js"]
 
 [taxonomies]
     category = "blog"
