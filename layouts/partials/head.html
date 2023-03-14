@@ -31,9 +31,7 @@
 
 {{ $options := (dict "targetPath" "main.css" "outputStyle" "compressed" "enableSourceMap" true) }} {{ $style := resources.Get
 "scss/main.scss" | resources.ToCSS $options | resources.Fingerprint }}
-<link rel="stylesheet" href="{{ $style.RelPermalink }}" />
-
-{{ range $val := $.Site.Params.customCSS }} {{ if gt (len $val) 0 }}
+<link rel="stylesheet" href="{{ $style.RelPermalink }}" /> {{ range $val := $.Site.Params.customCSS }} {{ if gt (len $val) 0 }}
 <link rel="stylesheet" type="text/css" href="{{ $val }}" /> {{ end }} {{ end }} {{ range .Site.Params.custom_css -}}
 <link rel="stylesheet" href="{{ . | absURL }}" /> {{- end }} {{ range .Site.Params.custom_js -}}
 <script type="text/javascript" src="{{ . | absURL }}"></script>
