@@ -28,4 +28,16 @@ function animate(selector) {
 window.addEventListener("load", (event) => {
     animate("main > div > h1");
     animate(".logo__text");
+
+    const blob = document.querySelector("#blob");
+
+    window.onpointermove = event => {
+        const { clientX, clientY } = event;
+
+        blob.animate({
+            left: `${clientX}px`,
+            top: `${clientY}px`
+        }, { duration: 3000, fill: "forwards" });
+    }
 });
+
