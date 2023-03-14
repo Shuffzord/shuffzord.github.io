@@ -21,7 +21,6 @@ body {
   }
 }
 #blob {
-  background-color: white;
   height: 34vmax;
   aspect-ratio: 1;
   position: absolute;
@@ -29,7 +28,7 @@ body {
   top: 50%;
   translate: -50% -50%;
   border-radius: 50%;
-  background: linear-gradient(to right, aquamarine, mediumpurple);
+  background: linear-gradient(to right, rgb(19, 133, 95), rgb(82, 62, 121));
   animation: rotate 20s infinite;
   opacity: 0.8;
   z-index: -2;
