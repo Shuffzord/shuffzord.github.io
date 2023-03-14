@@ -2,9 +2,16 @@ main > div > h1 {
   font-family: "Space Mono", monospace;
   color: white;
 }
+.header {
+  background: transparent !important;
+}
+.menu {
+  background: transparent;
+}
 
 body {
   overflow: hidden;
+  height: 100dvh;
 }
 
 @keyframes rotate {
