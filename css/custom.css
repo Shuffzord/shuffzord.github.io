@@ -2,7 +2,7 @@ main > div > h1 {
   font-family: "Space Mono", monospace;
   color: white;
 }
-.header {
+header {
   background: transparent !important;
 }
 .menu {
@@ -11,7 +11,7 @@ main > div > h1 {
 
 body {
   overflow: hidden;
-  height: 100dvh;
+  min-height: 100dvh;
 }
 
 @keyframes rotate {
