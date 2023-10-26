@@ -28,22 +28,22 @@ function animate(selector) {
 
 
 window.onpointermove = event => {
-    const { clientX, clientY } = event;
-
+    
     const scrollX = window.scrollX || window.pageXOffset;
     const scrollY = window.scrollY || window.pageYOffset;
 
     const blobWidth = blob.offsetWidth;
     const blobHeight = blob.offsetHeight;
 
-    const windowWidth = window.innerWidth;
-    const windowHeight = window.innerHeight;
+    const bodyWidth = document.body.scrollWidth;
+    const bodyHeight = document.body.scrollHeight;
 
-    const maxLeft = windowWidth - blobWidth + scrollX;
-    const maxTop = windowHeight - blobHeight + scrollY;
+    const maxLeft = bodyWidth - blobWidth;
+    const maxTop = bodyHeight - blobHeight;
 
     const left = Math.min(clientX + scrollX, maxLeft);
     const top = Math.min(clientY + scrollY, maxTop);
+
 
     blob.animate({
         left: `${left}px`,
