@@ -34,11 +34,14 @@ window.addEventListener("load", (event) => {
     const blob = document.querySelector("#blob");
 
     window.onpointermove = event => {
-        const { clientX, clientY } = event;
+         const { clientX, clientY } = event;
 
+        const scrollX = window.scrollX || window.pageXOffset;
+        const scrollY = window.scrollY || window.pageYOffset;
+    
         blob.animate({
-            left: `${clientX}px`,
-            top: `${clientY}px`
+            left: `${clientX + scrollX}px`,
+            top: `${clientY + scrollY}px`
         }, { duration: 3000, fill: "forwards" });
     }
 });
