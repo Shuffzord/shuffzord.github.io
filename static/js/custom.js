@@ -27,22 +27,28 @@ function animate(selector) {
 }
 
 
-window.addEventListener("load", (event) => {
-    animate("main > div > h1");
-    animate(".logo__text");
+window.onpointermove = event => {
+    const { clientX, clientY } = event;
 
-    const blob = document.querySelector("#blob");
+    const scrollX = window.scrollX || window.pageXOffset;
+    const scrollY = window.scrollY || window.pageYOffset;
 
-    window.onpointermove = event => {
-         const { clientX, clientY } = event;
+    const blobWidth = blob.offsetWidth;
+    const blobHeight = blob.offsetHeight;
 
-        const scrollX = window.scrollX || window.pageXOffset;
-        const scrollY = window.scrollY || window.pageYOffset;
-    
-        blob.animate({
-            left: `${clientX + scrollX}px`,
-            top: `${clientY + scrollY}px`
-        }, { duration: 3000, fill: "forwards" });
+    const windowWidth = window.innerWidth;
+    const windowHeight = window.innerHeight;
+
+    const maxLeft = windowWidth - blobWidth + scrollX;
+    const maxTop = windowHeight - blobHeight + scrollY;
+
+    const left = Math.min(clientX + scrollX, maxLeft);
+    const top = Math.min(clientY + scrollY, maxTop);
+
+    blob.animate({
+        left: `${left}px`,
+        top: `${top}px`
+    }, { duration: 3000, fill: "forwards" });
     }
 });
 
