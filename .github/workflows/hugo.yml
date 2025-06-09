@@ -9,10 +9,12 @@ permissions:
   contents: read
   pages: write
   id-token: write
+  actions: write
 
+# Allow one concurrent deployment
 concurrency:
   group: "pages"
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 defaults:
   run:
@@ -41,7 +43,6 @@ jobs:
         uses: actions/upload-pages-artifact@v2
         with:
           path: ./public
-
   deploy:
     environment:
       name: github-pages
@@ -51,4 +52,6 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
