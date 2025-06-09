@@ -8,9 +8,6 @@ Thumbs.db
 .settings/
 .build/
 .idea/
-public/
-/public
-public
 nbproject/
 
 # Vagrant
@@ -33,4 +30,5 @@ npm-debug.log
 partials/structure/stylesheet.html
 
 # Hugo
+public/
 .hugo_build.lock
