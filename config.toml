@@ -75,3 +75,7 @@ theme = "hello-friend-ng"
 #     identifier = "Posts"
 #     name       = "Posts"
 #     url        = "/Posts"
+
+[services]
+  [services.googleAnalytics]
+    ID = "" # Add your Google Analytics ID here if you have one
