@@ -2,14 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/cheatsheats/aitools/</loc>
-    <lastmod>2023-01-22T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/cheatsheats/</loc>
+    <lastmod>2025-09-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2023-01-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/cheatsheats/</loc>
-    <lastmod>2023-01-22T00:00:00+00:00</lastmod>
+    <lastmod>2025-09-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/stock/links/</loc>
     <lastmod>2022-01-23T00:00:00+00:00</lastmod>
@@ -37,12 +34,6 @@
   </url><url>
     <loc>http://localhost:1313/study/</loc>
     <lastmod>2022-01-18T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/cheatsheats/n8n/advanced_n8n_workflows/</loc>
-  </url><url>
-    <loc>http://localhost:1313/cheatsheats/n8n/n8-cheatsheet/</loc>
-  </url><url>
-    <loc>http://localhost:1313/cheatsheats/n8n/simple_n8n_workflows/</loc>
   </url><url>
     <loc>http://localhost:1313/quotes/</loc>
   </url><url>

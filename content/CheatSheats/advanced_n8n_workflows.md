@@ -1,3 +1,11 @@
+---
+title: N8N Advanced n8n Workflow Examples - Database & API Integration
+date: 2025-09-06
+publishdate: 2025-09-06
+draft: false
+tags: n8n
+---
+
 # Advanced n8n Workflow Examples - Database & API Integration
 
 Complex workflows with error handling, data validation, and multi-step processing. These examples demonstrate enterprise-level automation patterns.

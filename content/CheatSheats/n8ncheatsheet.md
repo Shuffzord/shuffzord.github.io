@@ -1,3 +1,10 @@
+---
+title: N8N Developer Cheatsheet
+date: 2025-09-06
+publishdate: 2025-09-06
+draft: false
+---
+
 # n8n Developer Cheatsheet
 
 A comprehensive reference guide for building n8n workflows based on official documentation from docs.n8n.io.

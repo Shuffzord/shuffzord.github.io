@@ -1,3 +1,11 @@
+---
+title: N8N Simple n8n workflow examples
+date: 2025-09-06
+publishdate: 2025-09-06
+draft: true
+tags: n8n
+---
+
 # Simple n8n Workflow Examples - Ready to Import JSON
 
 Complete, working JSON examples for basic n8n workflows. Copy and import these directly into your n8n instance.
