@@ -1,5 +1,5 @@
 ---
-title: Linki
+title: Links
 date: 2022-01-23
 publishdate: 2022-01-23
 ---
@@ -13,12 +13,12 @@ publishdate: 2022-01-23
 - [StrefaInwestorów](https://strefainwestorow.pl)
 - [SeekingAlpha - spółki USA](https://seekingalpha.com/)
 
-## Do nauki
+## Study
 
 - [Inwestomat - Playlista do nauki](https://www.youtube.com/watch?v=gu8ZcHt6wLM&list=PLRBOV-q9LfvVGTepqvrapt63eH1wI5417)
 {{<youtube id="gu8ZcHt6wLM" list="PLRBOV-q9LfvVGTepqvrapt63eH1wI5417">}}
 
-## Do analizy
+## Analysis
 
 - [Raporty finansowe](https://strefainwestorow.pl/dane/raporty/lista-dat-publikacji-raportow-okresowych/wszystkie)
 

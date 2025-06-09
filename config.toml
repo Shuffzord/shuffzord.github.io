@@ -60,12 +60,12 @@ buildDrafts = false
   # And you can even create generic menu
 [[menu.main]]
     identifier = "Stock"
-    name       = "Giełda"
+    name       = "Stock"
     url        = "/Stock"
 
 [[menu.main]]
     identifier = "Study"
-    name       = "Nauka"
+    name       = "Study"
     url        = "/Study"
 [[menu.main]]
     identifier = "CheatSheats"
@@ -74,7 +74,7 @@ buildDrafts = false
 
 [[menu.main]]
     identifier = "Quote"
-    name       = "Cytaty"
+    name       = "Quotes"
     url        = "/Quotes"
 
 [[menu.main]]
@@ -82,10 +82,12 @@ buildDrafts = false
     name       = "About"
     url        = "/About"
 
-# [[menu.main]]
-#     identifier = "Posts"
-#     name       = "Posts"
-#     url        = "/Posts"
+[[menu.main]]
+    identifier = "Projects"
+    name       = "Projects"
+    url        = "/Projects"
+
+
 
 [services]
   [services.googleAnalytics]
