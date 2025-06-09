@@ -134,7 +134,7 @@ html {
     @if $i > 1 {
       $value: '#{$value}, ';
     }
-    $value: '#{$value}#{random(2000)}px #{random(2000)}px #{$color}';
+    $value: '#{$value}#{random(3000)}px #{random(3000)}px #{$color}';
   }
   @return unquote($value);
 }
@@ -157,7 +157,7 @@ $shadows-big:    multiple-shadows(100, $star-gold);
   &:after {
     content: " ";
     position: absolute;
-    top: 2000px;
+    top: 3000px;
     width: 1px;
     height: 1px;
     background: transparent;
@@ -179,7 +179,7 @@ $shadows-big:    multiple-shadows(100, $star-gold);
   &:after {
     content: " ";
     position: absolute;
-    top: 2000px;
+    top: 3000px;
     width: 2px;
     height: 2px;
     background: transparent;
@@ -201,7 +201,7 @@ $shadows-big:    multiple-shadows(100, $star-gold);
   &:after {
     content: " ";
     position: absolute;
-    top: 2000px;
+    top: 3000px;
     width: 3px;
     height: 3px;
     background: transparent;
