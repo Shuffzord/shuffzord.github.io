@@ -1,0 +1,33 @@
+{{ define "main" }}
+<section class="home section" id="home">
+    <div class="container">
+        <div class="row">
+            <div class="home-img padd-15">
+                <img src="/images/photo-me.png" alt="Mateusz Woźniak">
+            </div>
+            <div class="home-info padd-15">
+                <h3 class="hello"><span style="margin-right: 10px;">Hello, my name is </span><span class="name">Mateusz Woźniak</span></h3>
+                <h3 class="my-profession"><span style="margin-right: 10px;">I'm </span><span class="typing"></span></h3>
+                <p>{{ .Params.summary }}</p>
+                <div class="buttons">
+                    <a href="https://www.linkedin.com/in/marvelousmateuszwozniak/" target="_blank" class="btn blue">LinkedIn</a>
+                    <a href="/pdf/CV_WozniakMateusz.pdf" download class="btn">Download CV</a>
+                </div>
+            </div>    
+                    
+        </div>
+    </div>
+</section>
+
+<section class="about section" id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-content padd-15">
+                {{ .Content }}
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="/js/typing.js"></script>
+{{ end }}
