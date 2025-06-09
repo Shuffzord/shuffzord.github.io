@@ -100,10 +100,18 @@ main > div > h1 {
 
 header {
   background: transparent !important;
+
+  .header__inner {
+    background: transparent;
+  }
 }
 
 .menu {
-  background: transparent;
+  background: transparent !important;
+
+  &__inner {
+    background: transparent;
+  }
 }
 
 body {
