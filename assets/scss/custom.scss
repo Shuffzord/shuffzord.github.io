@@ -71,10 +71,6 @@ $a: $d * $ang;
   }
 }
 
-
-
-
-
 // Animation variables
 $size: 150px;
 $d: $size * 0.5;
@@ -211,5 +207,55 @@ $shadows-big:    multiple-shadows(100, $star-gold);
   }
   to {
     transform: translateY(-2000px);
+  }
+}
+
+// Title and subtitle styling
+.content {
+  main[aria-role="main"] {
+    position: relative;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+
+    h1 {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      color: #FFF;
+      text-align: center;
+      font-family: 'Lato', sans-serif;
+      font-weight: 800;
+      font-size: 60px;
+      letter-spacing: 10px;
+      margin-top: -60px;
+      padding-left: 10px;
+      background: -webkit-linear-gradient(white, #38495a);
+      background: linear-gradient(white, #38495a);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    p {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      color: #FFF;
+      text-align: center;
+      font-family: 'Lato', sans-serif;
+      font-weight: 400;
+      font-size: 20px;
+      letter-spacing: 8px;
+      margin-top: 20px;
+      padding-left: 10px;
+      background: -webkit-linear-gradient(white, #38495a);
+      background: linear-gradient(white, #38495a);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
   }
 }
