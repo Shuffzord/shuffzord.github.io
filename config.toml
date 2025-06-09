@@ -4,6 +4,11 @@ title = 'Principles'
 theme = "hello-friend-ng"
 # disqusShortname = 'https-shuffzord-github-io'
 
+# Enable building of future-dated content
+buildFuture = true
+buildExpired = true
+buildDrafts = false
+
 [params]
   dateform        = "Jan 2, 2006"
   dateformShort   = "Jan 2"
