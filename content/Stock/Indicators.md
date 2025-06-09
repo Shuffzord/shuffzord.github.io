@@ -1,5 +1,5 @@
 ---
-title: Wskaźniki
+title: indicators (polish)
 date: 2022-01-21
 publishdate: 2022-01-21
 comments: true

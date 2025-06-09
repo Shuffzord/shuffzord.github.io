@@ -1,6 +1,7 @@
 ---
 title: N8N Advanced n8n Workflow Examples - Database & API Integration
 date: 2025-09-06
+tags: ["n8n"]
 ---
 
 # Advanced n8n Workflow Examples - Database & API Integration

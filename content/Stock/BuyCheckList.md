@@ -4,7 +4,7 @@ date: 2022-01-18
 publishdate: 2022-01-18
 ---
 
-# Buying stock checklist
+# Simple Buying stock checklist
 
 ## Przydatne linki do nauki
 

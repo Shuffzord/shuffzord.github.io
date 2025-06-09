@@ -1,8 +1,9 @@
 ---
-title: Wskaźniki techniczne
+title: Technical Indicators (polish)
 date: 2022-01-21
 draft: true
 publishdate: 2022-01-21
+tags: ["Analiza giełdowa"]
 ---
 
 # [Średnia krocząca](https://poznajrynek.pl/srednia-kroczaca-moving-average-w-prakty/)

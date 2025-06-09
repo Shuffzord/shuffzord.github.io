@@ -2,6 +2,7 @@
 title: N8N Simple n8n workflow examples
 date: 2025-09-06
 publishdate: 2025-09-06
+tags: ["n8n"]
 ---
 
 # Simple n8n Workflow Examples - Ready to Import JSON
