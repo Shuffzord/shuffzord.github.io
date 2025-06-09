@@ -27,18 +27,5 @@ function animate(selector) {
 }
 
 
-window.onpointermove = event => {
-    
-   const { clientX, clientY } = event;
-
-    const scrollX = window.scrollX || window.pageXOffset;
-    const scrollY = window.scrollY || window.pageYOffset;
-
-
-    blob.animate({
-        left: `${left}px`,
-        top: `${top}px`
-    }, { duration: 3000, fill: "forwards" });
-    }
-});
+// Mandala effect does not require mousemove animation
 
