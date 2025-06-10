@@ -8,7 +8,7 @@ technologies: ["JavaScript", "React", "Financial Modeling"]
 externalLink: "https://www.smarter-loan.com"
 featured: true
 weight: 1
-image: "/images/projects/smarterloan/overview.png"
+image: "/Images/projects/smarterloan/overview.png"
 ---
 
 # 🧮 Smarter Loan - Mortgage Calculator
