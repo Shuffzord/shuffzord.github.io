@@ -1,9 +1,16 @@
 ---
-title: Mortgage Calculator
+title: "Smarter Loan"
 date: 2025-06-09
+description: "A comprehensive tool for understanding and planning mortgage payments with precision and clarity."
+type: "project"
+status: "active"
+technologies: ["JavaScript", "React", "Financial Modeling"]
+externalLink: "https://www.smarter-loan.com"
+featured: true
+weight: 1
 ---
 
-# 🧮[www.smarter-loan.com](www.smarter-loan.com)
+# 🧮 Smarter Loan - Mortgage Calculator
 
 This mortgage calculator is a comprehensive tool designed to help you understand and plan your mortgage payments with precision and clarity.
 
@@ -21,3 +28,5 @@ This mortgage calculator is a comprehensive tool designed to help you understand
 2. Review the calculated monthly payment and total interest
 3. Explore the amortization schedule to see payment breakdown over time
 4. Try different scenarios or overpayment options to optimize your mortgage
+
+[Visit Smarter Loan](https://www.smarter-loan.com)

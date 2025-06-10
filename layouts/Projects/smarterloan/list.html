@@ -1,0 +1,38 @@
+{{ define "main" }}
+<main class="project-overview">
+  <h1>{{ .Title }}</h1>
+  
+  <div class="project-meta">
+    <span class="project-status">Status: {{ .Params.status }}</span>
+    <span class="project-date">Last Updated: {{ .Date.Format "January 2, 2006" }}</span>
+  </div>
+
+  <div class="project-technologies">
+    {{ range .Params.technologies }}
+    <span class="technology-tag">{{ . }}</span>
+    {{ end }}
+  </div>
+
+  {{ if .Params.externalLink }}
+  <a href="{{ .Params.externalLink }}" class="project-link" target="_blank">Visit Project</a>
+  {{ end }}
+
+  <div class="project-content">
+    {{ .Content }}
+  </div>
+
+  {{ if .Pages }}
+  <h2>Project Subpages</h2>
+  <ul class="subpages-list">
+    {{ range .Pages }}
+    <li>
+      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+      <p>{{ .Description }}</p>
+    </li>
+    {{ end }}
+  </ul>
+  {{ end }}
+
+  <a href="/projects" class="back-link">← Back to Projects</a>
+</main>
+{{ end }}
