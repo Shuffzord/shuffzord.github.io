@@ -81,8 +81,8 @@ document.addEventListener('DOMContentLoaded', function() {
   // For the h1 title
   var titleEl = document.querySelector("#title");
   var titleFx = new TextScramble(titleEl, true);
-  var titlePhrases = ["Principles", "Systems", "Patterns", "Frameworks", "Methodologies", "Paradigms"];  
-  var paragraphPhrases = ["Structure in life", "Systematic thinking", "Purposeful design", "Mindful creation", "Deliberate practice", "Thoughtful curation"];
+  var titlePhrases = ["Principles", "Intelligence", "Cognition", "Learning", "Adaptation", "Evolution"];
+var paragraphPhrases = ["Structure in life", "Augmented thinking", "Human-AI collaboration", "Cognitive enhancement", "Intelligent assistance", "Symbiotic systems"];
   var titleCounter = 0;
   
   function nextTitle() {
