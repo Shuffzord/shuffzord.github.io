@@ -3,6 +3,7 @@ languageCode = 'en-us'
 title = 'Principles'
 theme = "hello-friend-ng"
 # disqusShortname = 'https-shuffzord-github-io'
+googleAnalytics = "G-RNL2R9XB2F"
 
 # Enable building of future-dated content
 buildFuture = true

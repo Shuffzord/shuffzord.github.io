@@ -1,5 +1,6 @@
 <meta charset="UTF-8" /> <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+{{ partial "analytics.html" . }}
 <meta
   name="author"
   content="{{ if .Params.author }}{{ .Params.author }}{{ else }}{{ range .Site.Author }}{{ . }} {{ end }}{{ end }}"
