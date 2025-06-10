@@ -1,0 +1,1150 @@
+{
+  "name": "Wellbeing-Morning",
+  "nodes": [
+    {
+      "parameters": {
+        "chatId": "=",
+        "text": "={{ $json.message }}",
+        "additionalFields": {}
+      },
+      "id": "506e164b-a3c5-420d-80cb-71f46cbcffd9",
+      "name": "Text reply",
+      "type": "n8n-nodes-base.telegram",
+      "position": [
+        2300,
+        -520
+      ],
+      "typeVersion": 1,
+      "webhookId": "fd130e90-41d4-4238-9284-efad8064e9d7",
+      "credentials": {
+        "telegramApi": {
+          "id": "OxKm02aLTUyWE9kN",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 7
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -120,
+        -520
+      ],
+      "id": "bf33e22f-e669-472b-877d-20b66606b8df",
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {
+        "jsCode": "\n// Get data from other nodes using the node name reference style\nconst weather = $('Today Weather').first().json;\nconst events = $('My Events').all();\nconst quotes = $('Cytaty').all();\nconst todos = $('Todos').all();\nconst lastDayNonNegotiables = $('LastDayNonNegotiables').first();\n\n// Get URL from first node that has it\nconst nonnegotiablesUrl = $('NonNegotiable').first().json.url;\n\n// Filter out quotes without meaningful text\nconst validQuotes = quotes.filter(item => {\n  const text = item.json.property_text;\n  return text && text.trim() !== \"\";\n});\n\n// Select random quote from filtered list\nconst randomQuote = validQuotes[Math.floor(Math.random() * validQuotes.length)];\nconst formattedQuote = `💭 \"${randomQuote.json.property_text}\"\\n— ${randomQuote.json.property_author || \"Nieznany autor\"} \n - ${randomQuote.json.property_title || \"Nieznane dzieło\"}`;\n\n// Format calendar events\nlet eventsList = \"\";\n\n// Check if events exists and is a non-empty array\nif (Array.isArray(events) && events.length > 0) {\n  // Filter out empty objects and invalid entries\n  const validEvents = events.filter(event => \n    event && \n    event.json && \n    (event.json.start || event.json.summary)\n  );\n\n  if (validEvents.length > 0) {\n    validEvents.forEach(event => {\n      const eventData = event.json;\n      let timeInfo = \"Cały dzień\"; // Default value\n      \n      // Handle different time formats\n      if (eventData.start?.dateTime && eventData.end?.dateTime) {\n        const start = eventData.start.dateTime.slice(11, 16);\n        const end = eventData.end.dateTime.slice(11, 16);\n        timeInfo = `${start}-${end}`;\n      } else if (eventData.start?.date) {\n        timeInfo = \"Całodniowe\";\n      }\n\n      const summary = eventData.summary?.trim() || \"Wydarzenie\";\n      eventsList += `⌚ ${timeInfo}: ${summary}\\n`;\n    });\n  } else {\n    eventsList = \"🕊️ Brak zaplanowanych wydarzeń\\n\";\n  }\n} else {\n  eventsList = \"📅 Dziś nie masz żadnych wydarzeń\\n\";\n}\n\n// Remove any trailing newlines\neventsList = eventsList.trim();\n// Format todos\nconst formatTodo = (todo) => {\n  // Safe emoji fallbacks (using basic symbols)\n\n  // Clean title (removing markdown unsafe chars)\nconst rawTitle = todo.property_status_title || todo.property_name || \"Brak\";\nconst cleanTitle = rawTitle.replace(/^\\[.*?\\]\\s*/, '').replace(/[*_`]/g, '');\n\n  // Date formatting\n  let dateInfo = '';\n  if (todo.property_date?.start) {\n    const startDate = new Date(todo.property_date.start).toLocaleDateString('pl-PL');\n    if (todo.property_date.end) {\n      const endDate = new Date(todo.property_date.end).toLocaleDateString('pl-PL');\n      dateInfo = `\\nTermin: ${startDate} - ${endDate}`;\n    } else {\n      dateInfo = `\\nTermin: ${startDate}`;\n    }\n  }\n\n  // Build message (without problematic emojis)\n  return `${cleanTitle}${dateInfo}\nKategoria: ${todo.property_category?.join(', ') || 'Brak'}\n[LINK](${todo.url})`;\n};\n\n// Telegram-safe message composition\nlet todosList = \"\";\nconsole.log(todos);\nif (Array.isArray(todos) && todos.length > 0) {\n  const validTodos = todos.filter(todo =>\n  todo &&\n  todo.json &&\n  (\n    todo.json.property_status_title ||\n    todo.json.property_name\n  )\n);\n\n  if (validTodos.length > 0) {\n    const todoItems = validTodos.map(todo => `${formatTodo(todo.json)}`).join(\"\\n\\n\");\n    todosList = `*Priorytety na dziś:*\\n${todoItems}`;\n  } else {\n    todosList = \"_Brak zadań na dziś - czas na planowanie_\";\n  }\n} else {\n  todosList = \"_Brak zadań na dziś - czas na planowanie_\";\n}\n// First, process the weather data\nconst todayForecasts = weather.list.filter(entry => {\n  const date = new Date(entry.dt * 1000);\n  return date.toDateString() === new Date().toDateString();\n});\n\nconst temps = todayForecasts.map(f => f.main.temp);\nconst minTemp = Math.round(Math.min(...temps));\nconst maxTemp = Math.round(Math.max(...temps));\nconst currentTemp = Math.round(todayForecasts[0].main.temp);\nconst rainChance = Math.max(...todayForecasts.map(f => f.pop * 100));\n\n// Get dominant weather condition\nconst conditions = todayForecasts.reduce((acc, f) => {\n  const condition = f.weather[0].description;\n  acc[condition] = (acc[condition] || 0) + 1;\n  return acc;\n}, {});\nconst mainCondition = Object.entries(conditions).sort((a,b) => b[1]-a[1])[0][0];\n\n// Format sunrise/sunset\nconst formatTime = (timestamp) => \n  new Date(timestamp * 1000).toLocaleTimeString('pl-PL', {hour: '2-digit', minute: '2-digit',  timeZone: 'Europe/Warsaw' });\n\nconst weatherSummary = `\n🌤️ *Pogoda na dziś:* ${mainCondition}\n🌡️ Temperatura: ${currentTemp}°C (min ${minTemp}°C / max ${maxTemp}°C)\n💧 Szansa na deszcz: ${Math.round(rainChance)}%\n🌬️ Wiatr: ${todayForecasts[0].wind.speed} m/s\n🌅 Wschód słońca: ${formatTime(weather.city.sunrise)}\n🌇 Zachód słońca: ${formatTime(weather.city.sunset)}\n`;\n\n\nconst generateNonNegotiablesSummary = (entry) => {\n  if (!entry || !entry.json) return \"Brak danych z poprzedniego dnia\";\n  \n  const data = entry.json;\n  \n  // Property mapper - add new properties here\n  const propertyMapper = {\n    'property_exercise': { emoji: '🏋️', name: 'Ćwiczenia' },\n    'property_hydration': { emoji: '💧', name: 'Nawodnienie' },\n    'property_self_care': { emoji: '🧘', name: 'Self-care' },\n    'property_home': { emoji: '🏠', name: 'Dom' },\n    'property_partner': { emoji: '💞', name: 'Partner' },\n    'property_reading': { emoji: '📚', name: 'Czytanie' }\n  };\n  \n  // Generate completion status for each mapped property\n  let completionStatus = [];\n  let completedCount = 0;\n  \n  Object.entries(propertyMapper).forEach(([key, config]) => {\n    if (data.hasOwnProperty(key)) {\n      const isDone = data[key];\n      if (isDone) completedCount++;\n      \n      completionStatus.push(\n        `${isDone ? '✅' : '❌'} ${config.emoji} ${config.name}`\n      );\n    }\n  });\n  \n  const total = Object.keys(propertyMapper).length;\n  const percentage = total > 0 ? Math.round((completedCount / total) * 100) : 0;\n\n  // Polish motivation messages\n  let motivation;\n  if (percentage === 100) {\n    motivation = \"🎉 Perfekcyjny dzień! Wszystko zrobione!\";\n  } else if (percentage >= 80) {\n    motivation = \"👏 Bardzo dobrze! Prawie wszystko się udało!\";\n  } else if (percentage >= 50) {\n    motivation = \"💪 Dobry progres ale próbujmy więcej!\";\n  } else {\n    motivation = \"🤔 Czasem są trudne dni ale nie poddawaj się!\";\n  }\n\n  // Build summary\n  let summary = `📊 Podsumowanie (${percentage}%): ${completedCount}/${total} zadań\\n`;\n  summary += completionStatus.join('\\n') + '\\n\\n';\n  summary += motivation;\n  \n  // Add mood if exists\n  if (data.property_mood) {\n    summary += `\\n\\n😐 Nastrój: ${data.property_mood}`;\n  }\n  \n  return summary;\n};\n\n// Usage with your data\nconst nonNegotiablesSummary = generateNonNegotiablesSummary(lastDayNonNegotiables);\n\n\n// Create the message\nconst message = `🌅 Dzień dobry!\n\n🌤️ Dzisiejsza pogoda: \n${weatherSummary}\n\n📆 Twój plan na dziś:\n${eventsList}\n\n${formattedQuote}\n\nZrealizuj jedno zadanie z listy priorytetów przed południem:\n${todosList}\n\n\n${nonNegotiablesSummary}\nBezapelacyjnie dobre zadania na dziś: ${nonnegotiablesUrl}\n`;\n\n// Return the formatted message\nreturn {\n  json: {\n    message\n  }\n};\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2080,
+        -520
+      ],
+      "id": "49d18ff0-c4a2-4983-89ed-7df20543743a",
+      "name": "Morning Message",
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "calendar": {
+          "__rl": true,
+          "value": "",
+          "mode": "list",
+          "cachedResultName": ""
+        },
+        "timeMin": "={{ new Date(new Date().setUTCHours(0, 0, 0, 0)).toISOString() }}",
+        "timeMax": "={{ new Date(new Date().setUTCHours(23, 59, 59, 999)).toISOString() }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleCalendar",
+      "typeVersion": 1.3,
+      "position": [
+        1860,
+        -520
+      ],
+      "id": "61404646-c6bc-4b92-a575-aaef35c922da",
+      "name": "My Events",
+      "executeOnce": true,
+      "alwaysOutputData": true,
+      "credentials": {
+        "googleCalendarOAuth2Api": {
+          "id": "jN3RxBgw9fXShU0I",
+          "name": "Google Calendar account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "5DayForecast",
+        "locationSelection": "coordinates",
+        "latitude": "52.309443",
+        "longitude": "20.9716101",
+        "language": "=pl"
+      },
+      "type": "n8n-nodes-base.openWeatherMap",
+      "typeVersion": 1,
+      "position": [
+        1200,
+        -520
+      ],
+      "id": "b8d2e890-0983-49d7-aad0-0c0557b740bf",
+      "name": "Today Weather",
+      "executeOnce": true,
+      "credentials": {
+        "openWeatherMapApi": {
+          "id": "cdZM5eLGMyIbiyKE",
+          "name": "OpenWeatherMap account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "operation": "getAll",
+        "databaseId": {
+          "__rl": true,
+          "value": "59dfb60f-349a-4f75-8a7f-2a71f5f25d9a",
+          "mode": "list",
+          "cachedResultName": "Cytaty",
+          "cachedResultUrl": "https://www.notion.so/59dfb60f349a4f758a7f2a71f5f25d9a"
+        },
+        "returnAll": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2.2,
+      "position": [
+        1420,
+        -520
+      ],
+      "id": "6b2bb14f-0838-48de-8bc5-08c98cb3314a",
+      "name": "Cytaty",
+      "executeOnce": true,
+      "credentials": {
+        "notionApi": {
+          "id": "NuCiEcOApvHF3e3s",
+          "name": "Notion account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "databaseId": {
+          "__rl": true,
+          "value": "1e6e1b49-269f-8052-b647-d239c3f504a3",
+          "mode": "list",
+          "cachedResultName": "Daily Non-Negotiables",
+          "cachedResultUrl": "https://www.notion.so/1e6e1b49269f8052b647d239c3f504a3"
+        },
+        "title": "={{ $now.format('yyyy-MM-dd') }}",
+        "propertiesUi": {
+          "propertyValues": [
+            {
+              "key": "Date|date",
+              "includeTime": false,
+              "date": "={{ $now.format('yyyy-MM-dd') }}",
+              "timezone": "Europe/Warsaw"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2.2,
+      "position": [
+        540,
+        -445
+      ],
+      "id": "ada4fbd6-d0a0-4afe-a238-75ebaef0cc61",
+      "name": "Daily Non-Negotiables",
+      "notesInFlow": false,
+      "alwaysOutputData": true,
+      "credentials": {
+        "notionApi": {
+          "id": "NuCiEcOApvHF3e3s",
+          "name": "Notion account"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "operation": "getAll",
+        "databaseId": {
+          "__rl": true,
+          "value": "1e6e1b49-269f-8052-b647-d239c3f504a3",
+          "mode": "list",
+          "cachedResultName": "Daily Non-Negotiables",
+          "cachedResultUrl": "https://www.notion.so/1e6e1b49269f8052b647d239c3f504a3"
+        },
+        "filterType": "json",
+        "filterJson": "={   \"property\": \"Title\",   \"text\": {     \"equals\": \"{{ $now.format('yyyy-MM-dd') }}\"   } }",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2.2,
+      "position": [
+        100,
+        -520
+      ],
+      "id": "445346f1-c8f5-42d7-ac0e-676e7c0977e9",
+      "name": "Notion",
+      "alwaysOutputData": true,
+      "credentials": {
+        "notionApi": {
+          "id": "NuCiEcOApvHF3e3s",
+          "name": "Notion account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "4365350c-cb7b-4748-87e0-38ff95efd11d",
+              "leftValue": "={{ $json.property_date.start }}",
+              "rightValue": "={{ $now.format('yyyy-MM-dd') }}",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "looseTypeValidation": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        320,
+        -520
+      ],
+      "id": "22d2e50f-a125-452f-8e3c-17ebedd17642",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "1c4f3434-5f7f-4e82-82aa-598b1efc36cd",
+              "name": "url",
+              "value": "={{ $json.url }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        760,
+        -520
+      ],
+      "id": "6e40df1f-c87c-48a5-8e34-7fb1021becaf",
+      "name": "NonNegotiable"
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "operation": "getAll",
+        "databaseId": {
+          "__rl": true,
+          "value": "66324131-23f0-41ed-999b-cfbcdda98a28",
+          "mode": "list",
+          "cachedResultName": "TODO",
+          "cachedResultUrl": "https://www.notion.so/6632413123f041ed999bcfbcdda98a28"
+        },
+        "returnAll": true,
+        "filterType": "manual",
+        "matchType": "allFilters",
+        "filters": {
+          "conditions": [
+            {
+              "key": "Status|select",
+              "condition": "does_not_equal",
+              "selectValue": "Completed"
+            },
+            {
+              "key": "Status|select",
+              "condition": "does_not_equal",
+              "selectValue": "Abandoned"
+            },
+            {
+              "key": "Date|date",
+              "condition": "is_not_empty"
+            },
+            {
+              "key": "Date|date",
+              "condition": "on_or_after",
+              "date": "={{ $today }}"
+            },
+            {
+              "key": "Date|date",
+              "condition": "on_or_before",
+              "date": "={{  $today.plus(2, 'days') }}"
+            }
+          ]
+        },
+        "options": {
+          "sort": {
+            "sortValue": [
+              {
+                "key": "Priority|select",
+                "direction": "ascending"
+              },
+              {
+                "key": "‼️ PastDeadline|formula",
+                "direction": "ascending"
+              },
+              {
+                "key": "Date|date",
+                "direction": "ascending"
+              },
+              {
+                "key": "Status|select",
+                "direction": "ascending"
+              }
+            ]
+          }
+        }
+      },
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2.2,
+      "position": [
+        1640,
+        -520
+      ],
+      "id": "9c6aab3f-4b4e-4faa-8d21-52ca67adf104",
+      "name": "Todos",
+      "executeOnce": true,
+      "alwaysOutputData": true,
+      "credentials": {
+        "notionApi": {
+          "id": "NuCiEcOApvHF3e3s",
+          "name": "Notion account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "operation": "getAll",
+        "databaseId": {
+          "__rl": true,
+          "value": "1e6e1b49-269f-8052-b647-d239c3f504a3",
+          "mode": "list",
+          "cachedResultName": "Daily Non-Negotiables",
+          "cachedResultUrl": "https://www.notion.so/1e6e1b49269f8052b647d239c3f504a3"
+        },
+        "filterType": "manual",
+        "matchType": "allFilters",
+        "filters": {
+          "conditions": [
+            {
+              "key": "Title|title",
+              "condition": "equals",
+              "titleValue": "={{ $now.minus(1,'day').format('yyyy-MM-dd') }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2.2,
+      "position": [
+        980,
+        -520
+      ],
+      "id": "e1cd6814-eaab-44ea-b14c-72a4b33a0d06",
+      "name": "LastDayNonNegotiables",
+      "alwaysOutputData": true,
+      "credentials": {
+        "notionApi": {
+          "id": "NuCiEcOApvHF3e3s",
+          "name": "Notion account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Text reply').item.json.result.chat.id }}",
+        "text": "={{ $json.text }}",
+        "replyMarkup": "inlineKeyboard",
+        "inlineKeyboard": {
+          "rows": [
+            {
+              "row": {
+                "buttons": [
+                  {
+                    "text": "={{ $json.reply_markup.inline_keyboard[0][0].text }}",
+                    "additionalFields": {
+                      "callback_data": "={{ $json.reply_markup.inline_keyboard[0][0].callback_data }}"
+                    }
+                  },
+                  {
+                    "text": "={{ $json.reply_markup.inline_keyboard[0][1].text }}",
+                    "additionalFields": {
+                      "callback_data": "={{ $json.reply_markup.inline_keyboard[0][1].callback_data }}"
+                    }
+                  },
+                  {
+                    "text": "={{ $json.reply_markup.inline_keyboard[0][2].text }}",
+                    "additionalFields": {
+                      "callback_data": "={{ $json.reply_markup.inline_keyboard[0][2].callback_data }}"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "row": {
+                "buttons": [
+                  {
+                    "text": "={{ $json.reply_markup.inline_keyboard[1][0].text }}",
+                    "additionalFields": {
+                      "callback_data": "={{ $json.reply_markup.inline_keyboard[1][0].callback_data }}"
+                    }
+                  },
+                  {
+                    "text": "={{ $json.reply_markup.inline_keyboard[1][1].text }}",
+                    "additionalFields": {
+                      "callback_data": "={{ $json.reply_markup.inline_keyboard[1][1].callback_data }}"
+                    }
+                  },
+                  {
+                    "text": "={{ $json.reply_markup.inline_keyboard[2][1].text }}",
+                    "additionalFields": {
+                      "callback_data": "={{ $json.reply_markup.inline_keyboard[2][1].callback_data }}"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "additionalFields": {
+          "disable_web_page_preview": "={{ $json.options.disable_web_page_preview }}",
+          "parse_mode": "={{ $json.options.parse_mode }}"
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        2740,
+        -520
+      ],
+      "id": "9e7fceac-b523-4dfb-9c35-605952c0efb4",
+      "name": "Telegram",
+      "webhookId": "fabbc776-37bf-461d-973e-2b574d173dde",
+      "credentials": {
+        "telegramApi": {
+          "id": "OxKm02aLTUyWE9kN",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const moodOptions = {\n  text: \"Jak się dzisiaj czujesz?\",\n  reply_markup: {\n    inline_keyboard: [\n      [\n        { text: \"😄 Amazing\", callback_data: \"mood_amazing\" },\n        { text: \"🙂 Good\", callback_data: \"mood_good\" }, \n        { text: \"😐 Neutral\", callback_data: \"mood_neutral\" }\n      ],\n      [\n        { text: \"😩 Tired\", callback_data: \"mood_tired\" },\n        { text: \"😟 Anxious\", callback_data: \"mood_anxious\" }\n      ],\n      [\n        { text: \"😤 Stressed\", callback_data: \"mood_stressed\" },\n        { text: \"😔 Down\", callback_data: \"mood_down\" }\n      ]\n    ]\n  },\n  options: {\n    parse_mode: \"HTML\",\n    disable_web_page_preview: true\n  }\n};\n\nreturn [{ json: moodOptions }];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2520,
+        -520
+      ],
+      "id": "3390153d-a60e-40e3-8ce3-a6357635637f",
+      "name": "MoodOptions"
+    },
+    {
+      "parameters": {
+        "updates": [
+          "callback_query"
+        ],
+        "additionalFields": {
+          "chatIds": ""
+        }
+      },
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -280,
+        -60
+      ],
+      "id": "59e17360-ecce-4048-8c17-f735f03526ef",
+      "name": "Telegram Trigger",
+      "webhookId": "c1f393a3-d36c-4d78-99cf-cd8bdfcc0ba5",
+      "credentials": {
+        "telegramApi": {
+          "id": "OxKm02aLTUyWE9kN",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "operation": "update",
+        "pageId": {
+          "__rl": true,
+          "value": "={{ $json.url }}",
+          "mode": "url"
+        },
+        "propertiesUi": {
+          "propertyValues": [
+            {
+              "key": "Mood|select",
+              "selectValue": "={{ $('Mood').item.json.moodText }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2.2,
+      "position": [
+        760,
+        -140
+      ],
+      "id": "604330d7-6de8-4443-a83c-6ecf361751e2",
+      "name": "Notion2",
+      "alwaysOutputData": true,
+      "credentials": {
+        "notionApi": {
+          "id": "NuCiEcOApvHF3e3s",
+          "name": "Notion account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "=",
+        "text": "=Saved: {{$('Mood').item.json.moodText}} for {{ $json.property_date.start }}",
+        "additionalFields": {}
+      },
+      "id": "e257f350-2d36-4de5-bd2d-b8070b296d2c",
+      "name": "Text reply1",
+      "type": "n8n-nodes-base.telegram",
+      "position": [
+        960,
+        -140
+      ],
+      "typeVersion": 1,
+      "webhookId": "fd130e90-41d4-4238-9284-efad8064e9d7",
+      "credentials": {
+        "telegramApi": {
+          "id": "OxKm02aLTUyWE9kN",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// 1. Create the Buttons (Function Node)\nconst habitOptions = {\n  text: \"Co udało Ci się dziś zrobić?\",\n  reply_markup: {\n    inline_keyboard: [\n      [\n        { text: \"🏋️ Ćwiczenia\", callback_data: \"track_exercise\" },\n        { text: \"🧘 Self-care\", callback_data: \"track_selfcare\" },\n        { text: \"🏠 Dom\", callback_data: \"track_home\" }\n      ],\n      [\n        { text: \"💞 Partner\", callback_data: \"track_partner\" },\n        { text: \"📚 Czytanie\", callback_data: \"track_reading\" },\n        { text: \"💧 Nawodnienie\", callback_data: \"track_hydration\" }\n      ]\n    ]\n  },\n  options: {\n    parse_mode: \"HTML\",\n    disable_web_page_preview: true\n  }\n};\n\nreturn [{ json: habitOptions }];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2960,
+        -520
+      ],
+      "id": "cf270514-9a88-43f2-b597-94353ab00f1a",
+      "name": "tracking"
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Text reply').item.json.result.chat.id }}",
+        "text": "={{ $json.text }}",
+        "replyMarkup": "inlineKeyboard",
+        "inlineKeyboard": {
+          "rows": [
+            {
+              "row": {
+                "buttons": [
+                  {
+                    "text": "={{ $json.reply_markup.inline_keyboard[0][0].text }}",
+                    "additionalFields": {
+                      "callback_data": "={{ $json.reply_markup.inline_keyboard[0][0].callback_data }}"
+                    }
+                  },
+                  {
+                    "text": "={{ $json.reply_markup.inline_keyboard[0][1].text }}",
+                    "additionalFields": {
+                      "callback_data": "={{ $json.reply_markup.inline_keyboard[0][1].callback_data }}"
+                    }
+                  },
+                  {
+                    "text": "={{ $json.reply_markup.inline_keyboard[0][2].text }}",
+                    "additionalFields": {
+                      "callback_data": "={{ $json.reply_markup.inline_keyboard[0][2].callback_data }}"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "row": {
+                "buttons": [
+                  {
+                    "text": "={{ $json.reply_markup.inline_keyboard[1][0].text }}",
+                    "additionalFields": {
+                      "callback_data": "={{ $json.reply_markup.inline_keyboard[1][0].callback_data }}"
+                    }
+                  },
+                  {
+                    "text": "={{ $json.reply_markup.inline_keyboard[1][1].text }}",
+                    "additionalFields": {
+                      "callback_data": "={{ $json.reply_markup.inline_keyboard[1][1].callback_data }}"
+                    }
+                  },
+                  {
+                    "text": "={{ $json.reply_markup.inline_keyboard[1][2].text }}",
+                    "additionalFields": {
+                      "callback_data": "={{ $json.reply_markup.inline_keyboard[1][2].callback_data }}"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "additionalFields": {
+          "disable_web_page_preview": "={{ $json.options.disable_web_page_preview }}",
+          "parse_mode": "={{ $json.options.parse_mode }}"
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        3180,
+        -520
+      ],
+      "id": "d99ef7f6-5aa3-4ef5-8ffc-24b98a96cacd",
+      "name": "Telegram1",
+      "webhookId": "fabbc776-37bf-461d-973e-2b574d173dde",
+      "credentials": {
+        "telegramApi": {
+          "id": "OxKm02aLTUyWE9kN",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const input = $input.all()[0].json;\nconst mood = input.callback_query.data.replace('mood_', '');\n\nconst moodLabels = {\n  amazing: \"Amazing\",\n  good: \"Good\",\n  neutral: \"Neutral\",\n  tired: \"Tired\",\n  anxious: \"Anxious\",\n  stressed: \"Stressed\",\n  down: \"Down\"\n};\n\nreturn [{\n  json: {\n    userId: input.callback_query.from.id,\n    messageId: input.callback_query.message.message_id,\n    mood: mood,\n    moodText: moodLabels[mood] || 'Nieznany',\n    timestamp: new Date().toISOString()\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        280,
+        -140
+      ],
+      "id": "856b94b2-a1d0-47f8-8bf0-c8ce04e70ea3",
+      "name": "Mood"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.callback_query.data }}",
+                    "rightValue": "mood_",
+                    "operator": {
+                      "type": "string",
+                      "operation": "regex"
+                    },
+                    "id": "c3b63496-3a81-4855-a96c-18cac8b701db"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "d8b73162-ad28-4e99-b1c7-7dd1ea5616d7",
+                    "leftValue": "={{ $json.callback_query.data }}",
+                    "rightValue": "track_",
+                    "operator": {
+                      "type": "string",
+                      "operation": "regex"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        0,
+        -60
+      ],
+      "id": "baf712e4-a3d0-4845-b000-2f93f98d9e8c",
+      "name": "Switch"
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "operation": "getAll",
+        "databaseId": {
+          "__rl": true,
+          "value": "1e6e1b49-269f-8052-b647-d239c3f504a3",
+          "mode": "list",
+          "cachedResultName": "Daily Non-Negotiables",
+          "cachedResultUrl": "https://www.notion.so/1e6e1b49269f8052b647d239c3f504a3"
+        },
+        "filterType": "json",
+        "filterJson": "={   \"property\": \"Title\",   \"text\": {     \"equals\": \"{{ $json.timestamp.toDateTime().format('yyyy-MM-dd') }}\"   } }",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2.2,
+      "position": [
+        480,
+        40
+      ],
+      "id": "d9c04942-59b2-42e4-87a9-340745287ee5",
+      "name": "Notion3",
+      "alwaysOutputData": true,
+      "credentials": {
+        "notionApi": {
+          "id": "NuCiEcOApvHF3e3s",
+          "name": "Notion account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "operation": "update",
+        "pageId": {
+          "__rl": true,
+          "value": "={{ $json.url }}",
+          "mode": "url"
+        },
+        "propertiesUi": {
+          "propertyValues": [
+            {
+              "key": "={{$('Activities').item.json.notion_property}}|checkbox",
+              "checkboxValue": "={{ !$json[$(\"Activities\").item.json.notion_json_property] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2.2,
+      "position": [
+        760,
+        40
+      ],
+      "id": "8ce0a1b7-0d71-48bb-83d2-1b2f973061e3",
+      "name": "Notion4",
+      "alwaysOutputData": true,
+      "credentials": {
+        "notionApi": {
+          "id": "NuCiEcOApvHF3e3s",
+          "name": "Notion account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "=",
+        "text": "=Saved: {{ $('Activities').item.json.notion_property }} as {{ $json[$(\"Activities\").item.json.notion_json_property] }}\n",
+        "additionalFields": {}
+      },
+      "id": "865098f2-717f-4c7f-999f-74bf799b9cde",
+      "name": "Text reply2",
+      "type": "n8n-nodes-base.telegram",
+      "position": [
+        960,
+        40
+      ],
+      "typeVersion": 1,
+      "webhookId": "fd130e90-41d4-4238-9284-efad8064e9d7",
+      "credentials": {
+        "telegramApi": {
+          "id": "OxKm02aLTUyWE9kN",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const input = $input.all()[0].json;\nconst callbackData = input.callback_query?.data;\n\n// Map callback actions to Notion properties\nconst propertyMap = {\n  'track_exercise': 'Exercise',\n  'track_hydration': 'Hydration',\n  'track_selfcare': 'Self-care',\n  'track_home': 'Home',\n  'track_partner': 'Partner',\n  'track_reading': 'Reading'\n};\n\nconst jsonpropertyMap = {\n  'track_exercise': 'property_exercise',\n  'track_hydration': 'property_hydration',\n  'track_selfcare': 'property_self_care',\n  'track_home': 'property_home',\n  'track_partner': 'property_partner',\n  'track_reading': 'property_reading'\n};\n\nif (propertyMap[callbackData]) {\n  const notionProperty = propertyMap[callbackData];\n  const jsonProperty = jsonpropertyMap[callbackData];\n  const friendlyNames = {\n    'property_exercise': 'Ćwiczenia',\n    'property_hydration': 'Nawodnienie',\n    'property_self_care': 'Self-care',\n    'property_home': 'Dom',\n    'property_partner': 'Partner',\n    'property_reading': 'Czytanie'\n  };\n\n  return [{\n    json: {\n      action: \"track_notion\",\n      notion_property: notionProperty,\n      notion_json_property: jsonProperty,\n      property_value: true,\n      friendly_name: friendlyNames[notionProperty],\n      user_id: input.callback_query.from.id,\n      message_id: input.callback_query.message.message_id,\n        timestamp: new Date().toISOString()\n    }\n  }];\n}\n\nreturn [{\n  json: {\n    error: \"Nieznana akcja\",\n    raw_data: input\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        280,
+        40
+      ],
+      "id": "b51f6231-3eec-4204-94bb-a89d7ff195e0",
+      "name": "Activities"
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "operation": "getAll",
+        "databaseId": {
+          "__rl": true,
+          "value": "1e6e1b49-269f-8052-b647-d239c3f504a3",
+          "mode": "list",
+          "cachedResultName": "Daily Non-Negotiables",
+          "cachedResultUrl": "https://www.notion.so/1e6e1b49269f8052b647d239c3f504a3"
+        },
+        "filterType": "json",
+        "filterJson": "={   \"property\": \"Title\",   \"text\": {     \"equals\": \"{{ $json.timestamp.toDateTime().format('yyyy-MM-dd') }}\"   } }",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2.2,
+      "position": [
+        480,
+        -140
+      ],
+      "id": "65eff754-6348-4caa-bc4b-ef56fdc6e771",
+      "name": "NonNegotiables",
+      "alwaysOutputData": true,
+      "credentials": {
+        "notionApi": {
+          "id": "NuCiEcOApvHF3e3s",
+          "name": "Notion account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Notion",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "My Events": {
+      "main": [
+        [
+          {
+            "node": "Morning Message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Today Weather": {
+      "main": [
+        [
+          {
+            "node": "Cytaty",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Morning Message": {
+      "main": [
+        [
+          {
+            "node": "Text reply",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Cytaty": {
+      "main": [
+        [
+          {
+            "node": "Todos",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Daily Non-Negotiables": {
+      "main": [
+        [
+          {
+            "node": "NonNegotiable",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Notion": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "NonNegotiable",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Daily Non-Negotiables",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "NonNegotiable": {
+      "main": [
+        [
+          {
+            "node": "LastDayNonNegotiables",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Todos": {
+      "main": [
+        [
+          {
+            "node": "My Events",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "LastDayNonNegotiables": {
+      "main": [
+        [
+          {
+            "node": "Today Weather",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Text reply": {
+      "main": [
+        [
+          {
+            "node": "MoodOptions",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "MoodOptions": {
+      "main": [
+        [
+          {
+            "node": "Telegram",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Telegram Trigger": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Notion2": {
+      "main": [
+        [
+          {
+            "node": "Text reply1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Telegram": {
+      "main": [
+        []
+      ]
+    },
+    "tracking": {
+      "main": [
+        [
+          {
+            "node": "Telegram1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mood": {
+      "main": [
+        [
+          {
+            "node": "NonNegotiables",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "Mood",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Activities",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Notion3": {
+      "main": [
+        [
+          {
+            "node": "Notion4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Notion4": {
+      "main": [
+        [
+          {
+            "node": "Text reply2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Activities": {
+      "main": [
+        [
+          {
+            "node": "Notion3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "NonNegotiables": {
+      "main": [
+        [
+          {
+            "node": "Notion2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "Europe/Warsaw",
+    "callerPolicy": "workflowsFromSameOwner"
+  },
+  "versionId": "02afa5d5-70dd-4dc4-822b-297a29f5715e",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "55ffdbf0fc0e562be0e5a2f60a990df4d045995e6f8178b1fae49aae68c4768a"
+  },
+  "id": "SZWENIgnwHMKq4iE",
+  "tags": [
+    {
+      "createdAt": "2025-05-02T10:27:22.775Z",
+      "updatedAt": "2025-05-02T10:27:22.775Z",
+      "id": "U9wMa4KKUMM0IbMY",
+      "name": "wellbeing"
+    }
+  ]
+}
