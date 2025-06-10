@@ -26,6 +26,7 @@
           <span class="technology-tag">{{ . }}</span>
           {{ end }}
         </div>
+        <a href="{{ .Permalink }}" class="project-read">Read more</a>
         {{ if .Params.externalLink }}
         <a href="{{ .Params.externalLink }}" class="project-link" target="_blank">Visit Project</a>
         {{ end }}

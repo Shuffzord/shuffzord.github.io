@@ -337,6 +337,18 @@ $shadows-big:    multiple-shadows(100, $star-gold);
       background-color: darken(#fd5085, 20%);
     }
   }
+  &-read {
+    display: inline-block;
+    background-color: #fd5085;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    &:hover {
+      background-color: darken(#fd5085, 20%);
+    }
+  }
 }
 
 .technology-tag {
