@@ -189,7 +189,7 @@ $shadows-big: multiple-shadows(100, $star-gold);
   &:after {
     content: " ";
     position: absolute;
-    top: 3000px;
+    top: -3000px;
     width: 1px;
     height: 1px;
     background: transparent;
@@ -212,7 +212,7 @@ $shadows-big: multiple-shadows(100, $star-gold);
   &:after {
     content: " ";
     position: absolute;
-    top: 3000px;
+    top: -3000px;
     width: 2px;
     height: 2px;
     background: transparent;
@@ -236,7 +236,7 @@ $shadows-big: multiple-shadows(100, $star-gold);
   &:after {
     content: " ";
     position: absolute;
-    top: 3000px;
+    top: -3000px;
     width: 3px;
     height: 3px;
     background: transparent;
@@ -259,7 +259,7 @@ $shadows-big: multiple-shadows(100, $star-gold);
   &:after {
     content: " ";
     position: absolute;
-    top: 3000px;
+    top: -3000px;
     width: 3px;
     height: 3px;
     background: transparent;
@@ -290,7 +290,6 @@ $shadows-big: multiple-shadows(100, $star-gold);
   }
 }
 
-// Star animation with diagonal movement and twinkling
 @keyframes animStar {
   0% {
     transform: translate(0, 0);
@@ -300,14 +299,14 @@ $shadows-big: multiple-shadows(100, $star-gold);
     opacity: 0.5;
   }
   50% {
-    transform: translate(100px, -1000px);
+    transform: translate(100px, 1000px); // Changed to positive Y value
     opacity: 1;
   }
   75% {
     opacity: 0.7;
   }
   100% {
-    transform: translate(-100px, -2000px);
+    transform: translate(-100px, 2000px); // Changed to positive Y value
     opacity: 1;
   }
 }
