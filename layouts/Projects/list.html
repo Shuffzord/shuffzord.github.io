@@ -1,28 +1,35 @@
 {{ define "main" }}
 <main class="projects">
-  <h1>{{ .Title }}</h1>
+  <h1 class="projects-title">{{ .Title }}</h1>
 
   {{ if .Content }}
-  <div class="content">{{ .Content }}</div>
+  <div class="projects-content">{{ .Content }}</div>
   {{ end }}
 
   <div class="project-list">
     {{ range .Pages }}
     <div class="project-card">
-      <h2 class="project-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
-      <p class="project-description">{{ .Params.description }}</p>
-      <div class="project-meta">
-        <span class="project-status">Status: {{ .Params.status }}</span>
-        <span class="project-date">Date: {{ .Date.Format "January 2, 2006" }}</span>
+      {{ if .Params.image }}
+      <div class="project-image">
+        <img src="{{ .Params.image }}" alt="{{ .Title }}" />
       </div>
-      <div class="project-technologies">
-        {{ range .Params.technologies }}
-        <span class="technology-tag">{{ . }}</span>
+      {{ end }}
+      <div class="project-details">
+        <h2 class="project-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+        <p class="project-description">{{ .Params.description }}</p>
+        <div class="project-meta">
+          <span class="project-status">Status: {{ .Params.status }}</span>
+          <span class="project-date">Date: {{ .Date.Format "January 2, 2006" }}</span>
+        </div>
+        <div class="project-technologies">
+          {{ range .Params.technologies }}
+          <span class="technology-tag">{{ . }}</span>
+          {{ end }}
+        </div>
+        {{ if .Params.externalLink }}
+        <a href="{{ .Params.externalLink }}" class="project-link" target="_blank">Visit Project</a>
         {{ end }}
       </div>
-      {{ if .Params.externalLink }}
-      <a href="{{ .Params.externalLink }}" class="project-link" target="_blank">Visit Project</a>
-      {{ end }}
     </div>
     {{ end }}
   </div>

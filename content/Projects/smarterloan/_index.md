@@ -3,11 +3,12 @@ title: "Smarter Loan"
 date: 2025-06-09
 description: "A comprehensive tool for understanding and planning mortgage payments with precision and clarity."
 type: "project"
-status: "active"
+status: "Active"
 technologies: ["JavaScript", "React", "Financial Modeling"]
 externalLink: "https://www.smarter-loan.com"
 featured: true
 weight: 1
+image: "/images/projects/smarterloan/overview.png"
 ---
 
 # 🧮 Smarter Loan - Mortgage Calculator
