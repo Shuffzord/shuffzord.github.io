@@ -20,4 +20,5 @@ What has changed since last week?
 Was it easy to reach this stage? Let's say the road wasn't paved. A non-technical person would probably stumble more than once. But with a bit of understanding, well-written prompts (for me, only Claude 3.7 is reliable)—it can be managed.
 2. 🚀 Overpayment optimizer: I'm already working on a new feature—the overpayment optimizer. The first seeds are already online. Check out the site and see what's happening. Feedback is welcome!
 
+
 PS. Thanks for shares, comments, and every message. It really drives the project. Cheers!

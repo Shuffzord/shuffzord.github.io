@@ -18,7 +18,7 @@
         <h2 class="project-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
         <p class="project-description">{{ .Params.description }}</p>
         <div class="project-meta">
-          <span class="project-status">Status: {{ .Params.status }}</span>
+          <span class="project-status {{ if eq .Params.status "Active" }}status-active{{ end }}">Status: {{ .Params.status }}</span>
           <span class="project-date">Date: {{ .Date.Format "January 2, 2006" }}</span>
         </div>
         <div class="project-technologies">

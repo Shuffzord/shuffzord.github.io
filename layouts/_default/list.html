@@ -13,6 +13,7 @@
       {{ range .Pages }}
       <li class="post-item">
         <a href="{{.Permalink}}">
+            <span class="post-title">{{ .Date.Format "January 2, 2006" }}</span>
           <span class="post-title">{{.Title}}</span>
           <span class="post-day"
             >{{ i18n "readingTime" .Page.ReadingTime }}

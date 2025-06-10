@@ -1,6 +1,6 @@
 ---
 title: "Smarter Loan Refactoring Insights"
-date: "2025-06-10"
+date: "2025-06-09
 description: "Reflections on refactoring the Smarter Loan project and leveraging AI agents effectively."
 tags: [AIagents, vibe_coding, refactoring, promptEngineering]
 weight: 2

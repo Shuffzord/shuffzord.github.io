@@ -1,6 +1,6 @@
 ---
 title: "Smarter Loan Project Overview"
-date: "2025-06-10"
+date: "2025-06-08"
 description: "Overview of the Smarter Loan project, its assumptions, features, and future plans."
 tags: [AIcoding, SmarterLoan, VibeCoding, FutureOfProgramming]
 weight: 1

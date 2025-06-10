@@ -1,35 +1,44 @@
 {{ define "main" }}
 <main class="project-subpage">
-  <nav class="breadcrumb">
-    <a href="/projects">Projects</a> &gt;
-    <a href="{{ .Parent.RelPermalink }}">{{ .Parent.Title }}</a> &gt;
-    <span>{{ .Title }}</span>
-  </nav>
+    <nav class="breadcrumb">
+        <a href="/projects">Projects</a> &gt;
+        <a href="{{ .Parent.RelPermalink }}">{{ .Parent.Title }}</a> &gt;
+        <span>{{ .Title }}</span>
+    </nav>
 
-  <article>
-    <h1>{{ .Title }}</h1>
-    
-    {{ if .Params.date }}
-    <div class="subpage-meta">
-      <span class="subpage-date">Last Updated: {{ .Date.Format "January 2, 2006" }}</span>
-    </div>
-    {{ end }}
+    <article>
+        <h1>{{ .Title }}</h1>
 
-    <div class="subpage-content">
-      {{ .Content }}
-    </div>
-  </article>
+        {{ if .Params.date }}
+        <div class="subpage-meta">
+            <span class="subpage-date">Last Updated: {{ .Date.Format "January 2, 2006" }}</span>
+        </div>
+        {{ end }}
 
-  <nav class="subpage-navigation">
-    {{ with .PrevInSection }}
-    <a href="{{ .RelPermalink }}" class="prev-page">&larr; {{ .Title }}</a>
-    {{ end }}
-    
-    {{ with .NextInSection }}
-    <a href="{{ .RelPermalink }}" class="next-page">{{ .Title }} &rarr;</a>
-    {{ end }}
-  </nav>
+        {{ if .Params.toc }}
+        <hr />
+        <aside id="toc">
+            <div class="toc-title">{{ i18n "tableOfContents" }}</div>
+            {{ .TableOfContents }}
+        </aside>
+        <hr />
+        {{ end }}
 
-  <a href="{{ .Parent.RelPermalink }}" class="back-link">← Back to {{ .Parent.Title }}</a>
+        <div class="contentt">
+            {{ .Content }}
+        </div>
+    </article>
+
+    <nav class="subpage-navigation">
+        {{ with .PrevInSection }}
+        <a href="{{ .RelPermalink }}" class="prev-page">&larr; {{ .Title }}</a>
+        {{ end }}
+
+        {{ with .NextInSection }}
+        <a href="{{ .RelPermalink }}" class="next-page">{{ .Title }} &rarr;</a>
+        {{ end }}
+    </nav>
+
+    <a href="{{ .Parent.RelPermalink }}" class="back-link">← Back to {{ .Parent.Title }}</a>
 </main>
 {{ end }}
