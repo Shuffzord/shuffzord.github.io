@@ -3,7 +3,7 @@
   "nodes": [
     {
       "parameters": {
-        "chatId": "=",
+        "chatId": "=YOUR_TELEGRAM_CHAT_ID",
         "text": "={{ $json.message }}",
         "additionalFields": {}
       },
@@ -15,10 +15,10 @@
         -520
       ],
       "typeVersion": 1,
-      "webhookId": "fd130e90-41d4-4238-9284-efad8064e9d7",
+      "webhookId": "YOUR_WEBHOOK_ID",
       "credentials": {
         "telegramApi": {
-          "id": "OxKm02aLTUyWE9kN",
+          "id": "YOUR_TELEGRAM_CREDENTIALS",
           "name": "Telegram account"
         }
       }
@@ -44,7 +44,7 @@
     },
     {
       "parameters": {
-        "jsCode": "\n// Get data from other nodes using the node name reference style\nconst weather = $('Today Weather').first().json;\nconst events = $('My Events').all();\nconst quotes = $('Cytaty').all();\nconst todos = $('Todos').all();\nconst lastDayNonNegotiables = $('LastDayNonNegotiables').first();\n\n// Get URL from first node that has it\nconst nonnegotiablesUrl = $('NonNegotiable').first().json.url;\n\n// Filter out quotes without meaningful text\nconst validQuotes = quotes.filter(item => {\n  const text = item.json.property_text;\n  return text && text.trim() !== \"\";\n});\n\n// Select random quote from filtered list\nconst randomQuote = validQuotes[Math.floor(Math.random() * validQuotes.length)];\nconst formattedQuote = `💭 \"${randomQuote.json.property_text}\"\\n— ${randomQuote.json.property_author || \"Nieznany autor\"} \n - ${randomQuote.json.property_title || \"Nieznane dzieło\"}`;\n\n// Format calendar events\nlet eventsList = \"\";\n\n// Check if events exists and is a non-empty array\nif (Array.isArray(events) && events.length > 0) {\n  // Filter out empty objects and invalid entries\n  const validEvents = events.filter(event => \n    event && \n    event.json && \n    (event.json.start || event.json.summary)\n  );\n\n  if (validEvents.length > 0) {\n    validEvents.forEach(event => {\n      const eventData = event.json;\n      let timeInfo = \"Cały dzień\"; // Default value\n      \n      // Handle different time formats\n      if (eventData.start?.dateTime && eventData.end?.dateTime) {\n        const start = eventData.start.dateTime.slice(11, 16);\n        const end = eventData.end.dateTime.slice(11, 16);\n        timeInfo = `${start}-${end}`;\n      } else if (eventData.start?.date) {\n        timeInfo = \"Całodniowe\";\n      }\n\n      const summary = eventData.summary?.trim() || \"Wydarzenie\";\n      eventsList += `⌚ ${timeInfo}: ${summary}\\n`;\n    });\n  } else {\n    eventsList = \"🕊️ Brak zaplanowanych wydarzeń\\n\";\n  }\n} else {\n  eventsList = \"📅 Dziś nie masz żadnych wydarzeń\\n\";\n}\n\n// Remove any trailing newlines\neventsList = eventsList.trim();\n// Format todos\nconst formatTodo = (todo) => {\n  // Safe emoji fallbacks (using basic symbols)\n\n  // Clean title (removing markdown unsafe chars)\nconst rawTitle = todo.property_status_title || todo.property_name || \"Brak\";\nconst cleanTitle = rawTitle.replace(/^\\[.*?\\]\\s*/, '').replace(/[*_`]/g, '');\n\n  // Date formatting\n  let dateInfo = '';\n  if (todo.property_date?.start) {\n    const startDate = new Date(todo.property_date.start).toLocaleDateString('pl-PL');\n    if (todo.property_date.end) {\n      const endDate = new Date(todo.property_date.end).toLocaleDateString('pl-PL');\n      dateInfo = `\\nTermin: ${startDate} - ${endDate}`;\n    } else {\n      dateInfo = `\\nTermin: ${startDate}`;\n    }\n  }\n\n  // Build message (without problematic emojis)\n  return `${cleanTitle}${dateInfo}\nKategoria: ${todo.property_category?.join(', ') || 'Brak'}\n[LINK](${todo.url})`;\n};\n\n// Telegram-safe message composition\nlet todosList = \"\";\nconsole.log(todos);\nif (Array.isArray(todos) && todos.length > 0) {\n  const validTodos = todos.filter(todo =>\n  todo &&\n  todo.json &&\n  (\n    todo.json.property_status_title ||\n    todo.json.property_name\n  )\n);\n\n  if (validTodos.length > 0) {\n    const todoItems = validTodos.map(todo => `${formatTodo(todo.json)}`).join(\"\\n\\n\");\n    todosList = `*Priorytety na dziś:*\\n${todoItems}`;\n  } else {\n    todosList = \"_Brak zadań na dziś - czas na planowanie_\";\n  }\n} else {\n  todosList = \"_Brak zadań na dziś - czas na planowanie_\";\n}\n// First, process the weather data\nconst todayForecasts = weather.list.filter(entry => {\n  const date = new Date(entry.dt * 1000);\n  return date.toDateString() === new Date().toDateString();\n});\n\nconst temps = todayForecasts.map(f => f.main.temp);\nconst minTemp = Math.round(Math.min(...temps));\nconst maxTemp = Math.round(Math.max(...temps));\nconst currentTemp = Math.round(todayForecasts[0].main.temp);\nconst rainChance = Math.max(...todayForecasts.map(f => f.pop * 100));\n\n// Get dominant weather condition\nconst conditions = todayForecasts.reduce((acc, f) => {\n  const condition = f.weather[0].description;\n  acc[condition] = (acc[condition] || 0) + 1;\n  return acc;\n}, {});\nconst mainCondition = Object.entries(conditions).sort((a,b) => b[1]-a[1])[0][0];\n\n// Format sunrise/sunset\nconst formatTime = (timestamp) => \n  new Date(timestamp * 1000).toLocaleTimeString('pl-PL', {hour: '2-digit', minute: '2-digit',  timeZone: 'Europe/Warsaw' });\n\nconst weatherSummary = `\n🌤️ *Pogoda na dziś:* ${mainCondition}\n🌡️ Temperatura: ${currentTemp}°C (min ${minTemp}°C / max ${maxTemp}°C)\n💧 Szansa na deszcz: ${Math.round(rainChance)}%\n🌬️ Wiatr: ${todayForecasts[0].wind.speed} m/s\n🌅 Wschód słońca: ${formatTime(weather.city.sunrise)}\n🌇 Zachód słońca: ${formatTime(weather.city.sunset)}\n`;\n\n\nconst generateNonNegotiablesSummary = (entry) => {\n  if (!entry || !entry.json) return \"Brak danych z poprzedniego dnia\";\n  \n  const data = entry.json;\n  \n  // Property mapper - add new properties here\n  const propertyMapper = {\n    'property_exercise': { emoji: '🏋️', name: 'Ćwiczenia' },\n    'property_hydration': { emoji: '💧', name: 'Nawodnienie' },\n    'property_self_care': { emoji: '🧘', name: 'Self-care' },\n    'property_home': { emoji: '🏠', name: 'Dom' },\n    'property_partner': { emoji: '💞', name: 'Partner' },\n    'property_reading': { emoji: '📚', name: 'Czytanie' }\n  };\n  \n  // Generate completion status for each mapped property\n  let completionStatus = [];\n  let completedCount = 0;\n  \n  Object.entries(propertyMapper).forEach(([key, config]) => {\n    if (data.hasOwnProperty(key)) {\n      const isDone = data[key];\n      if (isDone) completedCount++;\n      \n      completionStatus.push(\n        `${isDone ? '✅' : '❌'} ${config.emoji} ${config.name}`\n      );\n    }\n  });\n  \n  const total = Object.keys(propertyMapper).length;\n  const percentage = total > 0 ? Math.round((completedCount / total) * 100) : 0;\n\n  // Polish motivation messages\n  let motivation;\n  if (percentage === 100) {\n    motivation = \"🎉 Perfekcyjny dzień! Wszystko zrobione!\";\n  } else if (percentage >= 80) {\n    motivation = \"👏 Bardzo dobrze! Prawie wszystko się udało!\";\n  } else if (percentage >= 50) {\n    motivation = \"💪 Dobry progres ale próbujmy więcej!\";\n  } else {\n    motivation = \"🤔 Czasem są trudne dni ale nie poddawaj się!\";\n  }\n\n  // Build summary\n  let summary = `📊 Podsumowanie (${percentage}%): ${completedCount}/${total} zadań\\n`;\n  summary += completionStatus.join('\\n') + '\\n\\n';\n  summary += motivation;\n  \n  // Add mood if exists\n  if (data.property_mood) {\n    summary += `\\n\\n😐 Nastrój: ${data.property_mood}`;\n  }\n  \n  return summary;\n};\n\n// Usage with your data\nconst nonNegotiablesSummary = generateNonNegotiablesSummary(lastDayNonNegotiables);\n\n\n// Create the message\nconst message = `🌅 Dzień dobry!\n\n🌤️ Dzisiejsza pogoda: \n${weatherSummary}\n\n📆 Twój plan na dziś:\n${eventsList}\n\n${formattedQuote}\n\nZrealizuj jedno zadanie z listy priorytetów przed południem:\n${todosList}\n\n\n${nonNegotiablesSummary}\nBezapelacyjnie dobre zadania na dziś: ${nonnegotiablesUrl}\n`;\n\n// Return the formatted message\nreturn {\n  json: {\n    message\n  }\n};\n"
+        "jsCode": "\n// Get data from other nodes using the node name reference style\nconst weather = $('Today Weather').first().json;\nconst events = $('My Events').all();\nconst quotes = $('Quotes').all();\nconst todos = $('Todos').all();\nconst lastDayNonNegotiables = $('LastDayNonNegotiables').first();\n\n// Get URL from first node that has it\nconst nonnegotiablesUrl = $('NonNegotiable').first().json.url;\n\n// Filter out quotes without meaningful text\nconst validQuotes = quotes.filter(item => {\n  const text = item.json.property_text;\n  return text && text.trim() !== \"\";\n});\n\n// Select random quote from filtered list\nconst randomQuote = validQuotes[Math.floor(Math.random() * validQuotes.length)];\nconst formattedQuote = `💭 \"${randomQuote.json.property_text}\"\\n— ${randomQuote.json.property_author || \"Unknown author\"} \n - ${randomQuote.json.property_title || \"Unknown work\"}`;\n\n// Format calendar events\nlet eventsList = \"\";\n\n// Check if events exists and is a non-empty array\nif (Array.isArray(events) && events.length > 0) {\n  // Filter out empty objects and invalid entries\n  const validEvents = events.filter(event => \n    event && \n    event.json && \n    (event.json.start || event.json.summary)\n  );\n\n  if (validEvents.length > 0) {\n    validEvents.forEach(event => {\n      const eventData = event.json;\n      let timeInfo = \"All day\"; // Default value\n      \n      // Handle different time formats\n      if (eventData.start?.dateTime && eventData.end?.dateTime) {\n        const start = eventData.start.dateTime.slice(11, 16);\n        const end = eventData.end.dateTime.slice(11, 16);\n        timeInfo = `${start}-${end}`;\n      } else if (eventData.start?.date) {\n        timeInfo = \"All day\";\n      }\n\n      const summary = eventData.summary?.trim() || \"Event\";\n      eventsList += `⌚ ${timeInfo}: ${summary}\\n`;\n    });\n  } else {\n    eventsList = \"🕊️ No scheduled events\\n\";\n  }\n} else {\n  eventsList = \"📅 No events today\\n\";\n}\n\n// Remove any trailing newlines\neventsList = eventsList.trim();\n// Format todos\nconst formatTodo = (todo) => {\n  // Safe emoji fallbacks (using basic symbols)\n\n  // Clean title (removing markdown unsafe chars)\nconst rawTitle = todo.property_status_title || todo.property_name || \"No title\";\nconst cleanTitle = rawTitle.replace(/^\\[.*?\\]\\s*/, '').replace(/[*_`]/g, '');\n\n  // Date formatting\n  let dateInfo = '';\n  if (todo.property_date?.start) {\n    const startDate = new Date(todo.property_date.start).toLocaleDateString('en-US');\n    if (todo.property_date.end) {\n      const endDate = new Date(todo.property_date.end).toLocaleDateString('en-US');\n      dateInfo = `\\nDue: ${startDate} - ${endDate}`;\n    } else {\n      dateInfo = `\\nDue: ${startDate}`;\n    }\n  }\n\n  // Build message (without problematic emojis)\n  return `${cleanTitle}${dateInfo}\nCategory: ${todo.property_category?.join(', ') || 'None'}\n[LINK](${todo.url})`;\n};\n\n// Telegram-safe message composition\nlet todosList = \"\";\nconsole.log(todos);\nif (Array.isArray(todos) && todos.length > 0) {\n  const validTodos = todos.filter(todo =>\n  todo &&\n  todo.json &&\n  (\n    todo.json.property_status_title ||\n    todo.json.property_name\n  )\n);\n\n  if (validTodos.length > 0) {\n    const todoItems = validTodos.map(todo => `${formatTodo(todo.json)}`).join(\"\\n\\n\");\n    todosList = `*Today's Priorities:*\\n${todoItems}`;\n  } else {\n    todosList = \"_No tasks today - time for planning_\";\n  }\n} else {\n  todosList = \"_No tasks today - time for planning_\";\n}\n// First, process the weather data\nconst todayForecasts = weather.list.filter(entry => {\n  const date = new Date(entry.dt * 1000);\n  return date.toDateString() === new Date().toDateString();\n});\n\nconst temps = todayForecasts.map(f => f.main.temp);\nconst minTemp = Math.round(Math.min(...temps));\nconst maxTemp = Math.round(Math.max(...temps));\nconst currentTemp = Math.round(todayForecasts[0].main.temp);\nconst rainChance = Math.max(...todayForecasts.map(f => f.pop * 100));\n\n// Get dominant weather condition\nconst conditions = todayForecasts.reduce((acc, f) => {\n  const condition = f.weather[0].description;\n  acc[condition] = (acc[condition] || 0) + 1;\n  return acc;\n}, {});\nconst mainCondition = Object.entries(conditions).sort((a,b) => b[1]-a[1])[0][0];\n\n// Format sunrise/sunset\nconst formatTime = (timestamp) => \n  new Date(timestamp * 1000).toLocaleTimeString('en-US', {hour: '2-digit', minute: '2-digit',  timeZone: 'UTC' });\n\nconst weatherSummary = `\n🌤️ *Today's Weather:* ${mainCondition}\n🌡️ Temperature: ${currentTemp}°C (min ${minTemp}°C / max ${maxTemp}°C)\n💧 Rain chance: ${Math.round(rainChance)}%\n🌬️ Wind: ${todayForecasts[0].wind.speed} m/s\n🌅 Sunrise: ${formatTime(weather.city.sunrise)}\n🌇 Sunset: ${formatTime(weather.city.sunset)}\n`;\n\n\nconst generateNonNegotiablesSummary = (entry) => {\n  if (!entry || !entry.json) return \"No data from previous day\";\n  \n  const data = entry.json;\n  \n  // Property mapper - add new properties here\n  const propertyMapper = {\n    'property_exercise': { emoji: '🏋️', name: 'Exercise' },\n    'property_hydration': { emoji: '💧', name: 'Hydration' },\n    'property_self_care': { emoji: '🧘', name: 'Self-care' },\n    'property_home': { emoji: '🏠', name: 'Home' },\n    'property_partner': { emoji: '💞', name: 'Partner' },\n    'property_reading': { emoji: '📚', name: 'Reading' }\n  };\n  \n  // Generate completion status for each mapped property\n  let completionStatus = [];\n  let completedCount = 0;\n  \n  Object.entries(propertyMapper).forEach(([key, config]) => {\n    if (data.hasOwnProperty(key)) {\n      const isDone = data[key];\n      if (isDone) completedCount++;\n      \n      completionStatus.push(\n        `${isDone ? '✅' : '❌'} ${config.emoji} ${config.name}`\n      );\n    }\n  });\n  \n  const total = Object.keys(propertyMapper).length;\n  const percentage = total > 0 ? Math.round((completedCount / total) * 100) : 0;\n\n  // Motivation messages\n  let motivation;\n  if (percentage === 100) {\n    motivation = \"🎉 Perfect day! Everything done!\";\n  } else if (percentage >= 80) {\n    motivation = \"👏 Very good! Almost everything accomplished!\";\n  } else if (percentage >= 50) {\n    motivation = \"💪 Good progress but let's try for more!\";\n  } else {\n    motivation = \"🤔 Sometimes there are tough days but don't give up!\";\n  }\n\n  // Build summary\n  let summary = `📊 Summary (${percentage}%): ${completedCount}/${total} tasks\\n`;\n  summary += completionStatus.join('\\n') + '\\n\\n';\n  summary += motivation;\n  \n  // Add mood if exists\n  if (data.property_mood) {\n    summary += `\\n\\n😐 Mood: ${data.property_mood}`;\n  }\n  \n  return summary;\n};\n\n// Usage with your data\nconst nonNegotiablesSummary = generateNonNegotiablesSummary(lastDayNonNegotiables);\n\n\n// Create the message\nconst message = `🌅 Good morning!\n\n🌤️ Today's weather: \n${weatherSummary}\n\n📆 Your plan for today:\n${eventsList}\n\n${formattedQuote}\n\nComplete one priority task before noon:\n${todosList}\n\n\n${nonNegotiablesSummary}\nToday's non-negotiables: ${nonnegotiablesUrl}\n`;\n\n// Return the formatted message\nreturn {\n  json: {\n    message\n  }\n};\n"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -61,9 +61,9 @@
         "operation": "getAll",
         "calendar": {
           "__rl": true,
-          "value": "",
+          "value": "YOUR_CALENDAR_EMAIL@gmail.com",
           "mode": "list",
-          "cachedResultName": ""
+          "cachedResultName": "Your Calendar"
         },
         "timeMin": "={{ new Date(new Date().setUTCHours(0, 0, 0, 0)).toISOString() }}",
         "timeMax": "={{ new Date(new Date().setUTCHours(23, 59, 59, 999)).toISOString() }}",
@@ -81,7 +81,7 @@
       "alwaysOutputData": true,
       "credentials": {
         "googleCalendarOAuth2Api": {
-          "id": "jN3RxBgw9fXShU0I",
+          "id": "YOUR_GOOGLE_CALENDAR_CREDENTIALS",
           "name": "Google Calendar account"
         }
       }
@@ -90,9 +90,9 @@
       "parameters": {
         "operation": "5DayForecast",
         "locationSelection": "coordinates",
-        "latitude": "52.309443",
-        "longitude": "20.9716101",
-        "language": "=pl"
+        "latitude": "YOUR_LATITUDE",
+        "longitude": "YOUR_LONGITUDE",
+        "language": "=en"
       },
       "type": "n8n-nodes-base.openWeatherMap",
       "typeVersion": 1,
@@ -105,7 +105,7 @@
       "executeOnce": true,
       "credentials": {
         "openWeatherMapApi": {
-          "id": "cdZM5eLGMyIbiyKE",
+          "id": "YOUR_OPENWEATHER_CREDENTIALS",
           "name": "OpenWeatherMap account"
         }
       }
@@ -116,10 +116,10 @@
         "operation": "getAll",
         "databaseId": {
           "__rl": true,
-          "value": "59dfb60f-349a-4f75-8a7f-2a71f5f25d9a",
+          "value": "YOUR_QUOTES_DATABASE_ID",
           "mode": "list",
-          "cachedResultName": "Cytaty",
-          "cachedResultUrl": "https://www.notion.so/59dfb60f349a4f758a7f2a71f5f25d9a"
+          "cachedResultName": "Quotes",
+          "cachedResultUrl": "https://www.notion.so/YOUR_QUOTES_DATABASE_ID"
         },
         "returnAll": true,
         "options": {}
@@ -131,11 +131,11 @@
         -520
       ],
       "id": "6b2bb14f-0838-48de-8bc5-08c98cb3314a",
-      "name": "Cytaty",
+      "name": "Quotes",
       "executeOnce": true,
       "credentials": {
         "notionApi": {
-          "id": "NuCiEcOApvHF3e3s",
+          "id": "YOUR_NOTION_CREDENTIALS",
           "name": "Notion account"
         }
       }
@@ -145,10 +145,10 @@
         "resource": "databasePage",
         "databaseId": {
           "__rl": true,
-          "value": "1e6e1b49-269f-8052-b647-d239c3f504a3",
+          "value": "YOUR_DAILY_NONNEGOTIABLES_DATABASE_ID",
           "mode": "list",
           "cachedResultName": "Daily Non-Negotiables",
-          "cachedResultUrl": "https://www.notion.so/1e6e1b49269f8052b647d239c3f504a3"
+          "cachedResultUrl": "https://www.notion.so/YOUR_DAILY_NONNEGOTIABLES_DATABASE_ID"
         },
         "title": "={{ $now.format('yyyy-MM-dd') }}",
         "propertiesUi": {
@@ -157,7 +157,7 @@
               "key": "Date|date",
               "includeTime": false,
               "date": "={{ $now.format('yyyy-MM-dd') }}",
-              "timezone": "Europe/Warsaw"
+              "timezone": "YOUR_TIMEZONE"
             }
           ]
         },
@@ -175,7 +175,7 @@
       "alwaysOutputData": true,
       "credentials": {
         "notionApi": {
-          "id": "NuCiEcOApvHF3e3s",
+          "id": "YOUR_NOTION_CREDENTIALS",
           "name": "Notion account"
         }
       },
@@ -187,10 +187,10 @@
         "operation": "getAll",
         "databaseId": {
           "__rl": true,
-          "value": "1e6e1b49-269f-8052-b647-d239c3f504a3",
+          "value": "YOUR_DAILY_NONNEGOTIABLES_DATABASE_ID",
           "mode": "list",
           "cachedResultName": "Daily Non-Negotiables",
-          "cachedResultUrl": "https://www.notion.so/1e6e1b49269f8052b647d239c3f504a3"
+          "cachedResultUrl": "https://www.notion.so/YOUR_DAILY_NONNEGOTIABLES_DATABASE_ID"
         },
         "filterType": "json",
         "filterJson": "={   \"property\": \"Title\",   \"text\": {     \"equals\": \"{{ $now.format('yyyy-MM-dd') }}\"   } }",
@@ -207,7 +207,7 @@
       "alwaysOutputData": true,
       "credentials": {
         "notionApi": {
-          "id": "NuCiEcOApvHF3e3s",
+          "id": "YOUR_NOTION_CREDENTIALS",
           "name": "Notion account"
         }
       }
@@ -276,10 +276,10 @@
         "operation": "getAll",
         "databaseId": {
           "__rl": true,
-          "value": "66324131-23f0-41ed-999b-cfbcdda98a28",
+          "value": "YOUR_TODO_DATABASE_ID",
           "mode": "list",
           "cachedResultName": "TODO",
-          "cachedResultUrl": "https://www.notion.so/6632413123f041ed999bcfbcdda98a28"
+          "cachedResultUrl": "https://www.notion.so/YOUR_TODO_DATABASE_ID"
         },
         "returnAll": true,
         "filterType": "manual",
@@ -347,7 +347,7 @@
       "alwaysOutputData": true,
       "credentials": {
         "notionApi": {
-          "id": "NuCiEcOApvHF3e3s",
+          "id": "YOUR_NOTION_CREDENTIALS",
           "name": "Notion account"
         }
       }
@@ -358,10 +358,10 @@
         "operation": "getAll",
         "databaseId": {
           "__rl": true,
-          "value": "1e6e1b49-269f-8052-b647-d239c3f504a3",
+          "value": "YOUR_DAILY_NONNEGOTIABLES_DATABASE_ID",
           "mode": "list",
           "cachedResultName": "Daily Non-Negotiables",
-          "cachedResultUrl": "https://www.notion.so/1e6e1b49269f8052b647d239c3f504a3"
+          "cachedResultUrl": "https://www.notion.so/YOUR_DAILY_NONNEGOTIABLES_DATABASE_ID"
         },
         "filterType": "manual",
         "matchType": "allFilters",
@@ -387,7 +387,7 @@
       "alwaysOutputData": true,
       "credentials": {
         "notionApi": {
-          "id": "NuCiEcOApvHF3e3s",
+          "id": "YOUR_NOTION_CREDENTIALS",
           "name": "Notion account"
         }
       }
@@ -462,17 +462,17 @@
       ],
       "id": "9e7fceac-b523-4dfb-9c35-605952c0efb4",
       "name": "Telegram",
-      "webhookId": "fabbc776-37bf-461d-973e-2b574d173dde",
+      "webhookId": "YOUR_WEBHOOK_ID",
       "credentials": {
         "telegramApi": {
-          "id": "OxKm02aLTUyWE9kN",
+          "id": "YOUR_TELEGRAM_CREDENTIALS",
           "name": "Telegram account"
         }
       }
     },
     {
       "parameters": {
-        "jsCode": "const moodOptions = {\n  text: \"Jak się dzisiaj czujesz?\",\n  reply_markup: {\n    inline_keyboard: [\n      [\n        { text: \"😄 Amazing\", callback_data: \"mood_amazing\" },\n        { text: \"🙂 Good\", callback_data: \"mood_good\" }, \n        { text: \"😐 Neutral\", callback_data: \"mood_neutral\" }\n      ],\n      [\n        { text: \"😩 Tired\", callback_data: \"mood_tired\" },\n        { text: \"😟 Anxious\", callback_data: \"mood_anxious\" }\n      ],\n      [\n        { text: \"😤 Stressed\", callback_data: \"mood_stressed\" },\n        { text: \"😔 Down\", callback_data: \"mood_down\" }\n      ]\n    ]\n  },\n  options: {\n    parse_mode: \"HTML\",\n    disable_web_page_preview: true\n  }\n};\n\nreturn [{ json: moodOptions }];"
+        "jsCode": "const moodOptions = {\n  text: \"How are you feeling today?\",\n  reply_markup: {\n    inline_keyboard: [\n      [\n        { text: \"😄 Amazing\", callback_data: \"mood_amazing\" },\n        { text: \"🙂 Good\", callback_data: \"mood_good\" }, \n        { text: \"😐 Neutral\", callback_data: \"mood_neutral\" }\n      ],\n      [\n        { text: \"😩 Tired\", callback_data: \"mood_tired\" },\n        { text: \"😟 Anxious\", callback_data: \"mood_anxious\" }\n      ],\n      [\n        { text: \"😤 Stressed\", callback_data: \"mood_stressed\" },\n        { text: \"😔 Down\", callback_data: \"mood_down\" }\n      ]\n    ]\n  },\n  options: {\n    parse_mode: \"HTML\",\n    disable_web_page_preview: true\n  }\n};\n\nreturn [{ json: moodOptions }];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -489,7 +489,7 @@
           "callback_query"
         ],
         "additionalFields": {
-          "chatIds": ""
+          "chatIds": "YOUR_TELEGRAM_CHAT_ID"
         }
       },
       "type": "n8n-nodes-base.telegramTrigger",
@@ -500,10 +500,10 @@
       ],
       "id": "59e17360-ecce-4048-8c17-f735f03526ef",
       "name": "Telegram Trigger",
-      "webhookId": "c1f393a3-d36c-4d78-99cf-cd8bdfcc0ba5",
+      "webhookId": "YOUR_WEBHOOK_ID",
       "credentials": {
         "telegramApi": {
-          "id": "OxKm02aLTUyWE9kN",
+          "id": "YOUR_TELEGRAM_CREDENTIALS",
           "name": "Telegram account"
         }
       }
@@ -538,14 +538,14 @@
       "alwaysOutputData": true,
       "credentials": {
         "notionApi": {
-          "id": "NuCiEcOApvHF3e3s",
+          "id": "YOUR_NOTION_CREDENTIALS",
           "name": "Notion account"
         }
       }
     },
     {
       "parameters": {
-        "chatId": "=",
+        "chatId": "=YOUR_TELEGRAM_CHAT_ID",
         "text": "=Saved: {{$('Mood').item.json.moodText}} for {{ $json.property_date.start }}",
         "additionalFields": {}
       },
@@ -557,17 +557,17 @@
         -140
       ],
       "typeVersion": 1,
-      "webhookId": "fd130e90-41d4-4238-9284-efad8064e9d7",
+      "webhookId": "YOUR_WEBHOOK_ID",
       "credentials": {
         "telegramApi": {
-          "id": "OxKm02aLTUyWE9kN",
+          "id": "YOUR_TELEGRAM_CREDENTIALS",
           "name": "Telegram account"
         }
       }
     },
     {
       "parameters": {
-        "jsCode": "// 1. Create the Buttons (Function Node)\nconst habitOptions = {\n  text: \"Co udało Ci się dziś zrobić?\",\n  reply_markup: {\n    inline_keyboard: [\n      [\n        { text: \"🏋️ Ćwiczenia\", callback_data: \"track_exercise\" },\n        { text: \"🧘 Self-care\", callback_data: \"track_selfcare\" },\n        { text: \"🏠 Dom\", callback_data: \"track_home\" }\n      ],\n      [\n        { text: \"💞 Partner\", callback_data: \"track_partner\" },\n        { text: \"📚 Czytanie\", callback_data: \"track_reading\" },\n        { text: \"💧 Nawodnienie\", callback_data: \"track_hydration\" }\n      ]\n    ]\n  },\n  options: {\n    parse_mode: \"HTML\",\n    disable_web_page_preview: true\n  }\n};\n\nreturn [{ json: habitOptions }];"
+        "jsCode": "// 1. Create the Buttons (Function Node)\nconst habitOptions = {\n  text: \"What did you manage to do today?\",\n  reply_markup: {\n    inline_keyboard: [\n      [\n        { text: \"🏋️ Exercise\", callback_data: \"track_exercise\" },\n        { text: \"🧘 Self-care\", callback_data: \"track_selfcare\" },\n        { text: \"🏠 Home\", callback_data: \"track_home\" }\n      ],\n      [\n        { text: \"💞 Partner\", callback_data: \"track_partner\" },\n        { text: \"📚 Reading\", callback_data: \"track_reading\" },\n        { text: \"💧 Hydration\", callback_data: \"track_hydration\" }\n      ]\n    ]\n  },\n  options: {\n    parse_mode: \"HTML\",\n    disable_web_page_preview: true\n  }\n};\n\nreturn [{ json: habitOptions }];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -648,17 +648,17 @@
       ],
       "id": "d99ef7f6-5aa3-4ef5-8ffc-24b98a96cacd",
       "name": "Telegram1",
-      "webhookId": "fabbc776-37bf-461d-973e-2b574d173dde",
+      "webhookId": "YOUR_WEBHOOK_ID",
       "credentials": {
         "telegramApi": {
-          "id": "OxKm02aLTUyWE9kN",
+          "id": "YOUR_TELEGRAM_CREDENTIALS",
           "name": "Telegram account"
         }
       }
     },
     {
       "parameters": {
-        "jsCode": "const input = $input.all()[0].json;\nconst mood = input.callback_query.data.replace('mood_', '');\n\nconst moodLabels = {\n  amazing: \"Amazing\",\n  good: \"Good\",\n  neutral: \"Neutral\",\n  tired: \"Tired\",\n  anxious: \"Anxious\",\n  stressed: \"Stressed\",\n  down: \"Down\"\n};\n\nreturn [{\n  json: {\n    userId: input.callback_query.from.id,\n    messageId: input.callback_query.message.message_id,\n    mood: mood,\n    moodText: moodLabels[mood] || 'Nieznany',\n    timestamp: new Date().toISOString()\n  }\n}];"
+        "jsCode": "const input = $input.all()[0].json;\nconst mood = input.callback_query.data.replace('mood_', '');\n\nconst moodLabels = {\n  amazing: \"Amazing\",\n  good: \"Good\",\n  neutral: \"Neutral\",\n  tired: \"Tired\",\n  anxious: \"Anxious\",\n  stressed: \"Stressed\",\n  down: \"Down\"\n};\n\nreturn [{\n  json: {\n    userId: input.callback_query.from.id,\n    messageId: input.callback_query.message.message_id,\n    mood: mood,\n    moodText: moodLabels[mood] || 'Unknown',\n    timestamp: new Date().toISOString()\n  }\n}];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -736,10 +736,10 @@
         "operation": "getAll",
         "databaseId": {
           "__rl": true,
-          "value": "1e6e1b49-269f-8052-b647-d239c3f504a3",
+          "value": "YOUR_DAILY_NONNEGOTIABLES_DATABASE_ID",
           "mode": "list",
           "cachedResultName": "Daily Non-Negotiables",
-          "cachedResultUrl": "https://www.notion.so/1e6e1b49269f8052b647d239c3f504a3"
+          "cachedResultUrl": "https://www.notion.so/YOUR_DAILY_NONNEGOTIABLES_DATABASE_ID"
         },
         "filterType": "json",
         "filterJson": "={   \"property\": \"Title\",   \"text\": {     \"equals\": \"{{ $json.timestamp.toDateTime().format('yyyy-MM-dd') }}\"   } }",
@@ -756,7 +756,7 @@
       "alwaysOutputData": true,
       "credentials": {
         "notionApi": {
-          "id": "NuCiEcOApvHF3e3s",
+          "id": "YOUR_NOTION_CREDENTIALS",
           "name": "Notion account"
         }
       }
@@ -791,14 +791,14 @@
       "alwaysOutputData": true,
       "credentials": {
         "notionApi": {
-          "id": "NuCiEcOApvHF3e3s",
+          "id": "YOUR_NOTION_CREDENTIALS",
           "name": "Notion account"
         }
       }
     },
     {
       "parameters": {
-        "chatId": "=",
+        "chatId": "=YOUR_TELEGRAM_CHAT_ID",
         "text": "=Saved: {{ $('Activities').item.json.notion_property }} as {{ $json[$(\"Activities\").item.json.notion_json_property] }}\n",
         "additionalFields": {}
       },
@@ -810,17 +810,17 @@
         40
       ],
       "typeVersion": 1,
-      "webhookId": "fd130e90-41d4-4238-9284-efad8064e9d7",
+      "webhookId": "YOUR_WEBHOOK_ID",
       "credentials": {
         "telegramApi": {
-          "id": "OxKm02aLTUyWE9kN",
+          "id": "YOUR_TELEGRAM_CREDENTIALS",
           "name": "Telegram account"
         }
       }
     },
     {
       "parameters": {
-        "jsCode": "const input = $input.all()[0].json;\nconst callbackData = input.callback_query?.data;\n\n// Map callback actions to Notion properties\nconst propertyMap = {\n  'track_exercise': 'Exercise',\n  'track_hydration': 'Hydration',\n  'track_selfcare': 'Self-care',\n  'track_home': 'Home',\n  'track_partner': 'Partner',\n  'track_reading': 'Reading'\n};\n\nconst jsonpropertyMap = {\n  'track_exercise': 'property_exercise',\n  'track_hydration': 'property_hydration',\n  'track_selfcare': 'property_self_care',\n  'track_home': 'property_home',\n  'track_partner': 'property_partner',\n  'track_reading': 'property_reading'\n};\n\nif (propertyMap[callbackData]) {\n  const notionProperty = propertyMap[callbackData];\n  const jsonProperty = jsonpropertyMap[callbackData];\n  const friendlyNames = {\n    'property_exercise': 'Ćwiczenia',\n    'property_hydration': 'Nawodnienie',\n    'property_self_care': 'Self-care',\n    'property_home': 'Dom',\n    'property_partner': 'Partner',\n    'property_reading': 'Czytanie'\n  };\n\n  return [{\n    json: {\n      action: \"track_notion\",\n      notion_property: notionProperty,\n      notion_json_property: jsonProperty,\n      property_value: true,\n      friendly_name: friendlyNames[notionProperty],\n      user_id: input.callback_query.from.id,\n      message_id: input.callback_query.message.message_id,\n        timestamp: new Date().toISOString()\n    }\n  }];\n}\n\nreturn [{\n  json: {\n    error: \"Nieznana akcja\",\n    raw_data: input\n  }\n}];"
+        "jsCode": "const input = $input.all()[0].json;\nconst callbackData = input.callback_query?.data;\n\n// Map callback actions to Notion properties\nconst propertyMap = {\n  'track_exercise': 'Exercise',\n  'track_hydration': 'Hydration',\n  'track_selfcare': 'Self-care',\n  'track_home': 'Home',\n  'track_partner': 'Partner',\n  'track_reading': 'Reading'\n};\n\nconst jsonpropertyMap = {\n  'track_exercise': 'property_exercise',\n  'track_hydration': 'property_hydration',\n  'track_selfcare': 'property_self_care',\n  'track_home': 'property_home',\n  'track_partner': 'property_partner',\n  'track_reading': 'property_reading'\n};\n\nif (propertyMap[callbackData]) {\n  const notionProperty = propertyMap[callbackData];\n  const jsonProperty = jsonpropertyMap[callbackData];\n  const friendlyNames = {\n    'property_exercise': 'Exercise',\n    'property_hydration': 'Hydration',\n    'property_self_care': 'Self-care',\n    'property_home': 'Home',\n    'property_partner': 'Partner',\n    'property_reading': 'Reading'\n  };\n\n  return [{\n    json: {\n      action: \"track_notion\",\n      notion_property: notionProperty,\n      notion_json_property: jsonProperty,\n      property_value: true,\n      friendly_name: friendlyNames[notionProperty],\n      user_id: input.callback_query.from.id,\n      message_id: input.callback_query.message.message_id,\n        timestamp: new Date().toISOString()\n    }\n  }];\n}\n\nreturn [{\n  json: {\n    error: \"Unknown action\",\n    raw_data: input\n  }\n}];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -837,10 +837,10 @@
         "operation": "getAll",
         "databaseId": {
           "__rl": true,
-          "value": "1e6e1b49-269f-8052-b647-d239c3f504a3",
+          "value": "YOUR_DAILY_NONNEGOTIABLES_DATABASE_ID",
           "mode": "list",
           "cachedResultName": "Daily Non-Negotiables",
-          "cachedResultUrl": "https://www.notion.so/1e6e1b49269f8052b647d239c3f504a3"
+          "cachedResultUrl": "https://www.notion.so/YOUR_DAILY_NONNEGOTIABLES_DATABASE_ID"
         },
         "filterType": "json",
         "filterJson": "={   \"property\": \"Title\",   \"text\": {     \"equals\": \"{{ $json.timestamp.toDateTime().format('yyyy-MM-dd') }}\"   } }",
@@ -857,7 +857,7 @@
       "alwaysOutputData": true,
       "credentials": {
         "notionApi": {
-          "id": "NuCiEcOApvHF3e3s",
+          "id": "YOUR_NOTION_CREDENTIALS",
           "name": "Notion account"
         }
       }
@@ -891,7 +891,7 @@
       "main": [
         [
           {
-            "node": "Cytaty",
+            "node": "Quotes",
             "type": "main",
             "index": 0
           }
@@ -909,7 +909,7 @@
         ]
       ]
     },
-    "Cytaty": {
+    "Quotes": {
       "main": [
         [
           {
@@ -1039,7 +1039,13 @@
     },
     "Telegram": {
       "main": [
-        []
+        [
+          {
+            "node": "tracking",
+            "type": "main",
+            "index": 0
+          }
+        ]
       ]
     },
     "tracking": {
@@ -1130,20 +1136,20 @@
   "active": true,
   "settings": {
     "executionOrder": "v1",
-    "timezone": "Europe/Warsaw",
+    "timezone": "YOUR_TIMEZONE",
     "callerPolicy": "workflowsFromSameOwner"
   },
-  "versionId": "02afa5d5-70dd-4dc4-822b-297a29f5715e",
+  "versionId": "WORKFLOW_VERSION_ID",
   "meta": {
-    "templateCredsSetupCompleted": true,
-    "instanceId": "55ffdbf0fc0e562be0e5a2f60a990df4d045995e6f8178b1fae49aae68c4768a"
+    "templateCredsSetupCompleted": false,
+    "instanceId": "YOUR_N8N_INSTANCE_ID"
   },
-  "id": "SZWENIgnwHMKq4iE",
+  "id": "YOUR_WORKFLOW_ID",
   "tags": [
     {
       "createdAt": "2025-05-02T10:27:22.775Z",
       "updatedAt": "2025-05-02T10:27:22.775Z",
-      "id": "U9wMa4KKUMM0IbMY",
+      "id": "YOUR_TAG_ID",
       "name": "wellbeing"
     }
   ]
