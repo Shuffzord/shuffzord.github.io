@@ -1,7 +1,7 @@
 ---
 title: N8N Developer Cheatsheet
-date: 2025-09-06
-publishdate: 2025-09-06
+date: 2025-06-09
+publishdate: 2025-06-09
 tags: ["n8n"]
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: Mortgage Calculator
-date: 2025-09-06
+date: 2025-06-09
 ---
 
 # 🧮[www.smarter-loan.com](www.smarter-loan.com)
