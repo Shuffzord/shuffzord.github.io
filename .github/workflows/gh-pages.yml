@@ -30,31 +30,22 @@ jobs:
       - name: Install Dart Sass
         run: sudo snap install dart-sass
       
-      - name: Debug PAT availability
-        run: |
-          if [ -z "${{ secrets.GH_PAT }}" ]; then
-            echo "❌ GH_PAT is not set or empty"
-            exit 1
-          else
-            echo "✅ GH_PAT is available"
-          fi
-      
-      - name: Configure Git for Authentication
-        run: |
-          git config --global url."https://${{ secrets.GH_PAT }}@github.com/".insteadOf "https://github.com/"
-          echo "✅ Git authentication configured"
-      
-      - name: Verify Git Configuration
-        run: |
-          echo "Current git URL rewrites:"
-          git config --global --get-regexp url.*insteadof || echo "No URL rewrites found"
-      
       - name: Checkout
         uses: actions/checkout@v4
         with:
           submodules: recursive
           fetch-depth: 0
           token: ${{ secrets.GH_PAT }}
+      
+      - name: Configure Git for Submodules
+        run: |
+          git config --global url."https://${{ secrets.GH_PAT }}@github.com/".insteadOf "https://github.com/"
+          echo "✅ Git authentication configured for submodules"
+      
+      - name: Update Submodules with Authentication
+        run: |
+          git submodule sync --recursive
+          git submodule update --init --recursive --force
       
       - name: Debug Git Configuration (Post-checkout)
         run: |
