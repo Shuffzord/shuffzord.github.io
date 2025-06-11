@@ -1,6 +1,6 @@
 ---
 title: "Stock Reports Dashboard"
-layout: "stock-dashboard"
+type: "StockReport"
 ---
 
-Stock analysis reports dashboard with search functionality.
+Interactive dashboard for viewing and analyzing stock reports. Browse through available reports using the sidebar search and selection tools.

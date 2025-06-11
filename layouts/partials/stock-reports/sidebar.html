@@ -1,0 +1,57 @@
+<aside class="dashboard-sidebar">
+  <div class="sidebar-header">
+    <h2 class="sidebar-title">Stock Reports</h2>
+    <div class="search-container">
+      <input 
+        type="text" 
+        id="report-search" 
+        class="search-input" 
+        placeholder="Search reports..."
+        aria-label="Search stock reports"
+      >
+      <span class="search-icon" aria-hidden="true">🔍</span>
+    </div>
+  </div>
+
+  <nav class="reports-list" role="navigation" aria-label="Stock reports navigation">
+    {{- $reports := readDir "static/reports" -}}
+    {{- if $reports -}}
+      <ul class="report-items">
+        {{- range $reports -}}
+          {{- if and (not .IsDir) (strings.HasSuffix .Name ".html") -}}
+            {{- $displayName := strings.TrimSuffix ".html" .Name -}}
+            <li class="report-item" data-report-name="{{ $displayName }}">
+              <a 
+                href="#" 
+                class="report-link"
+                data-report-path="/reports/{{ .Name }}"
+                data-report-name="{{ $displayName }}"
+                aria-describedby="report-{{ $displayName }}-meta"
+              >
+                <span class="report-name">{{ $displayName }}</span>
+                <span class="report-meta" id="report-{{ $displayName }}-meta">
+                  <time datetime="{{ .ModTime.Format "2006-01-02" }}">
+                    {{ .ModTime.Format "Jan 2, 2006" }}
+                  </time>
+                  <span class="report-size">{{ div .Size 1024 }}KB</span>
+                </span>
+              </a>
+            </li>
+          {{- end -}}
+        {{- end -}}
+      </ul>
+    {{- else -}}
+      <div class="no-reports">
+        <p>No reports available</p>
+        <small>Reports will appear here when they are generated</small>
+      </div>
+    {{- end -}}
+  </nav>
+
+  <div class="sidebar-footer">
+    <small class="report-count">
+      {{- $htmlFiles := where (readDir "static/reports") "Name" "match" "\\.html$" -}}
+      {{ len $htmlFiles }} report{{ if ne (len $htmlFiles) 1 }}s{{ end }} available
+    </small>
+  </div>
+</aside>

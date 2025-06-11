@@ -1,0 +1,185 @@
+<main class="dashboard-viewer" id="report-viewer">
+  <div class="viewer-header">
+    <h2 class="viewer-title">Report Viewer</h2>
+    <div class="viewer-controls">
+      <button class="control-btn" id="refresh-btn" title="Refresh report" aria-label="Refresh current report">
+        <span aria-hidden="true">🔄</span>
+      </button>
+      <button class="control-btn" id="fullscreen-btn" title="Toggle fullscreen" aria-label="Toggle fullscreen mode">
+        <span aria-hidden="true">⛶</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="viewer-content">
+    <!-- Loading State -->
+    <div class="loading-state" style="display: none;">
+      <div class="loading-spinner" aria-hidden="true"></div>
+      <p class="loading-text">Loading report...</p>
+    </div>
+
+    <!-- Placeholder State -->
+    <div class="placeholder-state">
+      <div class="placeholder-icon" aria-hidden="true">📊</div>
+      <h3 class="placeholder-title">Select a Report</h3>
+      <p class="placeholder-description">
+        Choose a stock report from the sidebar to view detailed analysis and charts.
+      </p>
+      <div class="placeholder-features">
+        <ul>
+          <li>Interactive charts and graphs</li>
+          <li>Detailed financial metrics</li>
+          <li>Historical performance data</li>
+          <li>Technical analysis indicators</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Report Frame -->
+    <iframe 
+      id="report-frame"
+      class="report-frame"
+      style="display: none;"
+      title="Stock Report Content"
+      sandbox="allow-scripts allow-same-origin allow-forms"
+      loading="lazy"
+    ></iframe>
+
+    <!-- Error State -->
+    <div class="error-state" style="display: none;">
+      <div class="error-icon" aria-hidden="true">⚠️</div>
+      <h3 class="error-title">Failed to Load Report</h3>
+      <p class="error-description">
+        The selected report could not be loaded. Please try again or select a different report.
+      </p>
+      <button class="retry-btn" id="retry-btn">Retry</button>
+    </div>
+  </div>
+
+  <div class="viewer-footer">
+    <div class="viewer-status">
+      <span class="status-indicator" id="status-indicator">Ready</span>
+      <span class="report-info" id="report-info"></span>
+    </div>
+  </div>
+</main>
+
+<script>
+// Enhanced viewer functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const reportFrame = document.getElementById('report-frame');
+  const refreshBtn = document.getElementById('refresh-btn');
+  const fullscreenBtn = document.getElementById('fullscreen-btn');
+  const retryBtn = document.getElementById('retry-btn');
+  const statusIndicator = document.getElementById('status-indicator');
+  const reportInfo = document.getElementById('report-info');
+  const errorState = document.querySelector('.error-state');
+  const loadingState = document.querySelector('.loading-state');
+  const placeholderState = document.querySelector('.placeholder-state');
+
+  // Refresh functionality
+  if (refreshBtn && reportFrame) {
+    refreshBtn.addEventListener('click', function() {
+      if (reportFrame.src) {
+        reportFrame.src = reportFrame.src;
+        updateStatus('Refreshing...');
+      }
+    });
+  }
+
+  // Fullscreen functionality
+  if (fullscreenBtn) {
+    fullscreenBtn.addEventListener('click', function() {
+      const viewer = document.querySelector('.dashboard-viewer');
+      if (viewer) {
+        if (document.fullscreenElement) {
+          document.exitFullscreen();
+        } else {
+          viewer.requestFullscreen().catch(err => {
+            console.log('Fullscreen not supported:', err);
+          });
+        }
+      }
+    });
+  }
+
+  // Retry functionality
+  if (retryBtn && reportFrame) {
+    retryBtn.addEventListener('click', function() {
+      if (reportFrame.src) {
+        showLoading();
+        reportFrame.src = reportFrame.src;
+      }
+    });
+  }
+
+  // Frame load handlers
+  if (reportFrame) {
+    reportFrame.addEventListener('load', function() {
+      hideLoading();
+      hideError();
+      updateStatus('Report loaded');
+      
+      // Update report info
+      const reportName = this.src.split('/').pop();
+      if (reportInfo && reportName) {
+        reportInfo.textContent = `Viewing: ${reportName.replace('.html', '')}`;
+      }
+    });
+
+    reportFrame.addEventListener('error', function() {
+      hideLoading();
+      showError();
+      updateStatus('Error loading report');
+    });
+  }
+
+  // Helper functions
+  function showLoading() {
+    if (loadingState) loadingState.style.display = 'flex';
+    if (placeholderState) placeholderState.style.display = 'none';
+    if (errorState) errorState.style.display = 'none';
+    if (reportFrame) reportFrame.style.display = 'none';
+  }
+
+  function hideLoading() {
+    if (loadingState) loadingState.style.display = 'none';
+  }
+
+  function showError() {
+    if (errorState) errorState.style.display = 'flex';
+    if (placeholderState) placeholderState.style.display = 'none';
+    if (reportFrame) reportFrame.style.display = 'none';
+  }
+
+  function hideError() {
+    if (errorState) errorState.style.display = 'none';
+  }
+
+  function updateStatus(message) {
+    if (statusIndicator) {
+      statusIndicator.textContent = message;
+    }
+  }
+
+  // Responsive iframe sizing
+  function resizeFrame() {
+    if (reportFrame && reportFrame.style.display !== 'none') {
+      const container = reportFrame.parentElement;
+      if (container) {
+        const containerHeight = container.clientHeight;
+        const headerHeight = document.querySelector('.viewer-header')?.clientHeight || 0;
+        const footerHeight = document.querySelector('.viewer-footer')?.clientHeight || 0;
+        const availableHeight = containerHeight - headerHeight - footerHeight - 20; // 20px for padding
+        reportFrame.style.height = Math.max(400, availableHeight) + 'px';
+      }
+    }
+  }
+
+  // Resize on window resize
+  window.addEventListener('resize', resizeFrame);
+  
+  // Initial resize
+  setTimeout(resizeFrame, 100);
+});
+</script>

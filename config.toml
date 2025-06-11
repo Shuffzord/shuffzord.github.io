@@ -5,6 +5,9 @@ theme = "hello-friend-ng"
 # disqusShortname = 'https-shuffzord-github-io'
 googleAnalytics = "G-RNL2R9XB2F"
 
+# Ignore problematic data files
+ignoreFiles = ["data/daily/.*"]
+
 # Enable building of future-dated content
 buildFuture = true
 buildExpired = true

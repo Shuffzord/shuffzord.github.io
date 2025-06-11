@@ -1,28 +1,180 @@
-{{ define "main" }} {{ $paginator := .Paginate .Data.Pages }}
+{{ define "main" }}
+{{- if eq .Section "stockreport" -}}
+<!-- Simple Stock Reports Dashboard -->
+<style>
+.simple-dashboard {
+  display: flex;
+  gap: 20px;
+  min-height: 600px;
+}
 
-<main class="posts">
-  <h1>{{ .Title }}</h1>
+.reports-sidebar {
+  width: 20%;
+  background: #f5f5f5;
+  padding: 20px;
+  border-radius: 8px;
+}
 
-  {{ if .Content }}
-  <div class="content">{{ .Content }}</div>
-  {{ end }} {{ range $paginator.Pages.GroupByDate "2025" }}
-  <div class="posts-group">
-    <!-- <div class="post-year">{{ .Key }}</div> -->
+.reports-sidebar h3 {
+  margin-top: 0;
+  color: #333;
+}
 
-    <ul class="posts-list">
-      {{ range .Pages }}
-      <li class="post-item">
-        <a href="{{.Permalink}}">
-            <span class="post-title">{{ .Date.Format "January 2, 2006" }}</span>
-          <span class="post-title">{{.Title}}</span>
-          <span class="post-day"
-            >{{ i18n "readingTime" .Page.ReadingTime }}
-          </span>
-        </a>
-      </li>
-      {{ end }}
+.report-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.report-item {
+  margin-bottom: 10px;
+}
+
+.report-link {
+  display: block;
+  padding: 10px;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  text-decoration: none;
+  color: #333;
+  cursor: pointer;
+}
+
+.report-link:hover {
+  background: #007bff;
+  color: white;
+}
+
+.report-link.active {
+  background: #007bff;
+  color: white;
+}
+
+.report-viewer {
+  flex: 1;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.viewer-header {
+  padding: 15px;
+  background: #f8f9fa;
+  border-bottom: 1px solid #ddd;
+}
+
+.viewer-content {
+  height: 500px;
+  position: relative;
+}
+
+.report-frame {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: #666;
+  font-size: 18px;
+}
+</style>
+
+<h1>{{ .Title }}</h1>
+<p>{{ .Content }}</p>
+
+<div class="simple-dashboard">
+  <!-- Sidebar with reports -->
+  <div class="reports-sidebar">
+    <h3>Available Reports</h3>
+    <ul class="report-list">
+      {{- $reports := readDir "static/reports" -}}
+      {{- range $reports -}}
+        {{- if and (not .IsDir) (strings.HasSuffix .Name ".html") -}}
+          {{- $displayName := strings.TrimSuffix ".html" .Name -}}
+          <li class="report-item">
+            <a href="#" class="report-link" onclick="loadReport('/reports/{{ .Name }}', '{{ $displayName }}'); return false;">
+              {{ $displayName }}
+            </a>
+          </li>
+        {{- end -}}
+      {{- end -}}
     </ul>
   </div>
-  {{ end }} {{ partial "pagination-list.html" . }}
+
+  <!-- Report viewer -->
+  <div class="report-viewer">
+    <div class="viewer-header">
+      <h4 id="current-report">Select a Report</h4>
+    </div>
+    <div class="viewer-content">
+      <div id="placeholder" class="placeholder">
+        Click on a report from the sidebar to view it here
+      </div>
+      <iframe id="report-frame" class="report-frame" style="display: none;"></iframe>
+    </div>
+  </div>
+</div>
+
+<script>
+function loadReport(reportPath, reportName) {
+  // Update active state
+  document.querySelectorAll('.report-link').forEach(link => {
+    link.classList.remove('active');
+  });
+  event.target.classList.add('active');
+  
+  // Update header
+  document.getElementById('current-report').textContent = reportName;
+  
+  // Hide placeholder and show iframe
+  document.getElementById('placeholder').style.display = 'none';
+  const iframe = document.getElementById('report-frame');
+  iframe.style.display = 'block';
+  iframe.src = reportPath;
+}
+</script>
+
+{{- else -}}
+<!-- Default list template for other sections -->
+{{ $paginator := .Paginate .Data.Pages }}
+
+<main class="posts">
+    <h1>{{ .Title }}</h1>
+
+    {{ if .Content }}
+        <div class="content">{{ .Content }}</div>
+    {{ end }}
+
+    {{ range $paginator.Pages.GroupByDate "2006" }}
+        <div class="posts-group">
+            <div class="post-year">{{ .Key }}</div>
+
+            <ul class="posts-list">
+                {{ range .Pages }}
+                    <li class="post-item">
+                        <a href="{{.Permalink}}" class="post-item-inner">
+                            <span class="post-title">{{.Title}}</span>
+                            <span class="post-day">
+                                {{ if .Site.Params.dateformShort }}
+                                    {{ time.Format .Site.Params.dateformShort .Date }}
+                                {{ else }}
+                                    {{ time.Format "Jan 2" .Date }}
+                                {{ end }}
+                            </span>
+                        </a>
+                    </li>
+                {{ end }}
+            </ul>
+        </div>
+    {{ end }}
+{{ partial "pagination-list.html" . }}
 </main>
+{{- end -}}
 {{ end }}

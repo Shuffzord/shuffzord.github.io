@@ -1,0 +1,380 @@
+{{ define "main" }}
+<style>
+.stock-dashboard {
+  display: flex;
+  flex-direction: column;
+  min-height: 80vh;
+}
+
+.dashboard-header {
+  padding: 1rem 0;
+  border-bottom: 1px solid #e0e0e0;
+  margin-bottom: 1rem;
+}
+
+.dashboard-title {
+  margin: 0 0 0.5rem 0;
+  font-size: 2rem;
+  color: #333;
+}
+
+.dashboard-description {
+  margin: 0;
+  color: #666;
+}
+
+.dashboard-layout {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 2rem;
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .dashboard-layout {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+/* Sidebar Styles */
+.dashboard-sidebar {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 1rem;
+  height: fit-content;
+}
+
+.sidebar-title {
+  margin: 0 0 1rem 0;
+  font-size: 1.25rem;
+  color: #333;
+}
+
+.search-container {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.5rem 2rem 0.5rem 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.search-icon {
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #666;
+}
+
+.report-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.report-item {
+  margin-bottom: 0.5rem;
+}
+
+.report-link {
+  display: block;
+  padding: 0.75rem;
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  text-decoration: none;
+  color: #333;
+  transition: all 0.2s ease;
+}
+
+.report-link:hover,
+.report-link.active {
+  background: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+.report-name {
+  font-weight: 500;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.report-meta {
+  font-size: 0.8rem;
+  color: #666;
+  display: flex;
+  justify-content: space-between;
+}
+
+.report-link:hover .report-meta,
+.report-link.active .report-meta {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.no-reports {
+  text-align: center;
+  padding: 2rem;
+  color: #666;
+}
+
+.sidebar-footer {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e0e0e0;
+  text-align: center;
+}
+
+.report-count {
+  color: #666;
+  font-size: 0.8rem;
+}
+
+/* Viewer Styles */
+.dashboard-viewer {
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  display: flex;
+  flex-direction: column;
+}
+
+.viewer-header {
+  padding: 1rem;
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.viewer-title {
+  margin: 0;
+  font-size: 1.25rem;
+  color: #333;
+}
+
+.viewer-controls {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.control-btn {
+  background: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 0.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.2s ease;
+}
+
+.control-btn:hover {
+  background: #e9ecef;
+}
+
+.viewer-content {
+  flex: 1;
+  position: relative;
+  min-height: 400px;
+}
+
+.loading-state,
+.placeholder-state,
+.error-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  min-height: 400px;
+  padding: 2rem;
+  text-align: center;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #007bff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.placeholder-icon,
+.error-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.placeholder-title,
+.error-title {
+  margin: 0 0 1rem 0;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.placeholder-description,
+.error-description {
+  margin: 0 0 1rem 0;
+  color: #666;
+  max-width: 400px;
+}
+
+.placeholder-features ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.placeholder-features li {
+  padding: 0.25rem 0;
+  color: #666;
+}
+
+.placeholder-features li:before {
+  content: "✓ ";
+  color: #28a745;
+  font-weight: bold;
+}
+
+.report-frame {
+  width: 100%;
+  height: 100%;
+  border: none;
+  min-height: 400px;
+}
+
+.retry-btn {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.retry-btn:hover {
+  background: #0056b3;
+}
+
+.viewer-footer {
+  padding: 0.75rem 1rem;
+  border-top: 1px solid #e0e0e0;
+  background: #f8f9fa;
+  border-radius: 0 0 8px 8px;
+}
+
+.viewer-status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.status-indicator {
+  color: #28a745;
+  font-weight: 500;
+}
+
+.report-info {
+  color: #666;
+}
+</style>
+
+<div class="stock-dashboard">
+  <header class="dashboard-header">
+    <h1 class="dashboard-title">{{ .Title }}</h1>
+    <p class="dashboard-description">{{ .Content }}</p>
+  </header>
+
+  <div class="dashboard-layout">
+    {{ partial "stock-reports/sidebar.html" . }}
+    {{ partial "stock-reports/viewer.html" . }}
+  </div>
+</div>
+
+<script>
+// Pass report files data to JavaScript for progressive enhancement
+window.stockReports = {
+  files: [
+    {{- $reports := readDir "static/reports" -}}
+    {{- range $index, $file := $reports -}}
+      {{- if and (not $file.IsDir) (strings.HasSuffix $file.Name ".html") -}}
+        {{- if $index -}},{{- end -}}
+        {
+          name: {{ $file.Name | jsonify }},
+          displayName: {{ (strings.TrimSuffix ".html" $file.Name) | jsonify }},
+          path: "/reports/{{ $file.Name }}",
+          size: {{ $file.Size }},
+          modTime: {{ $file.ModTime.Format "2006-01-02T15:04:05Z07:00" | jsonify }}
+        }
+      {{- end -}}
+    {{- end -}}
+  ]
+};
+
+// Basic progressive enhancement for search functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const searchInput = document.getElementById('report-search');
+  const reportItems = document.querySelectorAll('.report-item');
+  
+  if (searchInput && reportItems.length > 0) {
+    searchInput.addEventListener('input', function() {
+      const searchTerm = this.value.toLowerCase();
+      
+      reportItems.forEach(function(item) {
+        const reportName = item.getAttribute('data-report-name').toLowerCase();
+        const shouldShow = reportName.includes(searchTerm);
+        item.style.display = shouldShow ? 'block' : 'none';
+      });
+    });
+  }
+  
+  // Handle report selection
+  const reportLinks = document.querySelectorAll('.report-link');
+  const reportViewer = document.getElementById('report-viewer');
+  const reportFrame = document.getElementById('report-frame');
+  const loadingState = document.querySelector('.loading-state');
+  const placeholderState = document.querySelector('.placeholder-state');
+  
+  reportLinks.forEach(function(link) {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const reportPath = this.getAttribute('data-report-path');
+      
+      // Update active state
+      reportLinks.forEach(l => l.classList.remove('active'));
+      this.classList.add('active');
+      
+      // Show loading state
+      if (loadingState) loadingState.style.display = 'flex';
+      if (placeholderState) placeholderState.style.display = 'none';
+      if (reportFrame) reportFrame.style.display = 'none';
+      
+      // Load report
+      if (reportFrame) {
+        reportFrame.src = reportPath;
+        reportFrame.onload = function() {
+          if (loadingState) loadingState.style.display = 'none';
+          reportFrame.style.display = 'block';
+        };
+      }
+    });
+  });
+});
+</script>
+{{ end }}
