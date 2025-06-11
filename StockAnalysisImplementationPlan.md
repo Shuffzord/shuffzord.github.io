@@ -202,7 +202,7 @@ jobs:
       - name: Generate reports
         run: |
           cd StockStrategiest
-          python report_generator.py
+          python report_generator.py --all --fetch-fresh
 
       - name: Process reports for Hugo
         run: |

@@ -62,7 +62,7 @@ jobs:
       - name: Generate stock reports
         run: |
           cd StockStrategiest
-          python report_generator.py
+          python report_generator.py --all --fetch-fresh
         env:
           # Add any environment variables needed for report generation
           PYTHONPATH: ${{ github.workspace }}/StockStrategiest
