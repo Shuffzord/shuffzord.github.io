@@ -26,31 +26,63 @@ jobs:
         run: |
           wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
           && sudo dpkg -i ${{ runner.temp }}/hugo.deb
+      
       - name: Install Dart Sass
         run: sudo snap install dart-sass
+      
+      - name: Debug PAT availability
+        run: |
+          if [ -z "${{ secrets.GH_PAT }}" ]; then
+            echo "❌ GH_PAT is not set or empty"
+            exit 1
+          else
+            echo "✅ GH_PAT is available"
+          fi
+      
       - name: Configure Git for Authentication
         run: |
           git config --global url."https://${{ secrets.GH_PAT }}@github.com/".insteadOf "https://github.com/"
+          echo "✅ Git authentication configured"
+      
+      - name: Verify Git Configuration
+        run: |
+          echo "Current git URL rewrites:"
+          git config --global --get-regexp url.*insteadof || echo "No URL rewrites found"
+      
       - name: Checkout
         uses: actions/checkout@v4
         with:
           submodules: recursive
           fetch-depth: 0
           token: ${{ secrets.GH_PAT }}
-      - name: Debug Git Configuration
+      
+      - name: Debug Git Configuration (Post-checkout)
         run: |
-          git config --list --show-origin
+          echo "=== Git Config List ==="
+          git config --list --show-origin | grep -E "(url\.|insteadof)" || echo "No URL configs found"
+      
       - name: Debug Submodule URLs
         run: |
-          cat .gitmodules
-      - name: Debug Environment Variables
-        run: env
+          echo "=== .gitmodules content ==="
+          if [ -f .gitmodules ]; then
+            cat .gitmodules
+          else
+            echo "No .gitmodules file found"
+          fi
+          echo ""
+          echo "=== Submodule status ==="
+          git submodule status || echo "No submodules or submodule command failed"
+      
       - name: Test Git Authentication
         run: |
-          git ls-remote https://github.com/Shuffzord/StockStrategiest.git
+          echo "Testing authentication to private repo..."
+          git ls-remote https://github.com/Shuffzord/StockStrategiest.git HEAD || echo "❌ Authentication test failed"
+          echo "✅ Authentication test completed"
+      
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v4
+      
       - name: Build with Hugo
         env:
           HUGO_ENVIRONMENT: production
@@ -60,6 +92,7 @@ jobs:
             --gc \
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/"
+      
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
