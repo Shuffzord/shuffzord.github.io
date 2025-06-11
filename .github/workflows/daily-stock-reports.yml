@@ -63,21 +63,20 @@ jobs:
         run: |
           cd StockStrategiest
           python report_generator.py --all --fetch-fresh
+          cd ..
         env:
           # Add any environment variables needed for report generation
           PYTHONPATH: ${{ github.workspace }}/StockStrategiest
 
       # Step 7: Process reports for Hugo
-      - name: Process reports for Hugo
+      - name: Copy reports for Hugo
         run: |
-          python scripts/process-reports.py
+          python scripts/copy-reports.py
 
       # Step 8: Commit changes
       - name: Commit changes
         run: |
-          git config user.name 'github-actions[bot]'
-          git config user.email 'github-actions[bot]@users.noreply.github.com'
-          git add data/reports.json static/reports/
+          git add data/. static/reports/
           git commit -m "Update stock reports - $(date)" || echo "No changes"
           git push
 
