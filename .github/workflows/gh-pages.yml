@@ -33,6 +33,7 @@ jobs:
         with:
           submodules: recursive
           fetch-depth: 0
+          token: ${{ secrets.GH_PAT }}
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v4
