@@ -18,23 +18,29 @@ graph TD
     G --> H
 ```
 
-## Phase 1: Hugo Dashboard Design
+## Phase 1: Clean Hugo Dashboard Architecture
 
 ### 1.1 Dashboard Layout Structure
 
 **Main Dashboard Page:** `content/StockReport/_index.md`
-- Full-width dashboard layout
-- Left sidebar: Report selector with search
+- Full-width dashboard layout using CSS Grid
+- Left sidebar: Report selector with Hugo-powered search
 - Right panel: Report viewer (iframe/embedded HTML)
-- Responsive design for mobile devices
+- Fully responsive design with mobile-first approach
 
-### 1.2 Hugo Templates & Layouts
+### 1.2 Clean File Structure (Remove & Rebuild)
 
-**Files to Create:**
-- `layouts/StockReport/list.html` - Main dashboard layout
-- `layouts/shortcodes/stock-dashboard.html` - Dashboard component
-- `layouts/partials/report-selector.html` - Left sidebar selector
-- `layouts/partials/report-viewer.html` - Right panel viewer
+**Files to Remove:**
+- ❌ `static/css/stock-dashboard.css` - Replace with SCSS
+- ❌ `static/js/stock-dashboard.js` - Minimize or eliminate JS
+- ❌ `layouts/StockReport/single.html` - Rebuild with clean architecture
+
+**New Files to Create:**
+- ✅ `assets/scss/stock-dashboard.scss` - Modern SCSS with CSS Grid
+- ✅ `layouts/StockReport/single.html` - Clean Hugo template with `readDir`
+- ✅ `layouts/partials/stock-reports/sidebar.html` - Report selector partial
+- ✅ `layouts/partials/stock-reports/viewer.html` - Report viewer partial
+- ✅ `static/js/minimal-dashboard.js` - Minimal JS for essential interactions only
 
 ### 1.3 Dashboard Features
 
@@ -50,79 +56,115 @@ graph TD
 - Fullscreen toggle option
 - Report navigation controls
 
-## Phase 2: Data Processing & Integration
+## Phase 2: Pure Hugo Integration (No JavaScript Dependencies)
 
-### 2.1 Report Processing Pipeline
+### 2.1 Server-Side Report Processing
 
-```mermaid
-graph LR
-    A[StockStrategiest/results/*.html] --> B[Process Reports Script]
-    B --> C[Generate Metadata]
-    C --> D[Copy to static/reports/]
-    D --> E[Update Hugo Data Files]
+**Hugo-Only Approach:**
+- Use Hugo's `readDir` function to scan `static/reports/` directory
+- Generate search functionality using Hugo templates and CSS
+- URL-based report selection (no JavaScript required)
+- Progressive enhancement with minimal JavaScript
+
+**Hugo Template Implementation:**
+```go
+{{/* Get all HTML reports */}}
+{{ $reports := slice }}
+{{ range (readDir "static/reports") }}
+  {{ if (strings.HasSuffix .Name ".html") }}
+    {{ $reports = $reports | append . }}
+  {{ end }}
+{{ end }}
+
+{{/* Generate report list with search capability */}}
+{{ range $reports }}
+  <a href="#{{ .Name }}" class="report-item" data-search="{{ .Name | lower }}">
+    {{ .Name | strings.TrimSuffix ".html" }}
+  </a>
+{{ end }}
 ```
 
-**Processing Steps:**
-1. Scan `StockStrategiest/results/` for HTML files
-2. Extract metadata from HTML reports (title, date, stock symbol)
-3. Generate `data/reports.json` for Hugo consumption
-4. Copy HTML files to `static/reports/current/`
+### 2.2 CSS-Only Search Implementation
 
-### 2.2 Hugo Data Structure
+**Pure CSS Search (No JavaScript):**
+- Use CSS `:target` pseudo-class for report selection
+- CSS-only filtering using `[data-search*=""]` selectors
+- Smooth transitions with CSS animations
+- Fallback to JavaScript only for enhanced UX
 
-**File:** `data/reports.json`
-```json
-{
-  "reports": [
-    {
-      "id": "PKO_2025-06-11",
-      "symbol": "PKO",
-      "title": "PKO Bank Polski S.A.",
-      "date": "2025-06-11",
-      "timestamp": "2025-06-11T14:29:04Z",
-      "file": "PKO.html",
-      "strategies": ["Trend + Momentum", "Volume Confirmation", "Bollinger + Oscillators"],
-      "signals": {
-        "buy": 0,
-        "sell": 0,
-        "hold": 1
-      }
-    }
-  ],
-  "lastUpdated": "2025-06-11T14:29:04Z"
+**Benefits:**
+- Works without JavaScript
+- Better SEO and accessibility
+- Faster initial page load
+- Progressive enhancement approach
+
+## Phase 3: Modern SCSS & Minimal JavaScript
+
+### 3.1 SCSS Architecture
+
+**File:** `assets/scss/stock-dashboard.scss`
+
+**Modern CSS Features:**
+- CSS Grid for layout (no flexbox fallbacks needed)
+- CSS Custom Properties for theming
+- CSS Container Queries for responsive design
+- CSS `:has()` selector for advanced interactions
+- SCSS mixins for responsive breakpoints
+
+**Structure:**
+```scss
+// Variables and mixins
+@import 'variables';
+@import 'mixins';
+
+// Base dashboard layout
+.stock-dashboard {
+  display: grid;
+  grid-template-columns: minmax(300px, 1fr) 3fr;
+  grid-template-areas: "sidebar viewer";
+  height: 100vh;
+  
+  @include mobile {
+    grid-template-columns: 1fr;
+    grid-template-areas: "sidebar" "viewer";
+  }
+}
+
+// CSS-only search functionality
+.search-input:placeholder-shown ~ .report-list .report-item {
+  display: block;
+}
+
+.search-input:not(:placeholder-shown) ~ .report-list .report-item:not([data-search*=""]) {
+  display: none;
 }
 ```
 
-## Phase 3: Frontend Implementation
+### 3.2 Minimal JavaScript (Optional Enhancement)
 
-### 3.1 Dashboard JavaScript
+**File:** `static/js/minimal-dashboard.js` (Optional)
 
-**File:** `static/js/stock-dashboard.js`
+**Only Essential Features:**
+- Enhanced search with real-time filtering
+- Smooth iframe loading transitions
+- Mobile menu toggle (if CSS-only isn't sufficient)
+- URL state management for deep linking
 
-**Features:**
-- Search functionality for report filtering
-- Dynamic report loading in iframe
-- URL state management (deep linking)
-- Responsive sidebar toggle
-- Loading states and error handling
+**Size Target:** < 2KB minified
 
-### 3.2 Dashboard Styling
+### 3.3 Progressive Enhancement Strategy
 
-**File:** `static/css/stock-dashboard.css`
+**Core Functionality (No JS Required):**
+- ✅ Report listing and selection
+- ✅ Basic search functionality
+- ✅ Mobile responsive layout
+- ✅ Report viewing in iframe
 
-**Layout:**
-- CSS Grid for dashboard layout
-- Responsive breakpoints
-- Dark/light theme support (matching site theme)
-- Smooth transitions and animations
-
-### 3.3 User Experience Features
-
-- **Search & Filter:** Real-time search with debouncing
-- **Report Loading:** Smooth transitions with loading indicators
-- **Mobile Responsive:** Collapsible sidebar on mobile
-- **Keyboard Navigation:** Arrow keys for report navigation
-- **URL Sharing:** Shareable URLs for specific reports
+**Enhanced Features (With JS):**
+- ✅ Real-time search filtering
+- ✅ Smooth transitions
+- ✅ URL state management
+- ✅ Keyboard navigation
 
 ## Phase 4: Automation & Deployment
 
@@ -201,43 +243,56 @@ jobs:
 - Copy files to static directory
 - Handle file cleanup and organization
 
-## Phase 5: Implementation Steps
+## Phase 5: Clean Implementation Steps
 
-### Step 1: Create Dashboard Layout (Day 1)
-1. Create main dashboard page structure
-2. Implement basic Hugo templates
-3. Add CSS grid layout for dashboard
-4. Test responsive design
+### Step 1: Remove Old Files & Create Clean Structure
+1. ❌ **Remove Existing Files**
+   ```bash
+   rm static/css/stock-dashboard.css
+   rm static/js/stock-dashboard.js
+   rm layouts/StockReport/single.html
+   ```
 
-### Step 2: Build Report Selector (Day 1-2)
-1. Create report selector partial
-2. Implement search functionality
-3. Add filtering capabilities
-4. Style the sidebar component
+2. ✅ **Create New Directory Structure**
+   ```bash
+   mkdir -p assets/scss
+   mkdir -p layouts/partials/stock-reports
+   ```
 
-### Step 3: Implement Report Viewer (Day 2)
-1. Create iframe-based report viewer
-2. Add loading states and error handling
-3. Implement fullscreen toggle
-4. Test with existing HTML reports
+### Step 2: Build Modern SCSS Architecture
+1. ✅ **Create SCSS Files**
+   - `assets/scss/stock-dashboard.scss` - Main dashboard styles
+   - `assets/scss/_variables.scss` - CSS custom properties
+   - `assets/scss/_mixins.scss` - Responsive mixins
 
-### Step 4: Data Processing (Day 2-3)
-1. Create report processing script
-2. Implement metadata extraction
-3. Generate Hugo data files
-4. Test with sample reports
+2. ✅ **Implement CSS Grid Layout**
+   - Mobile-first responsive design
+   - CSS-only search functionality
+   - Dark/light theme support
 
-### Step 5: GitHub Actions Setup (Day 3)
-1. Create workflow configuration
-2. Test automation pipeline
-3. Configure deployment to GitHub Pages
-4. Add error handling and notifications
+### Step 3: Build Clean Hugo Templates
+1. ✅ **Main Template**
+   - `layouts/StockReport/single.html` - Clean, semantic HTML
+   - Use Hugo's `readDir` for dynamic file listing
+   - Implement CSS-only interactions where possible
 
-### Step 6: Testing & Refinement (Day 3-4)
-1. End-to-end testing of automation
-2. UI/UX improvements
-3. Performance optimization
-4. Mobile responsiveness testing
+2. ✅ **Partial Templates**
+   - `layouts/partials/stock-reports/sidebar.html` - Report selector
+   - `layouts/partials/stock-reports/viewer.html` - Report viewer
+
+### Step 4: Add Minimal JavaScript (If Needed)
+1. ✅ **Optional Enhancement**
+   - `static/js/minimal-dashboard.js` - < 2KB
+   - Only for features that can't be done with CSS
+   - Progressive enhancement approach
+
+### Step 5: Test & Optimize
+1. Test without JavaScript (core functionality)
+2. Test with JavaScript (enhanced features)
+3. Verify mobile responsiveness
+4. Performance optimization
+
+**Priority: Build clean, modern solution from scratch**
 
 ## Technical Specifications
 
@@ -257,35 +312,162 @@ jobs:
 - Minimal JavaScript footprint
 - Optimized CSS delivery
 
-## File Structure After Implementation
+## Clean File Structure (After Implementation)
 
 ```
 shuffzord.github.io/
-├── .github/workflows/
-│   └── daily-stock-reports.yml
 ├── content/StockReport/
-│   └── _index.md
-├── data/
-│   └── reports.json
+│   └── _index.md ✅ (clean content)
+├── assets/scss/
+│   ├── stock-dashboard.scss ✅ (main styles)
+│   ├── _variables.scss ✅ (CSS custom properties)
+│   └── _mixins.scss ✅ (responsive mixins)
 ├── layouts/
 │   ├── StockReport/
-│   │   └── list.html
-│   ├── shortcodes/
-│   │   └── stock-dashboard.html
-│   └── partials/
-│       ├── report-selector.html
-│       └── report-viewer.html
+│   │   └── single.html ✅ (clean Hugo template)
+│   └── partials/stock-reports/
+│       ├── sidebar.html ✅ (report selector)
+│       └── viewer.html ✅ (report viewer)
 ├── static/
-│   ├── css/
-│   │   └── stock-dashboard.css
 │   ├── js/
-│   │   └── stock-dashboard.js
+│   │   └── minimal-dashboard.js ✅ (optional, < 2KB)
 │   └── reports/
-│       └── current/
+│       ├── CDR.html ✅
+│       └── sample.html ✅
 ├── scripts/
-│   └── process-reports.py
-└── StockStrategiest/ (submodule)
+│   └── copy-reports.py ✅ (existing)
+└── StockStrategiest/ (submodule) ✅
 ```
+
+**Architecture Benefits:**
+- ✅ Modern SCSS with CSS Grid
+- ✅ Minimal or no JavaScript dependency
+- ✅ Clean, semantic HTML structure
+- ✅ Progressive enhancement approach
+- ✅ Better performance and accessibility
+
+## Phase 6: Implementation Orchestration
+
+### 6.1 Task Breakdown for Orchestrator Mode
+
+**Task 1: File Cleanup & Structure Setup**
+- Mode: Code
+- Actions:
+  - Remove old files: `static/css/stock-dashboard.css`, `static/js/stock-dashboard.js`, `layouts/StockReport/single.html`
+  - Create directory structure: `assets/scss/`, `layouts/partials/stock-reports/`
+  - Verify existing reports in `static/reports/`
+
+**Task 2: SCSS Architecture Implementation**
+- Mode: Code
+- Actions:
+  - Create `assets/scss/_variables.scss` with CSS custom properties
+  - Create `assets/scss/_mixins.scss` with responsive breakpoints
+  - Create `assets/scss/stock-dashboard.scss` with CSS Grid layout
+  - Implement CSS-only search functionality
+
+**Task 3: Hugo Template Development**
+- Mode: Code
+- Actions:
+  - Create clean `layouts/StockReport/single.html` with `readDir` function
+  - Create `layouts/partials/stock-reports/sidebar.html` for report selector
+  - Create `layouts/partials/stock-reports/viewer.html` for report display
+  - Update `content/StockReport/_index.md` with clean configuration
+
+**Task 4: Testing & Validation**
+- Mode: Debug
+- Actions:
+  - Test dashboard functionality at `http://localhost:1313/stockreport/`
+  - Verify dynamic file listing works
+  - Test responsive design on mobile
+  - Validate CSS-only search functionality
+
+**Task 5: Optional JavaScript Enhancement**
+- Mode: Code (if needed)
+- Actions:
+  - Create minimal `static/js/minimal-dashboard.js` (< 2KB)
+  - Implement progressive enhancement features
+  - Add URL state management for deep linking
+
+### 6.2 Orchestrator Workflow
+
+```mermaid
+graph TD
+    A[Orchestrator Mode] --> B[Task 1: Cleanup]
+    B --> C[Code Mode: Remove old files]
+    C --> D[Task 2: SCSS]
+    D --> E[Code Mode: Create SCSS architecture]
+    E --> F[Task 3: Templates]
+    F --> G[Code Mode: Build Hugo templates]
+    G --> H[Task 4: Testing]
+    H --> I[Debug Mode: Validate functionality]
+    I --> J{All tests pass?}
+    J -->|No| K[Debug Mode: Fix issues]
+    K --> I
+    J -->|Yes| L[Task 5: Enhancement]
+    L --> M[Code Mode: Add minimal JS if needed]
+    M --> N[Complete]
+```
+
+### 6.3 Success Criteria for Each Task
+
+**Task 1 Success:**
+- ✅ Old problematic files removed
+- ✅ Clean directory structure created
+- ✅ Existing reports preserved in `static/reports/`
+
+**Task 2 Success:**
+- ✅ SCSS compiles without errors
+- ✅ CSS Grid layout renders properly
+- ✅ Responsive design works on all screen sizes
+- ✅ CSS-only search functionality operational
+
+**Task 3 Success:**
+- ✅ Hugo builds without template errors
+- ✅ `readDir` function lists reports dynamically
+- ✅ Dashboard renders with proper structure
+- ✅ Reports load correctly in iframe
+
+**Task 4 Success:**
+- ✅ Dashboard accessible at `/stockreport/` URL
+- ✅ All existing reports visible and clickable
+- ✅ Search functionality filters reports
+- ✅ Mobile responsive design functional
+
+**Task 5 Success (Optional):**
+- ✅ JavaScript enhances UX without breaking core functionality
+- ✅ Progressive enhancement maintains accessibility
+- ✅ File size remains under 2KB minified
+
+### 6.4 Orchestrator Commands
+
+**For Orchestrator Mode to execute:**
+
+1. **Start Cleanup Task:**
+   ```
+   Switch to Code mode to remove old dashboard files and create clean directory structure for modern SCSS architecture
+   ```
+
+2. **SCSS Implementation:**
+   ```
+   Switch to Code mode to implement modern SCSS architecture with CSS Grid, custom properties, and responsive design
+   ```
+
+3. **Hugo Template Creation:**
+   ```
+   Switch to Code mode to build clean Hugo templates using readDir function for dynamic report listing
+   ```
+
+4. **Testing & Validation:**
+   ```
+   Switch to Debug mode to test dashboard functionality, verify responsive design, and validate CSS-only features
+   ```
+
+5. **Optional Enhancement:**
+   ```
+   Switch to Code mode to add minimal JavaScript for progressive enhancement if needed after testing
+   ```
+
+This orchestration plan provides clear task boundaries, success criteria, and mode switching instructions for systematic implementation.
 
 ## Success Metrics
 
