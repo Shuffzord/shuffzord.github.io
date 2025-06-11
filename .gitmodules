@@ -6,4 +6,4 @@
 	url = https://github.com/theNewDynamic/gohugo-theme-ananke
 [submodule "StockStrategiest"]
 	path = StockStrategiest
-	url = git@github.com:Shuffzord/StockStrategiest.git
+	url = https://github.com/Shuffzord/StockStrategiest.git
