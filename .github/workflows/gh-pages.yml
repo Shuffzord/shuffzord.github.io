@@ -34,6 +34,20 @@ jobs:
           submodules: recursive
           fetch-depth: 0
           token: ${{ secrets.GH_PAT }}
+      - name: Debug Git Configuration
+        run: |
+          git config --list --show-origin
+
+      - name: Debug Submodule URLs
+        run: |
+          cat .gitmodules
+
+      - name: Debug Environment Variables
+        run: env
+
+      - name: Test Git Authentication
+        run: |
+          git ls-remote https://github.com/Shuffzord/StockStrategiest.git
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v4
