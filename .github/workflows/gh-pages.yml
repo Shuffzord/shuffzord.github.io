@@ -33,7 +33,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          submodules: recursive
+          submodules: false  # Don't checkout submodules automatically
           fetch-depth: 0
           token: ${{ secrets.GH_PAT }}
       
@@ -42,10 +42,11 @@ jobs:
           git config --global url."https://${{ secrets.GH_PAT }}@github.com/".insteadOf "https://github.com/"
           echo "✅ Git authentication configured for submodules"
       
-      - name: Update Submodules with Authentication
+      - name: Manually Initialize Submodules
         run: |
-          git submodule sync --recursive
-          git submodule update --init --recursive --force
+          echo "Initializing submodules manually..."
+          git submodule init
+          git submodule update --recursive --remote
       
       - name: Debug Git Configuration (Post-checkout)
         run: |
