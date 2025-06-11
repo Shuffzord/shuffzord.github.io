@@ -65,6 +65,11 @@ buildDrafts = false
     url        = "/Stock"
 
 [[menu.main]]
+    identifier = "Stock-Report"
+    name       = "Stock Report"
+    url        = "/StockReport"
+
+[[menu.main]]
     identifier = "Study"
     name       = "Study"
     url        = "/Study"

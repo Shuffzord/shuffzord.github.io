@@ -7,3 +7,6 @@
 [submodule "StockStrategiest"]
 	path = StockStrategiest
 	url = https://github.com/Shuffzord/StockStrategiest.git
+[submodule "themes/StockStrategiest"]
+	path = themes/StockStrategiest
+	url = https://github.com/Shuffzord/StockStrategiest.git
