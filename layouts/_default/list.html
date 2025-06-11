@@ -2,20 +2,28 @@
 {{- if eq .Section "stockreport" -}}
 <!-- Simple Stock Reports Dashboard -->
 <style>
-.simple-dashboard {
-  display: flex;
-  gap: 20px;
-  min-height: 600px;
+/* Break out of theme container for full width */
+.stockreport-fullwidth {
+  position: relative;
+  width: 100%;
+  max-width: 100vw;
 }
 
-.reports-sidebar {
-  width: 20%;
+.simple-dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-sizing: border-box;
+}
+
+.reports-selector {
   background: #f5f5f5;
   padding: 20px;
   border-radius: 8px;
+  text-align: center;
 }
 
-.reports-sidebar h3 {
+.reports-selector h3 {
   margin-top: 0;
   color: #333;
 }
@@ -24,31 +32,39 @@
   list-style: none;
   padding: 0;
   margin: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .report-item {
-  margin-bottom: 10px;
+  margin: 0;
 }
 
 .report-link {
-  display: block;
-  padding: 10px;
+  display: inline-block;
+  padding: 12px 20px;
   background: white;
   border: 1px solid #ddd;
   border-radius: 4px;
   text-decoration: none;
   color: #333;
   cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
 }
 
 .report-link:hover {
   background: #007bff;
   color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,123,255,0.3);
 }
 
 .report-link.active {
   background: #007bff;
   color: white;
+  box-shadow: 0 4px 8px rgba(0,123,255,0.3);
 }
 
 .report-viewer {
@@ -57,6 +73,7 @@
   border: 1px solid #ddd;
   border-radius: 8px;
   overflow: hidden;
+  min-height: 70vh;
 }
 
 .viewer-header {
@@ -66,7 +83,7 @@
 }
 
 .viewer-content {
-  height: 500px;
+  height: calc(70vh - 60px);
   position: relative;
 }
 
@@ -84,14 +101,27 @@
   color: #666;
   font-size: 18px;
 }
+
+@media (max-width: 768px) {
+  .report-list {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .report-link {
+    width: 200px;
+    text-align: center;
+  }
+}
 </style>
 
 <h1>{{ .Title }}</h1>
 <p>{{ .Content }}</p>
 
+<div class="stockreport-fullwidth">
 <div class="simple-dashboard">
-  <!-- Sidebar with reports -->
-  <div class="reports-sidebar">
+  <!-- Report selector at top -->
+  <div class="reports-selector">
     <h3>Available Reports</h3>
     <ul class="report-list">
       {{- $reports := readDir "static/reports" -}}
@@ -107,15 +137,16 @@
       {{- end -}}
     </ul>
   </div>
+  </div>
 
-  <!-- Report viewer -->
+  <!-- Full-width report viewer -->
   <div class="report-viewer">
     <div class="viewer-header">
       <h4 id="current-report">Select a Report</h4>
     </div>
     <div class="viewer-content">
       <div id="placeholder" class="placeholder">
-        Click on a report from the sidebar to view it here
+        Click on a report above to view it here
       </div>
       <iframe id="report-frame" class="report-frame" style="display: none;"></iframe>
     </div>
