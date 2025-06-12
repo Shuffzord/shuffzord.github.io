@@ -73,7 +73,13 @@ jobs:
         run: |
           python scripts/copy-reports.py
 
-      # Step 8: Commit changes
+      # Step 8: Configure Git user identity
+      - name: Configure Git user identity
+        run: |
+          git config user.email "ennobler@gmail.com"
+          git config user.name "Mateusz Wozniak - automate"
+
+      # Step 9: Commit changes
       - name: Commit changes
         run: |
           git add data/. static/reports/
