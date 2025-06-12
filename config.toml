@@ -6,7 +6,7 @@ theme = "hello-friend-ng"
 googleAnalytics = "G-RNL2R9XB2F"
 
 # Ignore problematic data files
-ignoreFiles = ["data/daily/.*"]
+ignoreFiles = ["data/.*"]
 
 # Enable building of future-dated content
 buildFuture = true
