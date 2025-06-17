@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // For the paragraph
-  var paragraphEl = document.querySelector("#title p");
+  var paragraphEl = document.querySelector("#title + p");
   var paragraphFx = new TextScramble(paragraphEl);
   var paragraphCounter = 0;
 
