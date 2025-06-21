@@ -1,0 +1,54 @@
+{{ define "main" }}
+
+<div class="simple-dashboard">
+  <!-- Sidebar with reports -->
+  <div class="reports-sidebar">
+    <h3>Stock Reports</h3>
+    <ul class="report-list">
+      {{- $reports := readDir "static/reports" -}}
+      {{- range $reports -}}
+        {{- if and (not .IsDir) (strings.HasSuffix .Name ".html") -}}
+          {{- $displayName := strings.TrimSuffix ".html" .Name -}}
+          <li class="report-item">
+            <a href="#" class="report-link" onclick="loadReport('/reports/{{ .Name }}', '{{ $displayName }}'); return false;">
+              {{ $displayName }}
+            </a>
+          </li>
+        {{- end -}}
+      {{- end -}}
+    </ul>
+  </div>
+
+  <!-- Report viewer -->
+  <div class="report-viewer">
+    <div class="viewer-header">
+      <h4 id="current-report">Select a Report</h4>
+    </div>
+    <div class="viewer-content">
+      <div id="placeholder" class="placeholder">
+        Click on a report from the sidebar to view it here
+      </div>
+      <iframe id="report-frame" class="report-frame" style="display: none;"></iframe>
+    </div>
+  </div>
+</div>
+
+<script>
+function loadReport(reportPath, reportName) {
+  // Update active state
+  document.querySelectorAll('.report-link').forEach(link => {
+    link.classList.remove('active');
+  });
+  event.target.classList.add('active');
+  
+  // Update header
+  document.getElementById('current-report').textContent = reportName;
+  
+  // Hide placeholder and show iframe
+  document.getElementById('placeholder').style.display = 'none';
+  const iframe = document.getElementById('report-frame');
+  iframe.style.display = 'block';
+  iframe.src = reportPath;
+}
+</script>
+{{ end }}

@@ -5,6 +5,9 @@ theme = "hello-friend-ng"
 # disqusShortname = 'https-shuffzord-github-io'
 googleAnalytics = "G-RNL2R9XB2F"
 
+# Ignore problematic data files
+ignoreFiles = ["data/.*"]
+
 # Enable building of future-dated content
 buildFuture = true
 buildExpired = true
@@ -63,6 +66,11 @@ buildDrafts = false
     identifier = "Stock"
     name       = "Stock"
     url        = "/Stock"
+
+[[menu.main]]
+    identifier = "Stock-Report"
+    name       = "Stock Report"
+    url        = "/StockReport"
 
 [[menu.main]]
     identifier = "Study"

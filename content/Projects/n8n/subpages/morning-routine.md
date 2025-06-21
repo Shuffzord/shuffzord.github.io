@@ -90,11 +90,9 @@ This system connects six different platforms seamlessly:
 
 ### **The Workflow in Action:**
 
-```mermaid
 Schedule Trigger (7 AM) → Fetch Calendar Events → Get Weather Data → 
 Pull Random Quote → Check Yesterday's Habits → Generate Message → 
 Send to Telegram → Wait for Interactions → Update Notion
-```
 
 ---
 
