@@ -1,6 +1,6 @@
 ---
 title: "Pydantic + LLM Structured Outputs Cheat Sheet"
-date: "2025-06-10"
+date: "2025-06-21"
 tags: [llm]
 ---
 
